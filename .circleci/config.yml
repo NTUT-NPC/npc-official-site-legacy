@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:10.10.0
     steps:
+      - checkout
       - restore_cache:
           keys:
             # when lock file changes, use increasingly general patterns to restore cache
@@ -20,7 +21,11 @@ jobs:
             - ~/usr/local/lib/node_modules # location depends on npm version
           key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
-      - checkout
+      - run:
+          name: lint
+          command: |
+            mkdir -p /tmp/test-reports/eslint
+            node_modules/.bin/eslint . --format junit --output-file /tmp/test-reports/eslint/results.xml
 
       - run:
           name: Build
@@ -29,3 +34,6 @@ jobs:
       - run:
           name: Run danger
           command: npm run danger
+
+      - store_test_results:
+          path: /tmp/test-reports
