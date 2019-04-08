@@ -79,9 +79,9 @@ if (testFilesMissingTypes.length > 0) {
 
 // validate commit message in PR if it conforms conventional change log, notify if it doesn't.
 const messageConventionValid = danger.git.commits.reduce(function (acc, value) {
-  let valid = false
-  lint(value.message).then(report => (valid = report))
-  return valid && acc
+  lint(value.message).then((report) => {
+    return report && acc
+  })
 }, true)
 
 if (!messageConventionValid) {
