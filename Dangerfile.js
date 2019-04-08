@@ -2,7 +2,7 @@ import { danger, fail, markdown, warn } from 'danger'
 const fs = require('fs')
 const path = require('path')
 const _ = require('lodash')
-const lint = require('@commitlint/lint')
+
 // simple regex matcher to detect usage of helper function and its type signature
 const hotMatch = /\bhot\(/gi
 const hotSignatureMatch = /\bimport \{.*?hot.*?\} from '.*?\/helpers\/marble-testing'/gi
@@ -74,25 +74,5 @@ if (testFilesMissingTypes.length > 0) {
     '> (' +
       errorCount +
       ') : It seems updated test cases uses test scheduler interface `hot`, `cold` but miss to import type signature for those.'
-  )
-}
-
-// validate commit message in PR if it conforms conventional change log, notify if it doesn't.
-const messageConventionValid = danger.git.commits.reduce(function (acc, value) {
-  lint(value.message).then((report) => {
-    return report && acc
-  })
-}, true)
-
-if (!messageConventionValid) {
-  warn(
-    'commit message does not follows conventional change log (' +
-      ++errorCount +
-      ')'
-  )
-  markdown(
-    '> (' +
-      errorCount +
-      ') : NPC uses conventional change log to generate changelog automatically. It seems some of commit messages are not following those, please check [contributing guideline](https://chris.beams.io/posts/git-commit/) and update commit messages.'
   )
 }
