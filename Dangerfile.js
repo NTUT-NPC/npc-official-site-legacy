@@ -27,30 +27,6 @@ if (packageChanged) {
   warn(`${title} - <i>${idea}</i>`)
 }
 
-// Regex looks for given categories, types, a file/framework/component, and a message - broken into 4 capture groups
-const changelogRegex = /\[\s?(ANDROID|GENERAL|IOS)\s?\]\s*?\[\s?(ADDED|CHANGED|DEPRECATED|REMOVED|FIXED|SECURITY)\s?\]\s*?-?\s*?(.*)/gi
-const includesChangelog =
-  danger.github.pr.body &&
-  (danger.github.pr.body.toLowerCase().includes('## changelog') ||
-    danger.github.pr.body.toLowerCase().includes('release notes'))
-const correctlyFormattedChangelog = changelogRegex.test(danger.github.pr.body)
-
-// Provides advice if a changelog is missing
-const changelogInstructions =
-  'A changelog entry has the following format: `[CATEGORY] [TYPE] - Message`.\n\n<details>CATEGORY may be:\n\n- General\n- iOS\n- Android\n\nTYPE may be:\n\n- Added, for new features.\n- Changed, for changes in existing functionality.\n- Deprecated, for soon-to-be removed features.\n- Removed, for now removed features.\n- Fixed, for any bug fixes.\n- Security, in case of vulnerabilities.\n\nMESSAGE may answer "what and why" on a feature level.   Use this to briefly tell React Native users about notable changes.</details>'
-if (!includesChangelog) {
-  const title = ':clipboard: Missing Changelog'
-  const idea =
-    'Can you add a Changelog? ' +
-    'To do so, add a "## Changelog" section to your PR description. ' +
-    changelogInstructions
-  message(`${title} - <i>${idea}</i>`)
-} else if (!correctlyFormattedChangelog) {
-  const title = ':clipboard: Changelog Format'
-  const idea = 'Did you include a Changelog? ' + changelogInstructions
-  message(`${title} - <i>${idea}</i>`)
-}
-
 // Warns if the PR is opened against stable, as commits need to be cherry picked and tagged by a release maintainer.
 // Fails if the PR is opened against anything other than `master` or `-stable`.
 const isMergeRefMaster = danger.github.pr.base.ref === 'master'
