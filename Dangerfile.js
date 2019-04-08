@@ -1,6 +1,6 @@
+import { danger, fail, markdown, warn } from 'danger'
 const fs = require('fs')
 const path = require('path')
-const danger = require('danger')
 const _ = require('lodash')
 const lint = require('@commitlint/lint')
 // simple regex matcher to detect usage of helper function and its type signature
@@ -15,8 +15,8 @@ let errorCount = 0
 // Warn when PR size is large
 const bigPRThreshold = 600
 if (danger.github.pr.additions + danger.github.pr.deletions > bigPRThreshold) {
-  danger.warn(':exclamation: Big PR (' + ++errorCount + ')')
-  danger.markdown(
+  warn(':exclamation: Big PR (' + ++errorCount + ')')
+  markdown(
     '> (' +
       errorCount +
       ') : Pull Request size seems relatively large. If Pull Request contains multiple changes, split each into separate PR will helps faster, easier review.'
@@ -63,14 +63,14 @@ const testFilesMissingTypes = modifiedSpecFiles.reduce(function (acc, value) {
 }, [])
 
 if (testFilesMissingTypes.length > 0) {
-  danger.fail(
+  fail(
     'missing type definition import in tests (' +
       testFilesMissingTypes +
       ') (' +
       ++errorCount +
       ')'
   )
-  danger.markdown(
+  markdown(
     '> (' +
       errorCount +
       ') : It seems updated test cases uses test scheduler interface `hot`, `cold` but miss to import type signature for those.'
@@ -85,12 +85,12 @@ const messageConventionValid = danger.git.commits.reduce(function (acc, value) {
 }, true)
 
 if (!messageConventionValid) {
-  danger.warn(
+  warn(
     'commit message does not follows conventional change log (' +
       ++errorCount +
       ')'
   )
-  danger.markdown(
+  markdown(
     '> (' +
       errorCount +
       ') : RxJS uses conventional change log to generate changelog automatically. It seems some of commit messages are not following those, please check [contributing guideline](https://github.com/ReactiveX/rxjs/blob/master/CONTRIBUTING.md#commit-message-format) and update commit messages.'
