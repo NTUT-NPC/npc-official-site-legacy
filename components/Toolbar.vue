@@ -30,6 +30,6 @@
     .toolbar__link
       margin-left: 50px
       display: flex
-      // align-items: center
-      // justify-content: space-around
+      align-items: center
+      justify-content: space-around
 </style>
