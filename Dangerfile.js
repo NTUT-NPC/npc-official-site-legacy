@@ -80,7 +80,7 @@ if (testFilesMissingTypes.length > 0) {
 // validate commit message in PR if it conforms conventional change log, notify if it doesn't.
 const messageConventionValid = danger.git.commits.reduce(function (acc, value) {
   let valid = false
-  lint('foo: bar').then(report => (valid = report))
+  lint(value.message).then(report => (valid = report))
   return valid && acc
 }, true)
 
@@ -93,6 +93,6 @@ if (!messageConventionValid) {
   markdown(
     '> (' +
       errorCount +
-      ') : NPC uses conventional change log to generate changelog automatically. It seems some of commit messages are not following those, please check [contributing guideline](https://github.com/ReactiveX/rxjs/blob/master/CONTRIBUTING.md#commit-message-format) and update commit messages.'
+      ') : NPC uses conventional change log to generate changelog automatically. It seems some of commit messages are not following those, please check [contributing guideline](https://chris.beams.io/posts/git-commit/) and update commit messages.'
   )
 }
