@@ -22,5 +22,5 @@ jobs:
           name: Build
           command: npm run build
       - run:
-        name: Run danger
-        command: npm run danger
+          name: Run danger
+          command: npm run danger
