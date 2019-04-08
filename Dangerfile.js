@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const danger = require('danger')
 const _ = require('lodash')
-const validateMessage = require('validate-commit-msg')
+const lint = require('@commitlint/lint')
 // simple regex matcher to detect usage of helper function and its type signature
 const hotMatch = /\bhot\(/gi
 const hotSignatureMatch = /\bimport \{.*?hot.*?\} from '.*?\/helpers\/marble-testing'/gi
@@ -79,7 +79,8 @@ if (testFilesMissingTypes.length > 0) {
 
 // validate commit message in PR if it conforms conventional change log, notify if it doesn't.
 const messageConventionValid = danger.git.commits.reduce(function (acc, value) {
-  const valid = validateMessage(value.message)
+  let valid = false
+  lint('foo: bar').then(report => (valid = report))
   return valid && acc
 }, true)
 
