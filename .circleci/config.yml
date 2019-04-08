@@ -21,3 +21,8 @@ jobs:
       - run:
           name: Build
           command: npm run build
+  test:
+    override:
+      - run:
+        name: Run danger
+        command: npm run danger
