@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Build
+          command: npm run build
