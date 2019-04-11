@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
   .contaner
     display: flex
     height: 10%
