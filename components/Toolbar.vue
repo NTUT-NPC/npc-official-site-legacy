@@ -27,8 +27,8 @@
     height: 10%
     width: 100%
     .contaner__logo
-      width: 50px
-      height: 50px
+      width: 80px
+      height: 80px
     .contaner__middle
       height: 100%
       flex: 3
