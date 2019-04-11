@@ -1,5 +1,7 @@
 <template>
-  <div />
+  <div class="container">
+    <!-- <div class="flitter" /> -->
+</div>
 </template>
 
 <script>
@@ -9,38 +11,21 @@ export default {
 }
 </script>
 
-<style>
-* {
-  background-color: #0c1214;
-}
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="sass">
+*
+  background-color: #0c1214
+  width: 100%
+  height: 100%
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+.container
+  // position: relative
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+.flitter
+  position: fixed
+  width: 100%
+  height: 200%
+  background-color: white
+  left: -650px
+  top: -50px
+  transform: rotate(-30deg)
 </style>
