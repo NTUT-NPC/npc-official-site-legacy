@@ -1,25 +1,47 @@
 <template>
-  <div class="toolbar">
-    <img class="toolbar__logo" src="#">
-    <div class="toolbar__link">
-      <button class="toolbar__link__homepage" src="#">
-        首頁
-      </button>
-      <button class="toolbar__link__about_me" src="#">
-        關於我們
-      </button>
-      <button class="toolbar__link__about_me" src="#">
-        學習資源
-      </button>
-      <button class="toolbar__link__about_me" src="#">
-        登入
-      </button>
+  <div class="contaner">
+    <img class="contaner__logo" src="../src/logo_normal_word.png">
+    <div class="contaner__middle" />
+    <div class="contaner__toolbar">
+      <div class="toolbar__link">
+        <button class="toolbar__link__homepage" src="#">
+          <p>首頁</p>
+        </button>
+        <button class="toolbar__link__about_me" src="#">
+          <p>活動</p>
+        </button>
+        <button class="toolbar__link__about_me" src="#">
+          <p>學習資源</p>
+        </button>
+        <button class="toolbar__link__about_me" src="#">
+          <p>關於</p>
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="sass">
-
+  .contaner
+    display: flex
+    height: 10%
+    width: 100%
+    .contaner__logo
+      width: 50px
+      height: 50px
+    .contaner__middle
+      height: 100%
+      flex: 3
+    .contaner__toolbar
+      position: relative
+      flex: 2
+      display: flex
+      .toolbar__link
+        height: 100%
+        position: relative
+        left: 20%
+        display: flex
+        align-items: center
   button
     background-color: #0c1214
     border: none
@@ -32,19 +54,4 @@
   button:hover
       cursor: pointer
       border-bottom: solid 2px white
-  .toolbar
-    position: relative
-    display: flex
-    height: 10%
-    width: 100%
-    background-color: #0c1214
-    .toolbar__logo
-      color: white
-    .toolbar__link
-      position: relative
-      left: 60%
-      margin-left: 50px
-      display: flex
-      align-items: center
-      justify-content: space-around
 </style>
