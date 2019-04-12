@@ -12,8 +12,24 @@
       </div>
       <img alt="npc_big_logo" class="npc_big_logo">
     </div>
-    <div class="slide">
-      <!-- <slide /> -->
+    <div class="second_body">
+      <div class="second_title">
+        <p>為甚麼學程式</p>
+      </div>
+      <div class="second_body_container">
+        <ul class="body_cards">
+          <li v-for="(card,index) in second_body" :key="index">
+            <div class="card">
+              <div class="card_img">
+                <img :src="card.img" alt="">
+              </div>
+              <div class="content">
+                <p>{{card.text}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -24,11 +40,23 @@
 export default {
   components: {
     // Slide
+  },
+  data() {
+    return {
+      second_body: [
+        { text: 'first card content', img: '#' },
+        { text: 'second card content', img: '#' },
+        { text: 'third card content', img: '#' }
+      ]
+    }
   }
 }
 </script>
 
 <style lang="sass">
+*
+  padding: 0
+  margin: 0
 .main
   height: 80vh
   display: flex
@@ -40,15 +68,26 @@ export default {
   .npc_big_logo
     flex: 1
   .main__register
+    margin-top: 20px
     background-color: #0c1214
     border: 1px solid yellow
-    border-radius: 40% 40% 40% 40%
+    border-radius: 24px
     color: white
     padding: 5px 10px
     text-align: center
     font-size: 16px
     &:hover
       cursor: pointer
+.second_body
+  display: flex
+  flex-direction: column
+  align-items: center
+  .body_cards
+    display: flex
+    li
+      list-style-type: none
+    .card
+      margin-left: 100px
 h2
   color: white
 p
