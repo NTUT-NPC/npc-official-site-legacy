@@ -55,12 +55,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  $color: #5533ff
-  $deeper: darken($color, 5%)
-
-  *
-    background-color: #0c1214
-    color: white
 
   button
     border: none
@@ -120,8 +114,8 @@ export default {
     background: transparent
 
     &:before
-      border-top: .3rem solid white
-      border-bottom: .3rem solid white
+      border-top: .1rem solid white
+      border-bottom: .1rem solid white
       display: block
       position: absolute
       background: transparent

@@ -56,8 +56,6 @@ export default {
     width: 640px
     height: 300px
     margin: 0
-    margin-top: 50px
-    margin-bottom: 50px
     color: white
     display: flex
     justify-content: center
@@ -73,12 +71,6 @@ export default {
       from
         opacity: 0
         transform: translateY(30px)
-
-    &.dark
-      color: white
-
-      &::before
-        background-image: radial-gradient(hsla(0, 0%, 0%, .8), hsla(0, 0%, 0%, .6) 50%, transparent), linear-gradient(to top, hsl(240, 100%, 6%), hsl(202, 53%, 44%))
 
     &::before
       content: ""
@@ -189,25 +181,5 @@ export default {
         transform: translate(30px, calc(-30px - #{2 * $line-height - 0.1}em)) rotate(90deg)
       &::after
         transform: translate(-30px, calc(30px + #{3 * $line-height + 0.1}em)) rotate(90deg)
-
-  .card-image
-    position: absolute
-    z-index: -2
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    -o-object-fit: cover
-    object-fit: cover
-    transform-origin: 80% 20%
-    transition: ($transition * 2) cubic-bezier(0.32, 0.16, 0, 1)
-    filter: brightness(1.3) contrast(0.8)
-
-    .card.dark &
-      filter: brightness(.8) contrast(.8)
-
-    .card:hover &,
-    .card:focus &
-      transform: scale(1.05)
 
 </style>
