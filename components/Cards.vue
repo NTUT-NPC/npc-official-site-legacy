@@ -42,5 +42,5 @@
         width: 180px
         height: 180px
   .title
-    font-size: 24px
+    font-size: 2rem
 </style>

@@ -20,7 +20,15 @@
       </div>
     </div>
     <cards />
-    <history class="time_line" img-src="../static/learning_source.png" />
+    <div class="do__title">
+      <p>我們平常都在幹嘛呢？</p>
+    </div>
+    <what-we-do img-src="learning_source.png" title="社聚" content="let's have fun" :bool="true" />
+    <what-we-do img-src="learning_source.png" title="校外進修" content="let's have fun" :bool="false" />
+    <what-we-do img-src="learning_source.png" title="社團出遊" content="let's have fun" :bool="true" />
+    <what-we-do img-src="learning_source.png" title="校外比賽" content="let's have fun" :bool="false" />
+    <what-we-do img-src="learning_source.png" title="合作開發" content="let's have fun" :bool="true" />
+    <history class="time_line" img-src="learning_source.png" />
   </div>
 </template>
 
@@ -29,11 +37,13 @@
 import History from '@/components/History.vue'
 import Logo from '@/components/Npc_logo.vue'
 import Cards from '@/components/Cards.vue'
+import WhatWeDo from '@/components/WhatWeDo.vue'
 export default {
   components: {
     History,
     Logo,
-    Cards
+    Cards,
+    WhatWeDo
   }
 }
 </script>
@@ -42,36 +52,46 @@ export default {
 *
   padding: 0
   margin: 0
-.main
-  height: 80vh
+.container
   display: flex
-  justify-content: space-around
+  flex-direction: column
   align-items: center
-  .main_title
-    font-size: 72px
-  .main_describe
+  .main
+    height: 80vh
     display: flex
+    justify-content: space-around
     align-items: center
-  .main__register
-    margin-top: 20px
-    background-color: #0c1214
-    border: 1px solid orange
-    border-radius: 24px
-    color: orange
-    padding: 8px 12px
-    text-align: center
-    font-size: 18px
-    &:hover
-      cursor: pointer
-      background: orange
-      color: white
-      animation: pulse 1s infinite
+    .main_title
+      font-size: 4rem
+    .main_describe
+      display: flex
+      align-items: center
+    .main__register
+      margin-top: 20px
+      background-color: #0c1214
+      border: 1px solid orange
+      border-radius: 24px
+      color: orange
+      padding: 8px 12px
+      text-align: center
+      font-size: 18px
+      &:hover
+        cursor: pointer
+        background: orange
+        color: white
+        animation: pulse 1s infinite
+  .do__title
+    display: flex
+    margin: 50px 0px 80px 0px
+    font-size: 3rem
+    justify-content: center
+    align-items: center
 .second_body
   display: flex
   flex-direction: column
   align-items: center
   .second_title
-    font-size: 50px
+    font-size: 3rem
 .time_line
   margin-top: 50px
 .npc_big_logo

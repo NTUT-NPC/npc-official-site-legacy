@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="imgSrc" alt="">
+    <!-- <img :src="url" alt=""> -->
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
       type: String,
       require: true,
       default: ''
+    }
+  },
+  computed: {
+    url() {
+      return require(`~/static/${this.imgSrc}`)
     }
   }
 }
