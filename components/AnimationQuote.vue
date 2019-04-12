@@ -5,8 +5,8 @@
       <div class="box">
         <div class="box-side-borders" />
         <blockquote class="text">
-{{ text }}
-</blockquote>
+          {{ text }}
+        </blockquote>
       </div>
       <figcaption>
         <cite class="cite">— {{ author }} —</cite>
@@ -58,13 +58,13 @@ export default {
     margin: 0
     margin-top: 50px
     margin-bottom: 50px
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    outline: none;
-    animation: slide-in 1s backwards;
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    outline: none
+    animation: slide-in 1s backwards
 
     &:last-child
       animation-delay: .4s
