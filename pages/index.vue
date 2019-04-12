@@ -18,22 +18,9 @@
       <div class="second_title">
         <p>為甚麼加入我們？</p>
       </div>
-      <div class="second_body_container">
-        <ul class="body_cards">
-          <li v-for="(card,index) in second_body" :key="index">
-            <div class="card">
-              <div class="card_img">
-                <img :src="card.img" alt="">
-              </div>
-              <div class="content">
-                <p>{{ card.title }}</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
     </div>
-    <history class="time_line" />
+    <cards />
+    <history class="time_line" img-src="../static/learning_source.png" />
   </div>
 </template>
 
@@ -41,19 +28,12 @@
 
 import History from '@/components/History.vue'
 import Logo from '@/components/Npc_logo.vue'
+import Cards from '@/components/Cards.vue'
 export default {
   components: {
     History,
-    Logo
-  },
-  data() {
-    return {
-      second_body: [
-        { title: 'first card content', img: '@/img/partnner.png' },
-        { title: 'second card content', img: '@/img/partnner.png' },
-        { title: 'third card content', img: '@/img/partnner.png' }
-      ]
-    }
+    Logo,
+    Cards
   }
 }
 </script>
@@ -92,12 +72,6 @@ export default {
   align-items: center
   .second_title
     font-size: 50px
-  .body_cards
-    display: flex
-    li
-      list-style-type: none
-    .card
-      margin-left: 100px
 .time_line
   margin-top: 50px
 .npc_big_logo
