@@ -24,22 +24,23 @@
                 <img :src="card.img" alt="">
               </div>
               <div class="content">
-                <p>{{card.text}}</p>
+                <p>{{ card.text }}</p>
               </div>
             </div>
           </li>
         </ul>
       </div>
     </div>
+    <history class="time_line" />
   </div>
 </template>
 
 <script>
 
-// import Slide from '@/components/Slide.vue'
+import History from '@/components/History.vue'
 export default {
   components: {
-    // Slide
+    History
   },
   data() {
     return {
@@ -60,6 +61,7 @@ export default {
 .main
   height: 80vh
   display: flex
+  postion: relative
   .main_describe
     flex: 1
     display: flex
@@ -88,6 +90,8 @@ export default {
       list-style-type: none
     .card
       margin-left: 100px
+.time_line
+  margin-top: 50px
 h2
   color: white
 p
