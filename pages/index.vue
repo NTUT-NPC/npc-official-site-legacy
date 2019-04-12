@@ -26,7 +26,7 @@
                 <img :src="card.img" alt="">
               </div>
               <div class="content">
-                <p>{{ card.text }}</p>
+                <p>{{ card.title }}</p>
               </div>
             </div>
           </li>
@@ -49,9 +49,9 @@ export default {
   data() {
     return {
       second_body: [
-        { text: 'first card content', img: '#' },
-        { text: 'second card content', img: '#' },
-        { text: 'third card content', img: '#' }
+        { title: 'first card content', img: '@/img/partnner.png' },
+        { title: 'second card content', img: '@/img/partnner.png' },
+        { title: 'third card content', img: '@/img/partnner.png' }
       ]
     }
   }
