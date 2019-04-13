@@ -20,7 +20,7 @@
       </div>
     </div>
     <cards />
-    <div class="do__title">
+    <div class="title">
       <p>我們平常都在幹嘛呢？</p>
     </div>
     <what-we-do img-src="learning_source.png" title="社聚" content="let's have fun" :bool="true" />
@@ -28,7 +28,10 @@
     <what-we-do img-src="learning_source.png" title="社團出遊" content="let's have fun" :bool="true" />
     <what-we-do img-src="learning_source.png" title="校外比賽" content="let's have fun" :bool="false" />
     <what-we-do img-src="learning_source.png" title="合作開發" content="let's have fun" :bool="true" />
-    <history class="time_line" img-src="learning_source.png" />
+    <div class="title">
+      <p>經歷</p>
+    </div>
+    <history />
   </div>
 </template>
 
@@ -80,7 +83,7 @@ export default {
         background: orange
         color: white
         animation: pulse 1s infinite
-  .do__title
+  .title
     display: flex
     margin: 50px 0px 80px 0px
     font-size: 3rem
