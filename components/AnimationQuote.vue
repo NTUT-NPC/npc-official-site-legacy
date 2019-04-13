@@ -45,7 +45,6 @@ export default {
     flex-wrap: wrap
     justify-content: space-evenly
     align-items: center
-    font-family: serif
 
   *, *::before, *::after
     box-sizing: border-box
@@ -56,7 +55,6 @@ export default {
     width: 640px
     height: 300px
     margin: 0
-    color: white
     display: flex
     justify-content: center
     align-items: center
@@ -110,13 +108,13 @@ export default {
     left: 50%
     bottom: 0
     transform: translate(-50%, 100%)
-    transition: transform $transition * .4 $transition * .15, letter-spacing $transition * .4
+    transition: transform $transition * .8 $transition * .15, letter-spacing $transition * .4
 
     .card:hover &,
     .card:focus &
-      transition-delay: $transition, $transition * 1.15
+      transition-delay: $transition , $transition * 1.15
       letter-spacing: .1em
-      transform: translate(-50%, -20px)
+      transform: translate(-50%, -105px)
 
   .box,
   .box-side-borders

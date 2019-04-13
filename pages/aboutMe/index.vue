@@ -1,25 +1,39 @@
 <template>
   <div>
     <div class="body__line">
-      <h1>小辰辰經典語錄</h1>
+      <h1>關於</h1>
     </div>
     <animation-quote :text="text" :author="author" class="body__quote" />
     <div class="body__line">
-      <h2>小辰辰與他的小夥伴</h2>
+      <h2>幹部</h2>
     </div>
     <div class="body__avatars">
       <div v-for="person in people" :key="person.id">
-        <avatar :username="person.name" :size="avatarSize" :src="person.src" class="body__avatar" />
-        <span class="body__name">{{ person.name }}</span>
+        <avatar :username="person.name" :size="avatarSize" :src="person.src" class="avatars__avatar" />
+        <div class="avatar__name">
+          {{ person.name }}
+        </div>
       </div>
     </div>
-    <div class="body__follow">
-      <h3>- Follow Us -</h3>
+    <div class="body__group">
+      <h2>定期聚：</h2>
+      <br>
+      <p>歡迎加入我們，我們會在每週一的18:00~21:00舉行定期聚。追蹤我們的粉絲專頁獲得更多消息</p>
     </div>
-    <div class="body__follow-button">
-      <button class="button follow__button-animation">
-        Facebook
-      </button>
+    <div class="body__follow">
+      <h2>- Follow Us -</h2>
+    </div>
+    <div class="follow__buttons">
+      <div class="body__follow-button">
+        <button class="button follow__button-animation" @click="openFacebook">
+          Facebook
+        </button>
+      </div>
+      <div class="body__follow-button">
+        <button class="button follow__button-animation" @click="openGithub">
+          Github
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +50,7 @@ export default {
   },
   data() {
     return {
-      text: ' Don\'t be into trends. Don\'t make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live.',
+      text: '學習程式，並不是為了成為「程式設計師」，而是為了開拓更寬廣的學習途徑',
       author: '前社長 小辰辰',
       avatarSize: 100,
       people: [
@@ -50,13 +64,23 @@ export default {
         { name: '神崎秀吉', src: require('~/static/organizers/showgi.jpg') }
       ]
     }
+  },
+  methods: {
+    openFacebook() {
+      window.open('https://www.facebook.com/NPC.OwO/', '_blank')
+    },
+    openGithub() {
+      window.open('https://github.com/NTUT-NPC', '_blank')
+    }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-
+  *
+    color: white
   button
+
     border: none
     text-decoration: none
     color: rgba(white, .95)
@@ -73,18 +97,34 @@ export default {
     justify-content: center
     flex-wrap: wrap
 
-  .body__avatar
+  .avatars__avatar
     margin-right: 10px
     margin-bottom: 10px
 
-  .body__name
-    margin-left: 25px
+  .avatar__name
+    margin-right: 10px
+    text-align: center
 
   .body__line
     display: flex
     margin-top: 10px
     border: gray 1px solid
     justify-content: center
+
+  .body__group
+    display: flex
+    border: gray 1px solid
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    margin-top: 10px
+    text-align: center
+    h2
+      padding: 0
+      margin: 0
+    p
+      margin: 0
+      padding: 0
 
   .body__follow
     display: flex
@@ -96,16 +136,21 @@ export default {
     display: flex
     justify-content: center
 
+  .follow__buttons
+    display: flex
+    justify-content: center
+
   .button
-    padding: 2rem 7rem
+    padding: 1rem 2rem
     background: white
     text-align: center
     display: inline-block
-    font-size: 1.7rem
+    font-size: 1.2rem
     text-transform: uppercase
-    font-weight: 700
+    font-weight: 500
     position: relative
     will-change: transform
+    border: gray 1px solid
 
   .follow__button-animation
     letter-spacing: .05rem
