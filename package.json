@@ -14,10 +14,12 @@
     "danger": "danger ci"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
     "element-ui": "^2.4.11",
-    "@nuxtjs/axios": "^5.3.6"
+    "material-design-icons-iconfont": "^4.0.5",
+    "nuxt": "^2.4.0",
+    "vuetify": "^1.5.11"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

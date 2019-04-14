@@ -19,8 +19,8 @@ if (danger.github.pr.additions + danger.github.pr.deletions > bigPRThreshold) {
   warn(':exclamation: Big PR (' + ++errorCount + ')')
   markdown(
     '> (' +
-      errorCount +
-      ') : Pull Request size seems relatively large. If Pull Request contains multiple changes, split each into separate PR will helps faster, easier review.'
+    errorCount +
+    ') : Pull Request size seems relatively large. If Pull Request contains multiple changes, split each into separate PR will helps faster, easier review.'
   )
 }
 
@@ -66,15 +66,15 @@ const testFilesMissingTypes = modifiedSpecFiles.reduce(function (acc, value) {
 if (testFilesMissingTypes.length > 0) {
   fail(
     'missing type definition import in tests (' +
-      testFilesMissingTypes +
-      ') (' +
-      ++errorCount +
-      ')'
+    testFilesMissingTypes +
+    ') (' +
+    ++errorCount +
+    ')'
   )
   markdown(
     '> (' +
-      errorCount +
-      ') : It seems updated test cases uses test scheduler interface `hot`, `cold` but miss to import type signature for those.'
+    errorCount +
+    ') : It seems updated test cases uses test scheduler interface `hot`, `cold` but miss to import type signature for those.'
   )
 }
 
@@ -84,7 +84,7 @@ if (packageChanged) {
   const title = ':lock: package.json'
   const idea =
     'Changes were made to package.json. ' +
-    'This will require a manual import by a Facebook employee.'
+    'This will require a manual import by a NPC member.'
   warn(`${title} - <i>${idea}</i>`)
 }
 
@@ -110,7 +110,7 @@ const isMergeRefStable = danger.github.pr.base.ref.indexOf('-stable') !== -1
 if (!isMergeRefMaster && isMergeRefStable) {
   const title = ':grey_question: Base Branch'
   const idea =
-    'The base branch for this PR is something other than `master`. Are you sure you want to merge these changes into a stable release? If you are interested in backporting updates to an older release, the suggested approach is to land those changes on `master` first and then cherry-pick the commits into the branch for that release. The [Releases Guide](https://github.com/facebook/react-native/blob/master/Releases.md) has more information.'
+    'The base branch for this PR is something other than `master`. Are you sure you want to merge these changes into a stable release? If you are interested in backporting updates to an older release, the suggested approach is to land those changes on `master` first and then cherry-pick the commits into the branch for that release.'
   warn(`${title} - <i>${idea}</i>`)
 } else if (!isMergeRefMaster && !isMergeRefStable) {
   const title = ':exclamation: Base Branch'
