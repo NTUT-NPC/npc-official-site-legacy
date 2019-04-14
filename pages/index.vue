@@ -52,66 +52,66 @@ export default {
 </script>
 
 <style lang="sass">
-*
-  padding: 0
-  margin: 0
-.container
-  display: flex
-  flex-direction: column
-  align-items: center
-  .main
-    height: 80vh
+  *
+    padding: 0
+    margin: 0
+  .container
     display: flex
-    justify-content: space-around
+    flex-direction: column
     align-items: center
-    .main_title
-      font-size: 4rem
-    .main_describe
+    .main
+      height: 80vh
       display: flex
+      justify-content: space-around
       align-items: center
-    .main__register
-      margin-top: 20px
-      background-color: #0c1214
-      border: 1px solid orange
-      border-radius: 24px
-      color: orange
-      padding: 8px 12px
-      text-align: center
-      font-size: 18px
-      &:hover
-        cursor: pointer
-        background: orange
-        color: white
-        animation: pulse 1s infinite
-  .title
+      .main_title
+        font-size: 4rem
+      .main_describe
+        display: flex
+        align-items: center
+      .main__register
+        margin-top: 20px
+        background-color: #0c1214
+        border: 1px solid orange
+        border-radius: 24px
+        color: orange
+        padding: 8px 12px
+        text-align: center
+        font-size: 18px
+        &:hover
+          cursor: pointer
+          background: orange
+          color: white
+          animation: pulse 1s infinite
+    .title
+      display: flex
+      margin: 50px 0px 80px 0px
+      font-size: 3rem
+      justify-content: center
+      align-items: center
+  .second_body
     display: flex
-    margin: 50px 0px 80px 0px
-    font-size: 3rem
-    justify-content: center
+    flex-direction: column
     align-items: center
-.second_body
-  display: flex
-  flex-direction: column
-  align-items: center
-  .second_title
-    font-size: 3rem
-.time_line
-  margin-top: 50px
-.npc_big_logo
-  svg
-    width: 300px
-    height: 300px
+    .second_title
+      font-size: 3rem
+  .time_line
+    margin-top: 50px
+  .npc_big_logo
+    svg
+      width: 300px
+      height: 300px
 
-$main-color: #FFB945
+  $main-color: #FFB945
 
-@keyframes pulse
-  0%
-    transform: scale(1)
-  50%
-    transform: scale(1.1)
-    box-shadow: 0px 0px 0px 5px rgba($main-color, 0)
-  100%
-    transform: scale(1)
-    box-shadow: 0px 0px 0px 15px rgba($main-color, 0)
+  @keyframes pulse
+    0%
+      transform: scale(1)
+    50%
+      transform: scale(1.1)
+      box-shadow: 0px 0px 0px 5px rgba($main-color, 0)
+    100%
+      transform: scale(1)
+      box-shadow: 0px 0px 0px 15px rgba($main-color, 0)
 
 </style>

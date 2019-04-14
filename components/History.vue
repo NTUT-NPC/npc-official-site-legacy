@@ -1,8 +1,8 @@
 <template>
   <v-timeline>
     <v-timeline-item
-      v-for="(year, i) in years"
-      :key="i"
+      v-for="(year, index) in years"
+      :key="index"
       :color="year.color"
       small
     >
@@ -42,12 +42,6 @@
 
 <script>
 export default {
-  props: {
-    items: {
-      type: [Object],
-      default: () => []
-    }
-  },
   data: () => ({
     years: [
       {
