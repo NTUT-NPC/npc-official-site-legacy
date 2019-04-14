@@ -1,6 +1,6 @@
 <template>
   <div class="contaner">
-    <img class="contaner__logo" src="../src/logo_normal_word.png">
+    <img class="contaner__logo" src="../static/logo_normal_word.png">
     <div class="contaner__middle" />
     <div class="contaner__toolbar">
       <div class="toolbar__link">
@@ -29,6 +29,7 @@
     .contaner__logo
       width: 80px
       height: 80px
+      margin-left: 25px
     .contaner__middle
       height: 100%
       flex: 3
@@ -51,6 +52,7 @@
     font-size: 16px
     border-bottom: solid 2px #0c1214
     transition: 0.5s
+    outline: none
   button:hover
       cursor: pointer
       border-bottom: solid 2px white
