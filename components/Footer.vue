@@ -14,6 +14,8 @@
           :key="icon"
           class="mx-3 white--text"
           icon
+          href="https://www.facebook.com/NPC.OwO/"
+          target="_blank"
         >
           <v-icon size="24px">
             {{ icon }}
@@ -47,9 +49,3 @@ export default {
   })
 }
 </script>
-
-<style lang="sass" scoped>
-  *
-    border: white 1px solid
-
-</style>
