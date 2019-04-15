@@ -151,7 +151,7 @@ export default {
   .follow__buttons
     display: flex
     justify-content: center
-    margin-top: 50px
+    margin-bottom: 150px
 
   .button
     padding: 1rem 2rem
