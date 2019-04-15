@@ -38,14 +38,6 @@ export default {
   $transition: .5s
   $border-width: 2px
 
-  template
-    height: 100vh
-    margin: 0
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-evenly
-    align-items: center
-
   *, *::before, *::after
     box-sizing: border-box
 
@@ -53,7 +45,7 @@ export default {
     position: relative
     display: block
     width: 640px
-    height: 300px
+    height: 200px
     margin: 0
     display: flex
     justify-content: center
@@ -114,7 +106,7 @@ export default {
     .card:focus &
       transition-delay: $transition , $transition * 1.15
       letter-spacing: .1em
-      transform: translate(-50%, -105px)
+      transform: translate(-50%, -55px)
 
   .box,
   .box-side-borders
