@@ -2,21 +2,22 @@
   <div>
     <div class="body__carousal">
       <el-carousel
-        indicator-position="outside"
-        autoplay="false"
-        height="500px"
+        indicator-position="inside"
+        :autoplay="isAutoPlay"
+        height="550px"
+        type="card"
       >
-        <el-carousel-item v-for="(activity, index) in activities" :key="index">
+        <el-carousel-item v-for="(activity, index) in carousalActivities" :key="index">
           <v-img
             :src="activity.image"
             height="100%"
             width="100%"
-            object-fit="scale-down"
+            class="carousal__image"
           />
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="body__projects">
+    <div class="body__title">
       <h2>Projects</h2>
     </div>
     <div class="project__cards">
@@ -28,21 +29,27 @@
         @click.native="router(project.link)"
       >
         <div slot="header">
-          <span>{{ project.name }}</span>
-          <el-button
-            style="border: none;"
-            size="medium"
-            circle="true"
-          />
+          <strong>{{ project.name }}</strong>
         </div>
-        <div>
-          <span>{{ project.description }}</span>
-          <br>
-          <span>starts: {{ project.stars }}</span>
-          <br>
-          <span>fork: {{ project.forks }}</span>
-          <br>
-          <gh-btns-star slug="vuejs/vue" show-count />
+        <div class="github__buttons">
+          <gh-btns-star :slug="project.name" show-count />
+          <gh-btns-fork :slug="project.name" show-count />
+        </div>
+        <div class="github__description">
+          {{ project.description }}
+        </div>
+      </el-card>
+    </div>
+    <div class="body__title">
+      <h2>Activities</h2>
+    </div>
+    <div class="activities__cards">
+      <el-card v-for="(activitie, index) in activities" :key="index" shadow="hover">
+        <div slot="header">
+          <strong>{{ activitie.name }}</strong>
+        </div>
+        <div class="github__description">
+          <p>{{ activitie.description }}</p>
         </div>
       </el-card>
     </div>
@@ -54,15 +61,59 @@
 export default {
   name: 'Activities',
   componetns: {
+
   },
   data() {
     return {
-      projects: [],
-      activities: [
+      projects: [
+        {
+          name: 'NTUT-NPC/npc-official-site',
+          link: 'https://github.com/NTUT-NPC/npc-official-site',
+          description: 'It\'s the official web site of NPC ',
+          stars: 1,
+          forks: 0
+        },
+        {
+          name: 'NTUT-NPC/TAT-IOS',
+          link: 'https://github.com/NTUT-NPC/npc-official-site',
+          description: 'ios app for Taipei Tech student',
+          stars: 1,
+          forks: 0
+        },
+        {
+          name: 'NTUT-NPC/ntut-server',
+          link: 'https://github.com/NTUT-NPC/npc-official-site',
+          description: 'An API server for a series of application of Taipei Tech that write by NTUT Programming Club.',
+          stars: 1,
+          forks: 0
+        },
+        {
+          name: 'NTUT-NPC/TAT-Android',
+          link: 'https://github.com/NTUT-NPC/TAT-Android',
+          description: 'An App for Taipei Tech Student. ',
+          stars: 1,
+          forks: 0
+        }
+
+      ],
+      carousalActivities: [
         { image: require('~/static/activities/MLCC.jpg'), link: '' },
         { image: require('~/static/activities/npc_meet.png'), link: '' },
         { image: require('~/static/activities/python_basic.png'), link: '' }
-      ]
+      ],
+      activities: [
+        { name: 'MLCC', description: '還不快點來學ML' },
+        { name: '社烤', description: '哇尬藝烤肉，拜託來啦' },
+        { name: 'MLCC', description: 'hahah' },
+        { name: 'MLCC', description: 'hahah' },
+        { name: 'MLCC', description: 'hahah' },
+        { name: 'MLCC', description: 'hahah' },
+        { name: 'MLCC', description: 'hahah' },
+        { name: 'MLCC', description: 'hahah' },
+        { name: 'MLCC', description: 'hahah' }
+      ],
+      activeName: '1',
+      isAutoPlay: false
     }
   },
   created() {
@@ -90,6 +141,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  .fade-enter-active
+    transition: all 8s ease
+
+  .fade-enter
+    transform: translateX(50px)
+    opacity: 0
+
   .body__carousal
     margin: 0 160px 0 160px
     .el-carousel__item
@@ -107,18 +165,21 @@ export default {
       &:nth-child(2n + 1)
         background-color: #d3dce6
 
-  .body__projects
+  .body__title
     margin: 50px 160px 0 160px
 
+  .carousal__image
+    object-fit: cover
+
   .project__cards
-    margin: 50px 0 50px 160px
+    margin: 50px 160px 50px 160px
     display: flex
     flex-direction: row
     flex-wrap: wrap
 
   .project__card
-    height: 230px
-    width: 230px
+    height: 250px
+    width: 250px
     margin: 20px
     .text
     font-size: 14px
@@ -136,5 +197,21 @@ export default {
 
     .box-card
       width: 480px
+
+  .github__buttons
+    display: flex
+
+  .github__description
+    margin-top: 30px
+
+  .activities__cards
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin: 50px 160px 50px 160px
+    .el-card
+      width: 250px
+      height: 250px
+      margin: 20px
 
 </style>
