@@ -4,9 +4,15 @@
       <el-carousel
         indicator-position="outside"
         autoplay="false"
+        height="500px"
       >
-        <el-carousel-item v-for="item in 4" :key="item">
-          <h3>{{ item }}</h3>
+        <el-carousel-item v-for="(activity, index) in activities" :key="index">
+          <v-img
+            :src="activity.image"
+            height="100%"
+            width="100%"
+            object-fit="scale-down"
+          />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -51,7 +57,12 @@ export default {
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      activities: [
+        { image: require('~/static/activities/MLCC.jpg'), link: '' },
+        { image: require('~/static/activities/npc_meet.png'), link: '' },
+        { image: require('~/static/activities/python_basic.png'), link: '' }
+      ]
     }
   },
   created() {
@@ -80,6 +91,7 @@ export default {
 
 <style lang="sass" scoped>
   .body__carousal
+    margin: 0 160px 0 160px
     .el-carousel__item
       h3
         color: #475669
@@ -96,7 +108,7 @@ export default {
         background-color: #d3dce6
 
   .body__projects
-    margin-left: 160px
+    margin: 50px 160px 0 160px
 
   .project__cards
     margin: 50px 0 50px 160px
@@ -105,8 +117,8 @@ export default {
     flex-wrap: wrap
 
   .project__card
-    height: 250px
-    width: 250px
+    height: 230px
+    width: 230px
     margin: 20px
     .text
     font-size: 14px
