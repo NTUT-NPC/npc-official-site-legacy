@@ -8,64 +8,56 @@
     >
       <template v-slot:opposite>
         <span
-          :class="`headline font-weight-bold ${year.color}--text`"
-          v-text="year.year"
+          class="headline font-weight-bold text__color"
+          v-text="item.date"
         />
+        <vue-card :item="item" />
       </template>
-      <div class="py-3">
-        <h2 :class="`headline font-weight-light mb-3 ${year.color}--text`">
-          Lorem ipsum
-        </h2>
-        <div>
-          Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
-        </div>
-      </div>
     </v-timeline-item>
   </v-timeline>
 </template>
 
 <style lang="sass" scoped>
-  .h_title
-    color: black
-    font-size: 2rem
-  .card
-    /deep/.el-card__body
-      display: flex
-      .text
-        width: 200px
-        .content
-          margin-top: 20px
-      .card__img
-        width: 200px
-        height: 200px
+  .v-timeline-item
+    width: 1200px
+  .text__color
+    color: #22b590
 </style>
 
 <script>
+import VueCard from '@/components/VueCard.vue'
+
 export default {
+  components: {
+    VueCard
+  },
   data: () => ({
-    years: [
+    items: [
       {
-        color: 'cyan',
-        year: '1960'
+        title: '標題一',
+        date: '2018/04/23',
+        content: '內容一...',
+        imgSrc: 'learning_source.png'
       },
       {
-        color: 'green',
-        year: '1970'
+        title: '標題二',
+        date: '2018/04/22',
+        content: '內容二...',
+        imgSrc: 'learning_source.png'
       },
       {
-        color: 'pink',
-        year: '1980'
+        title: '標題三',
+        date: '2018/04/21',
+        content: '內容三...',
+        imgSrc: 'learning_source.png'
       },
       {
-        color: 'amber',
-        year: '1990'
-      },
-      {
-        color: 'orange',
-        year: '2000'
+        title: '標題四',
+        date: '2018/04/21',
+        content: '內容四...',
+        imgSrc: 'learning_source.png'
       }
-    ]
-  }),
+    ] }),
   computed: {
     url() {
       return require(`~/static/${this.imgSrc}`)
