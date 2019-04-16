@@ -48,7 +48,11 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['vue-github-buttons/nuxt', {
+      css: true,
+      useCache: true
+    }]
   ],
   /*
   ** Axios module configuration

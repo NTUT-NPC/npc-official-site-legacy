@@ -19,18 +19,24 @@
         :key="index"
         shadow="hover"
         class="box-card project__card"
+        @click.native="router(project.link)"
       >
         <div slot="header">
           <span>{{ project.name }}</span>
           <el-button
             style="border: none;"
-            icon="fab fa-github"
             size="medium"
             circle="true"
           />
         </div>
         <div>
-          {{ project.description }}
+          <span>{{ project.description }}</span>
+          <br>
+          <span>starts: {{ project.stars }}</span>
+          <br>
+          <span>fork: {{ project.forks }}</span>
+          <br>
+          <gh-btns-star slug="vuejs/vue" show-count />
         </div>
       </el-card>
     </div>
@@ -38,21 +44,35 @@
 </template>
 
 <script>
+
 export default {
   name: 'Activities',
   componetns: {
   },
   data() {
     return {
-      projects: [
-        { name: 'TAT-IOS', link: '', description: 'It\'s Taipei Tech unofficial app' },
-        { name: 'TAT-Android', link: '', description: '' },
-        { name: 'Python-101', link: '', description: '' },
-        { name: 'ntut-server', link: '', description: '' },
-        { name: 'crawler-tutorial', link: '', description: '' },
-        { name: 'CTFd', link: '', description: '' },
-        { name: 'npc-verify', link: '', description: '' }
-      ]
+      projects: []
+    }
+  },
+  created() {
+    this.fetchGithub()
+  },
+  methods: {
+    async fetchGithub() {
+      const resopnse = await this.$axios.$get('https://api.github.com/orgs/NTUT-NPC/repos')
+      for (let i = 0; i < resopnse.length; i++) {
+        const repo = resopnse[i]
+        this.$data.projects.push({
+          name: repo.full_name,
+          link: repo.html_url,
+          description: repo.description,
+          stars: repo.stargazers_count,
+          forks: repo.forks
+        })
+      }
+    },
+    router(link) {
+      window.open(link, '_blank')
     }
   }
 }
@@ -82,11 +102,12 @@ export default {
     margin: 50px 0 50px 160px
     display: flex
     flex-direction: row
+    flex-wrap: wrap
 
   .project__card
-    width: 200px
-    height: 200px
-    margin-right: 20px
+    height: 250px
+    width: 250px
+    margin: 20px
     .text
     font-size: 14px
 
