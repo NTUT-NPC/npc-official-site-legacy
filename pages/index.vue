@@ -3,7 +3,7 @@
     <div class="main">
       <div class="main_describe">
         <div class="main__club_name">
-          <h2>北科</h2>
+          <h1>北科</h1>
           <h2 class="main_title">
             程式設計研究社
           </h2>
@@ -21,15 +21,13 @@
     </div>
     <cards />
     <div class="title">
-      <p>我們平常都在幹嘛呢？</p>
+      <h2>我們平常都在幹嘛呢？</h2>
     </div>
-    <what-we-do img-src="learning_source.png" title="社聚" content="let's have fun" :bool="true" />
-    <what-we-do img-src="learning_source.png" title="校外進修" content="let's have fun" :bool="false" />
-    <what-we-do img-src="learning_source.png" title="社團出遊" content="let's have fun" :bool="true" />
-    <what-we-do img-src="learning_source.png" title="校外比賽" content="let's have fun" :bool="false" />
-    <what-we-do img-src="learning_source.png" title="合作開發" content="let's have fun" :bool="true" />
+    <what-we-do img-src="社聚.jpg" title="社聚" content="定期在學校社辦聚會，沒是寫寫程式，與大家一起討論。不時還會玩點桌遊，培養社員間的感情" :bool="true" />
+    <what-we-do img-src="107-1_MLCC上課.jpg" title="校外進修" content="有空參加校外的課程，在課餘時間精進自己，並將學習的新知教導給社員" :bool="false" />
+    <what-we-do img-src="演算法比賽-1.jpg" title="校外比賽" content="不時參加校外比賽，增價自己比賽的經歷，並且增廣見聞，看看外面的世界實力如何" :bool="true" />
     <div class="title">
-      <p>經歷</p>
+      <h2>經歷</h2>
     </div>
     <history />
   </div>
@@ -64,6 +62,8 @@ export default {
       display: flex
       justify-content: space-around
       align-items: center
+      .main__club_name
+        margin-right: 80px
       .main_title
         font-size: 4rem
       .main_describe

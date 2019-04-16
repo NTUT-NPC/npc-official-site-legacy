@@ -3,10 +3,10 @@
     :class="[bool? 'card1 card':'card card2']"
   >
     <div class="text">
-      <p class="title text_color">
-        {{ title }}
-      </p>
       <div class="content">
+        <p class="title text_color">
+          {{ title }}
+        </p>
         <p>{{ content }}</p>
       </div>
     </div>
@@ -20,28 +20,31 @@
   .card1
     flex-direction: row-reverse
   .card
-    height: 330px
+    height: 100%
     margin: 0px 100px 0px 100px
-    // margin-top: 80px
+    margin-top: 30px
     display: flex
     justify-content: center
     .text
-      margin-left: 150px
+      margin-left: 100px
       width: 400px
       display: flex
-      margin-top: 50px
       flex-direction: column
       justify-content: center
       .title
         font-size: 2rem
+        margin: 50px
       .content
-        flex: 4
+        display: flex
+        flex-direction: column
+        align-items: center
         font-size: 1rem
     .img_container
       img
         margin: 0px 100px 0px 100px
-        width: 200px
+        width: 300px
         height: 200px
+        object-fit: cover
 
 </style>
 
