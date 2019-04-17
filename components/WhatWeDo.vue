@@ -1,6 +1,8 @@
 <template>
   <v-card
-    :class="[bool? 'card1 card':'card card2']"
+    v-inview:parent="'animate'"
+    v-inview:animate="'fadeInUp'"
+    :class="[bool ? 'card1 card':'card card2']"
   >
     <div class="content">
       <p class="content__title text_color">
@@ -16,12 +18,14 @@
 
 <style lang="sass" scoped>
   *
-    color: black !important
+    color: black
   .card1
     flex-direction: row-reverse
   .card
+    opacity: 0
+    animation-direction: 1s
     height: 100%
-    display: flex
+    display: flex !important
     justify-content: center
     margin: 16px 0
     overflow: hidden

@@ -223,7 +223,6 @@ export default {
         color: #475669
         font-size: 18px
         opacity: 0.75
-        // line-height: 300px
         margin: 0
     .el-carousel__item
       &:nth-child(2n)
@@ -253,7 +252,7 @@ export default {
     width: 250px
     margin: 10px
     .text
-    font-size: 14px
+      font-size: 14px
 
     .item
       margin-bottom: 18px

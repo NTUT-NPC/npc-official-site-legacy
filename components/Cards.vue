@@ -1,21 +1,28 @@
 <template>
-  <div class="card-container">
+  <div
+    v-inview:parent="'animate'"
+    v-inview:animate="'fadeIn'"
+    class="card-container"
+  >
     <ul class="card">
       <li>
-        <img src="../static/idea_cometure.png" alt="" class="icon">
+        <img
+          src="../static/idea_cometure.png"
+          alt=""
+        >
 
         <div class="title">
           <p>實現你的創意</p>
         </div>
       </li>
       <li>
-        <img src="../static/learning_source.png" alt="" class="icon">
+        <img src="../static/learning_source.png" alt="">
         <div class="title">
           <p>許多學習資源</p>
         </div>
       </li>
       <li>
-        <img src="../static/partnner.png" alt="" class="icon">
+        <img src="../static/partnner.png" alt="">
         <div class="title">
           <p>帶著你進步的夥伴</p>
         </div>
@@ -27,6 +34,8 @@
 <style lang="sass" scoped>
   .card-container
     width: 100%
+    opacity: 0
+    animation-direction: 1s
     .card
       display: flex
       justify-content: space-between
