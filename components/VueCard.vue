@@ -16,8 +16,9 @@
             <v-bottom-sheet v-model="sheet">
               <template v-slot:activator>
                 <v-btn
-                  color="#22b590"
+                  color="orange"
                   dark
+                  round="true"
                 >
                   了解更多
                 </v-btn>
@@ -31,8 +32,8 @@
 </template>
 
 <style lang="sass" scoped>
-*
-  padding: 0
+  *
+    padding: 0
   .card__container
     border-radius: 10px
     padding: 5%

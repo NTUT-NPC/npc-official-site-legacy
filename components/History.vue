@@ -3,7 +3,7 @@
     <v-timeline-item
       v-for="(item, index) in items"
       :key="index"
-      color="blue"
+      color="orange"
       small
     >
       <template v-slot:opposite>
@@ -22,7 +22,7 @@
     width: 1200px
   .text__color
     margin-bottom: 50px
-    color: #22b590
+    color: orange
   .card__content
     margin-top: 30px
   .v-timeline::before
