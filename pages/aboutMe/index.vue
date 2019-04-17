@@ -3,17 +3,33 @@
     <div class="body__line">
       <h2>關於</h2>
     </div>
-    <animation-quote :text="aboutText" :author="author" class="body__quote" />
+    <animation-quote
+      :text="aboutText"
+      :author="author"
+      class="body__quote"
+    />
     <div class="body__line">
       <h2>使命</h2>
     </div>
-    <animation-quote :text="missonText" :author="author" class="body__quote" />
+    <animation-quote
+      :text="missonText"
+      :author="author"
+      class="body__quote"
+    />
     <div class="body__line">
       <h2>幹部</h2>
     </div>
     <div class="body__avatars">
-      <div v-for="person in people" :key="person.id">
-        <avatar :username="person.name" :size="avatarSize" :src="person.src" class="avatars__avatar" />
+      <div
+        v-for="person in people"
+        :key="person.id"
+      >
+        <avatar
+          :username="person.name"
+          :size="avatarSize"
+          :src="person.src"
+          class="avatars__avatar"
+        />
         <div class="avatar__name">
           {{ person.name }}
         </div>
@@ -22,19 +38,25 @@
     <div class="body__group">
       <h2>定期聚</h2>
       <br>
-      <p>歡迎加入我們，我們會在每週一的18:00~21:00舉行定期聚。追蹤我們的粉絲專頁獲得更多消息</p>
+      <p>歡迎加入我們，我們會在每週一的 18:00 ~ 21:00 舉行定期聚。追蹤我們的粉絲專頁獲得更多消息</p>
     </div>
     <div class="body__follow">
       <h2>- Follow Us -</h2>
     </div>
     <div class="follow__buttons">
       <div class="body__follow-button">
-        <button class="button follow__button-animation" @click="openFacebook">
+        <button
+          class="button follow__button-animation"
+          @click="openFacebook"
+        >
           Facebook
         </button>
       </div>
       <div class="body__follow-button">
-        <button class="button follow__button-animation" @click="openGithub">
+        <button
+          class="button follow__button-animation"
+          @click="openGithub"
+        >
           Github
         </button>
       </div>
@@ -89,7 +111,7 @@ export default {
     font-size: 3rem
 
   p
-    font-szie: 1.5rem
+    font-size: 1.5rem
 
   button
     border: none
