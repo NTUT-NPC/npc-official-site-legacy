@@ -7,6 +7,7 @@
       flat
       tile
       class="white--text text-xs-center"
+      color="#25282d"
     >
       <v-card-text>
         <v-btn

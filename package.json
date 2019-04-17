@@ -17,10 +17,12 @@
     "@nuxtjs/axios": "^5.4.1",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
+    "in-view": "^0.6.1",
     "material-design-icons-iconfont": "^4.0.5",
     "nuxt": "^2.6.2",
     "vue-avatar": "^2.1.7",
     "vue-github-buttons": "^3.1.0",
+    "vueinview": "^1.0.5",
     "vuetify": "^1.5.11"
   },
   "devDependencies": {
