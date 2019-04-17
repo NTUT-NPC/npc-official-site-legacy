@@ -4,15 +4,15 @@
       <el-carousel
         indicator-position="inside"
         :autoplay="isAutoPlay"
-        height="550px"
         type="card"
+        height="400px"
       >
         <el-carousel-item v-for="(activity, index) in carousalActivities" :key="index">
           <v-img
             :src="activity.image"
-            height="100%"
-            width="100%"
             class="carousal__image"
+            width="100%"
+            height="100%"
           />
         </el-carousel-item>
       </el-carousel>
@@ -43,16 +43,20 @@
     <div class="body__title">
       <h2>Activities</h2>
     </div>
-    <div class="activities__cards">
-      <el-card v-for="(activitie, index) in activities" :key="index" shadow="hover">
-        <div slot="header">
-          <strong>{{ activitie.name }}</strong>
-        </div>
-        <div class="github__description">
-          <p>{{ activitie.description }}</p>
-        </div>
+    <transition name="fadeLeft">
+      <div class="activities__cards">
+        <el-card v-for="(activitie, index) in activities" :key="index" shadow="hover">
+          <div slot="header">
+            <strong>{{ activitie.name }}</strong>
+          </div>
+          <div class="github__description">
+            <p>{{ activitie.description }}</p>
+          </div>
+        </el-card>
+      </div>
       </el-card>
-    </div>
+    </transition>
+  </div>
   </div>
 </template>
 
@@ -157,13 +161,14 @@ export default {
     opacity: 0
 
   .body__carousal
-    margin: 0 160px 0 160px
+    margin: 24px 120px 0 120px
+    padding: 0 40px
     .el-carousel__item
       h3
         color: #475669
         font-size: 18px
         opacity: 0.75
-        line-height: 300px
+        // line-height: 300px
         margin: 0
     .el-carousel__item
       &:nth-child(2n)
