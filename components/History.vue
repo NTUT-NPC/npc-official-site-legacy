@@ -3,6 +3,8 @@
     <v-timeline-item
       v-for="(item, index) in items"
       :key="index"
+      v-inview:parent="'animate'"
+      v-inview:animate="'fadeInUp'"
       color="orange"
       small
     >
@@ -20,6 +22,9 @@
 <style lang="sass" scoped>
   .v-timeline-item
     width: 1200px
+    opacity: 0
+    animation-direction: 1s
+    display: flex !important
   .text__color
     margin-bottom: 50px
     color: orange
