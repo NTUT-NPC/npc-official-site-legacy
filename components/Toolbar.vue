@@ -1,27 +1,42 @@
 <template>
   <div class="contaner">
-    <img class="contaner__logo" src="../static/logo_normal_word.png">
+    <img
+      class="contaner__logo"
+      src="../static/logo_normal_word.png"
+    >
     <div class="contaner__middle" />
     <div class="contaner__toolbar">
       <div class="toolbar__link">
-        <button class="toolbar__link__homepage" src="#">
+        <button
+          class="toolbar__link__homepage"
+          src="#"
+        >
           <nuxt-link to="/">
             <p>
               首頁
             </p>
           </nuxt-link>
         </button>
-        <button class="toolbar__link__about_me" src="#">
+        <button
+          class="toolbar__link__about_me"
+          src="#"
+        >
           <nuxt-link to="/activities/">
             <p>
               活動
             </p>
           </nuxt-link>
         </button>
-        <button class="toolbar__link__about_me" src="#">
+        <button
+          class="toolbar__link__about_me"
+          src="#"
+        >
           <p>學習資源</p>
         </button>
-        <button class="toolbar__link__about_me" src="#">
+        <button
+          class="toolbar__link__about_me"
+          src="#"
+        >
           <nuxt-link to="/aboutMe/">
             <p>
               關於
@@ -67,6 +82,9 @@
     border-bottom: solid 2px #0c1214
     transition: 0.5s
     outline: none
+    a
+      text-decoration: none
+
   button:hover
       cursor: pointer
       border-bottom: solid 2px white
