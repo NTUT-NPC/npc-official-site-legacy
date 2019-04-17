@@ -22,18 +22,18 @@ jobs:
           key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
       - run:
-          name: lint
-          command: |
-            mkdir -p /tmp/test-reports/eslint
-            node_modules/.bin/eslint . --format junit --output-file /tmp/test-reports/eslint/results.xml
-
+          name: Run danger
+          command: npm run danger
+      
       - run:
           name: Build
           command: npm run build
 
       - run:
-          name: Run danger
-          command: npm run danger
+          name: lint
+          command: |
+            mkdir -p /tmp/test-reports/eslint
+            node_modules/.bin/eslint . --format junit --output-file /tmp/test-reports/eslint/results.xml
 
       - store_test_results:
           path: /tmp/test-reports
