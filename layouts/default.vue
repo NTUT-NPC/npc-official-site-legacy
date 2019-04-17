@@ -22,6 +22,9 @@
     font-szie: 1rem
   h1, h2, h3, h4, p
     color: white
+    margin: 0
+  ul
+    padding: 0
 </style>
 
 <script>
