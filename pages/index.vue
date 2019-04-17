@@ -49,14 +49,12 @@ export default {
 }
 </script>
 
-<style lang="sass">
-  *
-    padding: 0
-    margin: 0
+<style lang="sass" scoped>
   .container
     display: flex
     flex-direction: column
     align-items: center
+    justify-content: center
     .main
       height: 80vh
       display: flex
