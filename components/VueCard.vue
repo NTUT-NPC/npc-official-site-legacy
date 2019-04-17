@@ -2,7 +2,10 @@
   <v-flex class="grid-list">
     <div class="card__container">
       <div class="img__conatiner">
-        <v-img :src="require(`~/static/${item.imgSrc}`)" height="100%" />
+        <v-img
+          :src="require(`~/static/${item.imgSrc}`)"
+          height="100%"
+        />
       </div>
       <div class="card__text">
         <v-card-title>
@@ -48,13 +51,15 @@
       .v-image
         border-radius: 8px
     .card__text
-      margin-left: 50px
+      margin-left: 32px
       display: flex
       flex-direction: column
       align-items: start
       text-align: left
       .text__title
         font-size: 2rem
+        margin-bottom: 8px
+        font-weight: 700
       .text__contain
         margin-top: 50px
         font-size: 1rem
@@ -70,7 +75,7 @@ export default {
     item: {
       type: Object,
       require: true,
-      default: () => {}
+      default: () => { }
     }
   },
   computed: {
