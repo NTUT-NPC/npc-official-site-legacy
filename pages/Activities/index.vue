@@ -36,7 +36,7 @@
           <gh-btns-fork :slug="project.name" show-count />
         </div>
         <div class="github__description">
-          {{ project.description }}
+          <p>{{ project.description }}</p>
         </div>
       </el-card>
     </div>
@@ -113,11 +113,15 @@ export default {
         { name: 'MLCC', description: 'hahah' }
       ],
       activeName: '1',
-      isAutoPlay: false
+      isAutoPlay: false,
+      isShow: false
     }
   },
   created() {
     this.fetchGithub()
+  },
+  mounted() {
+    this.isShow = true
   },
   methods: {
     async fetchGithub() {
@@ -141,6 +145,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  p
+    color: black
+  .test
+    color: white
   .fade-enter-active
     transition: all 8s ease
 
@@ -180,7 +188,7 @@ export default {
   .project__card
     height: 250px
     width: 250px
-    margin: 20px
+    margin: 10px
     .text
     font-size: 14px
 
@@ -212,6 +220,6 @@ export default {
     .el-card
       width: 250px
       height: 250px
-      margin: 20px
+      margin: 10px
 
 </style>

@@ -32,7 +32,8 @@ export default {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    'vuetify/dist/vuetify.min.css'
+    'vuetify/dist/vuetify.min.css',
+    'vue2-animate/dist/vue2-animate.min.css'
   ],
 
   /*
