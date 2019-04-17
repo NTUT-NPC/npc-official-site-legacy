@@ -97,7 +97,7 @@ export default {
     color: rgba(white, .95)
     cursor: pointer
   .about-container
-    padding: 32px;
+    padding: 32px
     .body__quote
       display: flex
       justify-content: center
