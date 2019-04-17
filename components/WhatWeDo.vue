@@ -1,50 +1,47 @@
 <template>
-  <div
+  <v-card
     :class="[bool? 'card1 card':'card card2']"
   >
-    <div class="text">
-      <div class="content">
-        <p class="title text_color">
-          {{ title }}
-        </p>
-        <p>{{ content }}</p>
-      </div>
+    <div class="content">
+      <p class="content__title text_color">
+        {{ title }}
+      </p>
+      <p class="content__info">
+        {{ content }}
+      </p>
     </div>
-    <div class="img_container">
-      <img :src="require(`~/static/${imgSrc}`)" alt="" width="500px" heght="500px">
-    </div>
-  </div>
+    <img :src="require(`~/static/${imgSrc}`)">
+  </v-card>
 </template>
 
 <style lang="sass" scoped>
+  *
+    color: black !important
   .card1
     flex-direction: row-reverse
   .card
     height: 100%
-    margin: 0px 100px 0px 100px
-    margin-top: 30px
     display: flex
     justify-content: center
-    .text
-      margin-left: 100px
-      width: 400px
+    margin: 16px 0
+    overflow: hidden
+    border-radius: 10px
+    .content
+      width: 50%
+      padding: 40px
       display: flex
       flex-direction: column
-      justify-content: center
-      .title
-        font-size: 2rem
-        margin: 50px
-      .content
-        display: flex
-        flex-direction: column
-        align-items: center
-        font-size: 1rem
-    .img_container
-      img
-        margin: 0px 100px 0px 100px
-        width: 300px
-        height: 200px
-        object-fit: cover
+      &__title
+        font-size: 2.5rem
+        margin-bottom: 8px
+        font-weight: 700
+      &__info
+        font-size: 1.3rem
+    img
+      object-fit: cover
+      height: 350px
+      width: 50%
+      border-radius: 0
 
 </style>
 
