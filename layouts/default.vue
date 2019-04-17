@@ -20,7 +20,7 @@
     font-szie: 2rem
   h4 p
     font-szie: 1rem
-  h1 h2 h3 h4 p
+  h1, h2, h3, h4, p
     color: white
 </style>
 
