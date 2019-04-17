@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="m-container">
     <toolbar />
     <nuxt />
     <foot />
@@ -9,6 +9,7 @@
 <style lang="sass">
   *
     font-family: "Helvetica", "Arial", "文泉驛正黑", "WenQuanYi Zen Hei", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei"
+  body
     background-color: #0c1214
 
   h1
@@ -19,7 +20,7 @@
     2rem
   h4 p
     1rem
-  h1 h2 h3 h4 p
+  h1,h2,h3,h4,p
     color: white
 </style>
 
