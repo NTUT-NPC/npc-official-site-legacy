@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="card-container">
     <ul class="card">
       <li>
         <img src="../static/idea_cometure.png" alt="" class="icon">
@@ -25,22 +25,21 @@
 </template>
 
 <style lang="sass" scoped>
-  .card
-    display: flex
-    margin-top: 50px
-    justify-content: center
-    align-items: center
-    li
-      list-style-type: none
-      margin-left: 80px
-      margin-right: 80px
-      .title
-        display: flex
-        justify-content: center
-        margin-top: 20px
-      img
-        width: 180px
-        height: 180px
-  .title
-    font-size: 2rem
+  .card-container
+    width: 100%
+    .card
+      display: flex
+      justify-content: space-between
+      align-items: center
+      li
+        list-style-type: none
+        .title
+          display: flex
+          justify-content: center
+          margin-top: 20px
+        img
+          width: 180px
+          height: 180px
+    .title
+      font-size: 2rem
 </style>
