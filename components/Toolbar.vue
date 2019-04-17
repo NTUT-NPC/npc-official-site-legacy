@@ -34,6 +34,8 @@
 </template>
 
 <style lang="sass" scoped>
+  p
+    margin: 0;
   .contaner
     display: flex
     height: 10%
