@@ -9,9 +9,9 @@
 <style lang="sass">
   *
     font-family: "Helvetica", "Arial", "文泉驛正黑", "WenQuanYi Zen Hei", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei"
+    line-height: 1.5
   body
     background-color: #0c1214
-
   h1
     font-size: 4rem
   h2

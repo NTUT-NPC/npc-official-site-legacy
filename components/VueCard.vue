@@ -2,7 +2,7 @@
   <v-flex class="grid-list">
     <div class="card__container">
       <div class="img__conatiner">
-        <v-img :src="require(`~/static/${item.imgSrc}`)" />
+        <v-img :src="require(`~/static/${item.imgSrc}`)" height="100%" />
       </div>
       <div class="card__text">
         <v-card-title>
@@ -34,16 +34,19 @@
 <style lang="sass" scoped>
   *
     padding: 0
+    color: black
   .card__container
     border-radius: 10px
     padding: 5%
     display: flex
     flex-direciton: column
-    background-color: gray
+    background-color: white
     position: relative
     .img__conatiner
       min-width: 200px
       min-height: 200px
+      .v-image
+        border-radius: 8px
     .card__text
       margin-left: 50px
       display: flex
