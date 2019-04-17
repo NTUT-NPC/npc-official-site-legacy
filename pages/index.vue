@@ -1,5 +1,14 @@
 <template>
   <div class="container">
+    <div>
+      <el-dialog
+        :visible.sync="centerDialogVisible"
+        width="30%"
+        center
+      >
+        <login />
+      </el-dialog>
+    </div>
     <div class="main">
       <div class="main_describe">
         <div class="main__club_name">
@@ -7,12 +16,14 @@
           <h2 class="main_title">
             程式設計研究社
           </h2>
-          <button class="main__register">
+          <button class="main__register" @click="centerDialogVisible = true">
             加入我們
           </button>
         </div>
       </div>
-      <logo class="npc_big_logo" />
+      <div class="np_big_logo">
+        <logo />
+      </div>
     </div>
     <div class="second_body">
       <div class="second_title">
@@ -39,24 +50,52 @@ import History from '@/components/History.vue'
 import Logo from '@/components/Npc_logo.vue'
 import Cards from '@/components/Cards.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
+import Login from '@/components/Login.vue'
 export default {
   components: {
     History,
     Logo,
     Cards,
-    WhatWeDo
+    WhatWeDo,
+    Login
+  },
+  data() {
+    return {
+      isModalVisible: false,
+      centerDialogVisible: false
+    }
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true
+    },
+    closeModal() {
+      this.isModalVisible = false
+    }
   }
 }
 </script>
 
-<style lang="sass">
-  *
-    padding: 0
-    margin: 0
+<style lang="sass" scoped>
+  /deep/ .el-dialog
+    background:  #c8c8c8 !important
+    padding: 0 !important
+  /deep/ .el-dialog__headerbtn
+    z-index: 2005 !important
+    color: white
+  /deep/ .el-dialog__header
+    padding: 0 !important
+  /deep/ .el-dialog__body
+    padding: 0 !important
+    .container
+      padding: 0 !important
+  /deep/ .el-dialog--center .el-dialog__body
+    padding: 0 !important
   .container
     display: flex
     flex-direction: column
     align-items: center
+    justify-content: center
     .main
       height: 80vh
       display: flex
@@ -101,6 +140,10 @@ export default {
     svg
       width: 300px
       height: 300px
+  .main__login
+    width: 525px
+    position: relative
+    z-index: 10
 
   $main-color: #FFB945
 

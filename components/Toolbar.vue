@@ -5,16 +5,28 @@
     <div class="contaner__toolbar">
       <div class="toolbar__link">
         <button class="toolbar__link__homepage" src="#">
-          <p>首頁</p>
+          <nuxt-link to="/">
+            <p>
+              首頁
+            </p>
+          </nuxt-link>
         </button>
         <button class="toolbar__link__about_me" src="#">
-          <p>活動</p>
+          <nuxt-link to="/activities/">
+            <p>
+              活動
+            </p>
+          </nuxt-link>
         </button>
         <button class="toolbar__link__about_me" src="#">
           <p>學習資源</p>
         </button>
         <button class="toolbar__link__about_me" src="#">
-          <p>關於</p>
+          <nuxt-link to="/aboutMe/">
+            <p>
+              關於
+            </p>
+          </nuxt-link>
         </button>
       </div>
     </div>
