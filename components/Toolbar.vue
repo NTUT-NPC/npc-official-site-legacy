@@ -47,8 +47,13 @@
         </button>
       </nuxt-link>
     </v-toolbar>
-    <v-toolbar class="hidden-md-and-up" flat dark color="#0c1214" fixed="true">
-      <v-toolbar-side-icon class="burger_size" />
+    <v-navigation-drawer
+      v-model="drawer"
+      class="hidden-md-and-up"
+      fixed
+      background-color="#0c1214"
+    /><v-toolbar class="hidden-md-and-up" flat dark color="#0c1214" fixed="true">
+      <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
     </v-toolbar>
   </div>
 </template>
@@ -70,5 +75,16 @@
     border-bottom: solid 2px white
   /deep/ .burger_size i
     font-size: 36px
+  .v-navigation-drawer
+    background-color: #0c1214
 
 </style>
+
+<script>
+export default {
+  data: () => ({
+    drawer: false
+  })
+
+}
+</script>
