@@ -40,8 +40,7 @@ export default {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    'vuetify/dist/vuetify.min.css',
-    'element-ui/lib/theme-chalk/display.css'
+    'vuetify/dist/vuetify.min.css'
   ],
 
   /*

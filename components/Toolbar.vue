@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <div fixed="true">
     <div class="contaner hidden-sm-and-down">
-      <img
-        class="contaner__logo"
-        src="../static/logo_normal_word.png"
-      >
-      <div class="contaner__toolbar">
-        <button
-          src="#"
+      <v-toolbar flat color="#0c1214" fixed="true">
+        <img
+          class="contaner__logo"
+          src="../static/logo_normal_word.png"
         >
+        <v-spacer />
+        <button>
           <nuxt-link to="/">
             <h3>
               首頁
@@ -48,9 +47,9 @@
             </h3>
           </nuxt-link>
         </button>
-      </div>
+      </v-toolbar>
     </div>
-    <v-toolbar class="hidden-md-and-up" flat dark color="#0c1214">
+    <v-toolbar class="hidden-md-and-up" flat dark color="#0c1214" fixed="true">
       <v-toolbar-side-icon class="burger_size" />
     </v-toolbar>
   </div>
