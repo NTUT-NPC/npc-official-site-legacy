@@ -7,7 +7,6 @@
       >
       <div class="contaner__toolbar">
         <button
-          class="toolbar__link__homepage"
           src="#"
         >
           <nuxt-link to="/">
@@ -32,12 +31,20 @@
           <h3>學習資源</h3>
         </button>
         <button
-          class="toolbar__link__about_me"
           src="#"
         >
           <nuxt-link to="/aboutMe/">
             <h3>
               關於
+            </h3>
+          </nuxt-link>
+        </button>
+        <button
+          src="#"
+        >
+          <nuxt-link to="/">
+            <h3>
+              登入
             </h3>
           </nuxt-link>
         </button>
