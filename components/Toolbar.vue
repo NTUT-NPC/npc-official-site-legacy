@@ -1,54 +1,52 @@
 <template>
   <div fixed="true">
-    <div class="contaner hidden-sm-and-down">
-      <v-toolbar flat color="#0c1214" fixed="true">
-        <img
-          class="contaner__logo"
-          src="../static/logo_normal_word.png"
-        >
-        <v-spacer />
-        <nuxt-link to="/">
-          <button>
-            <h3>
-              首頁
-            </h3>
-          </button>
-        </nuxt-link>
-        <nuxt-link to="/activities/">
-          <button
-            src="#"
-          >
-            <h3>
-              活動
-            </h3>
-          </button>
-        </nuxt-link>
+    <v-toolbar class="hidden-sm-and-down web" flat color="#0c1214" fixed="true">
+      <img
+        class="contaner__logo"
+        src="../static/logo_normal_word.png"
+      >
+      <v-spacer />
+      <nuxt-link to="/">
+        <button>
+          <h3>
+            首頁
+          </h3>
+        </button>
+      </nuxt-link>
+      <nuxt-link to="/activities/">
         <button
-          class="toolbar__link__about_me"
           src="#"
         >
-          <h3>學習資源</h3>
+          <h3>
+            活動
+          </h3>
         </button>
-        <nuxt-link to="/aboutMe/">
-          <button
-            src="#"
-          >
-            <h3>
-              關於
-            </h3>
-          </button>
-        </nuxt-link>
-        <nuxt-link to="/">
-          <button
-            src="#"
-          >
-            <h3>
-              登入
-            </h3>
-          </button>
-        </nuxt-link>
-      </v-toolbar>
-    </div>
+      </nuxt-link>
+      <button
+        class="toolbar__link__about_me"
+        src="#"
+      >
+        <h3>學習資源</h3>
+      </button>
+      <nuxt-link to="/aboutMe/">
+        <button
+          src="#"
+        >
+          <h3>
+            關於
+          </h3>
+        </button>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <button
+          src="#"
+        >
+          <h3>
+            登入
+          </h3>
+        </button>
+      </nuxt-link>
+    </v-toolbar>
     <v-toolbar class="hidden-md-and-up" flat dark color="#0c1214" fixed="true">
       <v-toolbar-side-icon class="burger_size" />
     </v-toolbar>
@@ -56,17 +54,10 @@
 </template>
 
 <style lang="sass" scoped>
-  .contaner
-    display: flex
-    height: 15%
-    width: 100%
-    justify-content: space-between
   .contaner__logo
     width: 70px
     height: 70px
-  .contaner__toolbar
-    display: flex
-  .contaner button
+  .web button
     padding: 15px 32px
     text-align: center
     border-bottom: solid 2px #0c1214
@@ -74,7 +65,7 @@
     outline: none
   a
     text-decoration: none
-  .contaner button:hover
+  .web button:hover
     cursor: pointer
     border-bottom: solid 2px white
   /deep/ .burger_size i
