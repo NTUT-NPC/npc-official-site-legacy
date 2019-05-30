@@ -7,46 +7,46 @@
           src="../static/logo_normal_word.png"
         >
         <v-spacer />
-        <button>
-          <nuxt-link to="/">
+        <nuxt-link to="/">
+          <button>
             <h3>
               首頁
             </h3>
-          </nuxt-link>
-        </button>
-        <button
-          src="#"
-        >
-          <nuxt-link to="/activities/">
+          </button>
+        </nuxt-link>
+        <nuxt-link to="/activities/">
+          <button
+            src="#"
+          >
             <h3>
               活動
             </h3>
-          </nuxt-link>
-        </button>
+          </button>
+        </nuxt-link>
         <button
           class="toolbar__link__about_me"
           src="#"
         >
           <h3>學習資源</h3>
         </button>
-        <button
-          src="#"
-        >
-          <nuxt-link to="/aboutMe/">
+        <nuxt-link to="/aboutMe/">
+          <button
+            src="#"
+          >
             <h3>
               關於
             </h3>
-          </nuxt-link>
-        </button>
-        <button
-          src="#"
-        >
-          <nuxt-link to="/">
+          </button>
+        </nuxt-link>
+        <nuxt-link to="/">
+          <button
+            src="#"
+          >
             <h3>
               登入
             </h3>
-          </nuxt-link>
-        </button>
+          </button>
+        </nuxt-link>
       </v-toolbar>
     </div>
     <v-toolbar class="hidden-md-and-up" flat dark color="#0c1214" fixed="true">
