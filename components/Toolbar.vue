@@ -56,8 +56,8 @@
     width: 100%
     justify-content: space-between
   .contaner__logo
-    width: 100px
-    height: 100px
+    width: 70px
+    height: 70px
   .contaner__toolbar
     display: flex
   .contaner button
