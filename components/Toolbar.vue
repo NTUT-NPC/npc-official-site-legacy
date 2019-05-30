@@ -44,7 +44,7 @@
       </div>
     </div>
     <v-toolbar class="hidden-md-and-up" flat dark color="#0c1214">
-      <v-toolbar-side-icon />
+      <v-toolbar-side-icon class="burger_size" />
     </v-toolbar>
   </div>
 </template>
@@ -71,5 +71,7 @@
   .contaner button:hover
     cursor: pointer
     border-bottom: solid 2px white
+  /deep/ .burger_size i
+    font-size: 36px
 
 </style>
