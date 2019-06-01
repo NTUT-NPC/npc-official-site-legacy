@@ -51,8 +51,8 @@
 <script>
 
 import History from '@/components/History.vue'
-import Logo from '@/components/Npc_logo.vue'
-import Cards from '@/components/Cards.vue'
+import Logo from '@/components/NpcLogo.vue'
+import Cards from '@/components/ClubFeature.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
 import Login from '@/components/Login.vue'
 export default {
