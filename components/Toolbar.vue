@@ -52,7 +52,7 @@
       class="hidden-md-and-up"
       fixed
       background-color="#0c1214"
-    /><v-toolbar class="hidden-md-and-up" flat dark color="#0c1214">
+    /><v-toolbar class="hidden-md-and-up" flat fixed dark color="#0c1214">
       <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
     </v-toolbar>
   </div>
