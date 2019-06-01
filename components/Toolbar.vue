@@ -1,6 +1,6 @@
 <template>
   <div fixed="true">
-    <v-toolbar class="hidden-sm-and-down web" flat color="#0c1214" fixed="true">
+    <v-toolbar class="hidden-sm-and-down web" flat color="#0c1214" fixed>
       <img
         class="contaner__logo"
         src="../static/logo_normal_word.png"
@@ -52,7 +52,7 @@
       class="hidden-md-and-up"
       fixed
       background-color="#0c1214"
-    /><v-toolbar class="hidden-md-and-up" flat dark color="#0c1214" fixed="true">
+    /><v-toolbar class="hidden-md-and-up" flat dark color="#0c1214">
       <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
     </v-toolbar>
   </div>

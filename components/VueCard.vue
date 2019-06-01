@@ -16,12 +16,11 @@
         <div class="text_contain">
           <p>{{ item.content }}</p>
           <div class="buttom__about">
-            <v-bottom-sheet v-model="sheet">
+            <v-bottom-sheet>
               <template v-slot:activator>
                 <v-btn
                   color="orange"
                   dark
-                  round="true"
                 >
                   了解更多
                 </v-btn>
@@ -75,7 +74,7 @@ export default {
     item: {
       type: Object,
       require: true,
-      default: () => { }
+      default: () => {}
     }
   },
   computed: {

@@ -36,19 +36,21 @@
     width: 100%
     opacity: 0
     animation-direction: 1s
-    .card
-      display: flex
-      justify-content: space-between
-      align-items: center
-      li
-        list-style-type: none
-        .title
-          display: flex
-          justify-content: center
-          margin-top: 20px
-        img
-          width: 180px
-          height: 180px
-    .title
-      font-size: 2rem
+  .card
+    display: flex
+  li
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    list-style-type: none
+    margin: 5% 5%
+  .title
+    text-align: center
+    margin-top: 20px
+  img
+    width: 70%
+    height: 70%
+  .title
+    font-size: 2rem
 </style>
