@@ -17,6 +17,7 @@
     "@nuxtjs/axios": "^5.5.3",
     "cross-env": "^5.2.0",
     "element-ui": "^2.9.1",
+    "firebase": "^6.1.0",
     "in-view": "^0.6.1",
     "material-design-icons-iconfont": "^4.0.5",
     "nuxt": "^2.8.0",
