@@ -13,7 +13,7 @@
           class="headline font-weight-bold text__color"
           v-text="item.date"
         />
-        <vue-card class="card__content" :item="item" />
+        <historyCard class="card__content" :item="item" />
       </template>
     </v-timeline-item>
   </v-timeline>
@@ -35,11 +35,11 @@
 </style>
 
 <script>
-import VueCard from '@/components/VueCard.vue'
+import historyCard from '@/components/HistoryCard.vue'
 
 export default {
   components: {
-    VueCard
+    historyCard
   },
   data: () => ({
     items: [

@@ -1,91 +1,90 @@
 <template>
-  <div class="contaner">
-    <img
-      class="contaner__logo"
-      src="../static/logo_normal_word.png"
-    >
-    <div class="contaner__middle" />
-    <div class="contaner__toolbar">
-      <div class="toolbar__link">
+  <div fixed="true">
+    <v-toolbar class="hidden-sm-and-down web" flat color="#0c1214" fixed>
+      <img
+        class="contaner__logo"
+        src="../static/logo_normal_word.png"
+      >
+      <v-spacer />
+      <nuxt-link to="/">
+        <button>
+          <h3>
+            首頁
+          </h3>
+        </button>
+      </nuxt-link>
+      <nuxt-link to="/activities/">
         <button
-          class="toolbar__link__homepage"
           src="#"
         >
-          <nuxt-link to="/">
-            <p>
-              首頁
-            </p>
-          </nuxt-link>
+          <h3>
+            活動
+          </h3>
         </button>
+      </nuxt-link>
+      <button
+        class="toolbar__link__about_me"
+        src="#"
+      >
+        <h3>學習資源</h3>
+      </button>
+      <nuxt-link to="/aboutMe/">
         <button
-          class="toolbar__link__about_me"
           src="#"
         >
-          <nuxt-link to="/activities/">
-            <p>
-              活動
-            </p>
-          </nuxt-link>
+          <h3>
+            關於
+          </h3>
         </button>
+      </nuxt-link>
+      <nuxt-link to="/">
         <button
-          class="toolbar__link__about_me"
           src="#"
         >
-          <p>學習資源</p>
+          <h3>
+            登入
+          </h3>
         </button>
-        <button
-          class="toolbar__link__about_me"
-          src="#"
-        >
-          <nuxt-link to="/aboutMe/">
-            <p>
-              關於
-            </p>
-          </nuxt-link>
-        </button>
-      </div>
-    </div>
+      </nuxt-link>
+    </v-toolbar>
+    <v-navigation-drawer
+      v-model="drawer"
+      class="hidden-md-and-up"
+      fixed
+      background-color="#0c1214"
+    /><v-toolbar class="hidden-md-and-up" flat fixed dark color="#0c1214">
+      <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
+    </v-toolbar>
   </div>
 </template>
 
 <style lang="sass" scoped>
-  p
-    margin: 0;
-  .contaner
-    display: flex
-    height: 10%
-    width: 100%
-    .contaner__logo
-      width: 80px
-      height: 80px
-      margin-left: 25px
-    .contaner__middle
-      height: 100%
-      flex: 3
-    .contaner__toolbar
-      position: relative
-      flex: 2
-      display: flex
-      .toolbar__link
-        height: 100%
-        position: relative
-        left: 20%
-        display: flex
-        align-items: center
-  button
-    background-color: #0c1214
-    border: none
-    color: white
+  .contaner__logo
+    width: 70px
+    height: 70px
+  .web button
     padding: 15px 32px
     text-align: center
-    font-size: 16px
     border-bottom: solid 2px #0c1214
     transition: 0.5s
     outline: none
-    a
-      text-decoration: none
+  a
+    text-decoration: none
+  .web button:hover
+    cursor: pointer
+    border-bottom: solid 2px white
+  /deep/ .burger_size i
+    font-size: 36px
+  .v-navigation-drawer
+    background-color: #0c1214
 
-  button:hover
-      cursor: pointer
-      border-bottom: solid 2px white
 </style>
+
+<script>
+export default {
+  data: () => ({
+    drawer: false
+  })
+
+}
+</script>
