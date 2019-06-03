@@ -154,7 +154,6 @@ export default {
   methods: {
     close() { this.$emit('close') },
     signUp() {
-      // eslint-disable-next-line no-console
       console.log('userName: ' +
         this.userInfo.userName +
         ' password: ' +
@@ -165,23 +164,18 @@ export default {
         this.userInfo.mail
       )
       if (this.userInfo.password !== this.userInfo.repeatPassword) {
-        // eslint-disable-next-line no-console
         console.log('password is not the same')
       } else if (this.userInfo.userName === '' || this.userInfo.repeatPassword === '' || this.userInfo.password === '') {
-        // eslint-disable-next-line no-console
         console.log('you gotta enter all the shit')
       } else {
         this.firebaseSignUp(this.userInfo.mail, this.userInfo.password)
       }
     },
     firebaseSignUp(email, password) {
-      // eslint-disable-next-line no-console
       console.log('mail is ' + email + ' password: ' + password)
       firebaseApp.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-        //   //   // Handle Errors here.
         const errorCode = error.code
         const errorMessage = error.message
-        // eslint-disable-next-line no-console
         console.log('error code: ' + errorCode + ' error message: ' + errorMessage)
       })
     }
