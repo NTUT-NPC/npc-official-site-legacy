@@ -83,6 +83,5 @@
   .title
     text-align: center
     margin-top: 20px
-  .title
     font-size: 2rem
 </style>
