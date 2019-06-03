@@ -49,8 +49,8 @@ export default {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/vuetify',
-    '@/plugins/vueinview',
-    '@/plugins/firebase'
+    '@/plugins/vueinview'
+
   ],
 
   /*
@@ -75,6 +75,10 @@ export default {
   ** Build configuration
   */
   build: {
+    vender: [
+      'firebase',
+      'firebase-auth'
+    ],
     transpile: [/^element-ui/, /^vuetify/],
 
     /*

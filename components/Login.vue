@@ -2,24 +2,65 @@
   <div class="container">
     <div class="login-wrap">
       <div class="login-html">
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <input
+          id="tab-1"
+          type="radio"
+          name="tab"
+          class="sign-in"
+          checked
+        ><label
+          for="tab-1"
+          class="tab"
+        >Sign In</label>
+        <input
+          id="tab-2"
+          type="radio"
+          name="tab"
+          class="sign-up"
+        ><label
+          for="tab-2"
+          class="tab"
+        >Sign Up</label>
         <div class="login-form">
           <div class="sign-in-htm">
             <div class="group">
-              <label for="user" class="label">Username</label>
-              <input id="user" type="text" class="input">
+              <label
+                for="user"
+                class="label"
+              >Username</label>
+              <input
+                id="user"
+                type="text"
+                class="input"
+              >
             </div>
             <div class="group">
-              <label for="pass" class="label">Password</label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label
+                for="pass"
+                class="label"
+              >Password</label>
+              <input
+                id="pass"
+                type="password"
+                class="input"
+                data-type="password"
+              >
             </div>
             <div class="group">
-              <input id="check" type="checkbox" class="check" checked>
+              <input
+                id="check"
+                type="checkbox"
+                class="check"
+                checked
+              >
               <label for="check"><span class="icon" /> Keep me Signed in</label>
             </div>
             <div class="group">
-              <input type="submit" class="button" value="Sign In">
+              <input
+                type="submit"
+                class="button"
+                value="Sign In"
+              >
             </div>
             <div class="hr" />
             <div class="foot-lnk">
@@ -28,23 +69,62 @@
           </div>
           <div class="sign-up-htm">
             <div class="group">
-              <label for="user" class="label">Username</label>
-              <input id="user" type="text" class="input">
+              <label
+                for="user"
+                class="label"
+              >Username</label>
+              <input
+                id="user"
+                v-model="userInfo.userName"
+                type="text"
+                class="input"
+              >
             </div>
             <div class="group">
-              <label for="pass" class="label">Password</label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label
+                for="pass"
+                class="label"
+              >Password</label>
+              <input
+                id="pass"
+                v-model="userInfo.password"
+                type="password"
+                class="input"
+                data-type="password"
+              >
             </div>
             <div class="group">
-              <label for="pass" class="label">Repeat Password</label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label
+                for="pass"
+                class="label"
+              >Repeat Password</label>
+              <input
+                id="pass"
+                v-model="userInfo.repeatPassword"
+                type="password"
+                class="input"
+                data-type="password"
+              >
             </div>
             <div class="group">
-              <label for="pass" class="label">Email Address</label>
-              <input id="pass" type="text" class="input">
+              <label
+                for="pass"
+                class="label"
+              >Email Address</label>
+              <input
+                id="pass"
+                v-model="userInfo.mail"
+                type="text"
+                class="input"
+              >
             </div>
             <div class="group">
-              <input type="submit" class="button" value="Sign Up">
+              <input
+                type="submit"
+                class="button"
+                value="Sign Up"
+                @click="signUp()"
+              >
             </div>
             <div class="hr" />
             <div class="foot-lnk">
@@ -59,11 +139,52 @@
 </template>
 
 <script>
+import firebaseApp from '~/firebase/app'
 
 export default {
   name: 'Login',
+  data: () => ({
+    userInfo: {
+      userName: '',
+      password: '',
+      repeatPassword: '',
+      mail: ''
+    }
+  }),
   methods: {
-    close() { this.$emit('close') }
+    close() { this.$emit('close') },
+    signUp() {
+      // eslint-disable-next-line no-console
+      console.log('userName: ' +
+        this.userInfo.userName +
+        ' password: ' +
+        this.userInfo.password +
+        ' repeatPassword: ' +
+        this.userInfo.repeatPassword +
+        ' mail: ' +
+        this.userInfo.mail
+      )
+      if (this.userInfo.password !== this.userInfo.repeatPassword) {
+        // eslint-disable-next-line no-console
+        console.log('password is not the same')
+      } else if (this.userInfo.userName === '' || this.userInfo.repeatPassword === '' || this.userInfo.password === '') {
+        // eslint-disable-next-line no-console
+        console.log('you gotta enter all the shit')
+      } else {
+        this.firebaseSignUp(this.userInfo.mail, this.userInfo.password)
+      }
+    },
+    firebaseSignUp(email, password) {
+      // eslint-disable-next-line no-console
+      console.log('mail is ' + email + ' password: ' + password)
+      firebaseApp.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+        //   //   // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // eslint-disable-next-line no-console
+        console.log('error code: ' + errorCode + ' error message: ' + errorMessage)
+      })
+    }
   }
 }
 
