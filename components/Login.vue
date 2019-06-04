@@ -75,7 +75,7 @@
               >Username</label>
               <input
                 id="user"
-                v-model="userInfo.userName"
+                v-model="user.userName"
                 type="text"
                 class="input"
               >
@@ -87,7 +87,7 @@
               >Password</label>
               <input
                 id="pass"
-                v-model="userInfo.password"
+                v-model="user.password"
                 type="password"
                 class="input"
                 data-type="password"
@@ -100,7 +100,7 @@
               >Repeat Password</label>
               <input
                 id="pass"
-                v-model="userInfo.repeatPassword"
+                v-model="user.repeatPassword"
                 type="password"
                 class="input"
                 data-type="password"
@@ -113,7 +113,7 @@
               >Email Address</label>
               <input
                 id="pass"
-                v-model="userInfo.mail"
+                v-model="user.mail"
                 type="text"
                 class="input"
               >
@@ -128,7 +128,7 @@
             </div>
             <div class="hr" />
             <div class="foot-lnk">
-              <label for="tab-1">Already Member?</a>
+              <label for="tab-1">Already Member?>
               </label>
             </div>
           </div>
@@ -139,12 +139,11 @@
 </template>
 
 <script>
-import firebaseApp from '~/firebase/app'
 
 export default {
   name: 'Login',
   data: () => ({
-    userInfo: {
+    user: {
       userName: '',
       password: '',
       repeatPassword: '',
@@ -154,30 +153,31 @@ export default {
   methods: {
     close() { this.$emit('close') },
     signUp() {
-      console.log('userName: ' +
-        this.userInfo.userName +
+      console.log(
+        'userName: ' +
+        this.user.userName +
         ' password: ' +
-        this.userInfo.password +
+        this.user.password +
         ' repeatPassword: ' +
-        this.userInfo.repeatPassword +
+        this.user.repeatPassword +
         ' mail: ' +
-        this.userInfo.mail
+        this.user.mail
       )
-      if (this.userInfo.password !== this.userInfo.repeatPassword) {
-        console.log('password is not the same')
-      } else if (this.userInfo.userName === '' || this.userInfo.repeatPassword === '' || this.userInfo.password === '') {
-        console.log('you gotta enter all the shit')
-      } else {
-        this.firebaseSignUp(this.userInfo.mail, this.userInfo.password)
-      }
-    },
-    firebaseSignUp(email, password) {
-      console.log('mail is ' + email + ' password: ' + password)
-      firebaseApp.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-        const errorCode = error.code
-        const errorMessage = error.message
-        console.log('error code: ' + errorCode + ' error message: ' + errorMessage)
-      })
+
+      this.$store.dispatch('signUp')
+
+      // this.signUp(this.user)
+
+      // if (this.user.password !== this.user.repeatPassword) {
+      //   console.log('password is not the same')
+      // } else if (this.user.userName === '' || this.user.repeatPassword === '' || this.user.password === '') {
+      //   console.log('you gotta enter all the shit')
+      // } else {
+      //   const firebaseUser = await firebaseApp.auth().createUserWithEmailAndPassword(this.user.mail, this.user.password)
+      //   // await this.writeUserData(firebaseUser.uid, firebaseUser.mail)
+      //   await console.log('outside user: ' + firebaseUser)
+      //   await this.login(firebaseUser.uid)
+      // }
     }
   }
 }
