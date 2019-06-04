@@ -52,7 +52,50 @@
       class="hidden-md-and-up"
       fixed
       background-color="#0c1214"
-    /><v-toolbar class="hidden-md-and-up" flat fixed dark color="#0c1214">
+    >
+      <v-list class="pa-1" dark>
+        <v-list-tile v-if="drawer" @click.stop="drawer = !drawer">
+          <v-list-tile-action>
+            <v-icon>
+              chevron_left
+            </v-icon>
+          </v-list-tile-action>
+        </v-list-tile>
+        <v-list-tile href="/" tag="div">
+          <v-list-tile-action>
+            <v-icon>
+              home
+            </v-icon>
+          </v-list-tile-action>
+          <h3>首頁</h3>
+        </v-list-tile>
+        <v-list-tile href="#" tag="div">
+          <v-list-tile-action>
+            <v-icon>
+              accessibility
+            </v-icon>
+          </v-list-tile-action>
+          <h3>教學資源</h3>
+        </v-list-tile>
+        <v-list-tile href="/activities/" tag="div">
+          <v-list-tile-action>
+            <v-icon>
+              accessibility
+            </v-icon>
+          </v-list-tile-action>
+          <h3>活動</h3>
+        </v-list-tile>
+        <v-list-tile href="/aboutMe/" tag="div">
+          <v-list-tile-action>
+            <v-icon>
+              accessibility
+            </v-icon>
+          </v-list-tile-action>
+          <h3>關於</h3>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar class="hidden-md-and-up" flat fixed dark color="#0c1214">
       <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
     </v-toolbar>
   </div>
