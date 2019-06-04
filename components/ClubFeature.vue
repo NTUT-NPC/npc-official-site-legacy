@@ -4,6 +4,9 @@
     v-inview:animate="'fadeIn'"
     class="card-container"
   >
+    <div class="section__title">
+      <p>為甚麼加入我們？</p>
+    </div>
     <ul class="web_card feature hidden-sm-and-down">
       <li>
         <img
@@ -84,4 +87,9 @@
     text-align: center
     margin-top: 20px
     font-size: 2rem
+  .section__title
+    display: flex
+    justify-content: center
+    font-size: 3rem
+    font-weight: 500
 </style>

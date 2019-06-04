@@ -26,9 +26,6 @@
       </div>
     </div>
     <div class="second_body section">
-      <div class="section__title">
-        <p>為甚麼加入我們？</p>
-      </div>
       <cards />
     </div>
     <div class="daily section">
