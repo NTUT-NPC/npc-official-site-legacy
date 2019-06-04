@@ -72,7 +72,7 @@
         <v-list-tile href="#" tag="div">
           <v-list-tile-action>
             <v-icon>
-              accessibility
+              import_contacts
             </v-icon>
           </v-list-tile-action>
           <h3>教學資源</h3>
@@ -80,7 +80,7 @@
         <v-list-tile href="/activities/" tag="div">
           <v-list-tile-action>
             <v-icon>
-              accessibility
+              insert_invitation
             </v-icon>
           </v-list-tile-action>
           <h3>活動</h3>
@@ -88,7 +88,7 @@
         <v-list-tile href="/aboutMe/" tag="div">
           <v-list-tile-action>
             <v-icon>
-              accessibility
+              supervised_user_circle
             </v-icon>
           </v-list-tile-action>
           <h3>關於</h3>
