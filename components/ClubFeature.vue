@@ -4,7 +4,34 @@
     v-inview:animate="'fadeIn'"
     class="card-container"
   >
-    <ul class="card">
+    <div class="section__title">
+      <p>為甚麼加入我們？</p>
+    </div>
+    <ul class="web_card feature hidden-sm-and-down">
+      <li>
+        <img
+          src="../static/idea_cometure.png"
+          alt=""
+        >
+
+        <div class="title">
+          <p>實現你的創意</p>
+        </div>
+      </li>
+      <li>
+        <img src="../static/learning_source.png" alt="">
+        <div class="title">
+          <p>許多學習資源</p>
+        </div>
+      </li>
+      <li>
+        <img src="../static/partnner.png" alt="">
+        <div class="title">
+          <p>帶著你進步的夥伴</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="phone_card feature hidden-md-and-up">
       <li>
         <img
           src="../static/idea_cometure.png"
@@ -36,8 +63,19 @@
     width: 100%
     opacity: 0
     animation-direction: 1s
-  .card
+  .feature
     display: flex
+    justify-content: center
+  .web_card
+    img
+      width: 20vw
+      height: 20vw
+
+  .phone_card
+    flex-direction: column
+    img
+      width: 35vw
+      height: 35vw
   li
     display: flex
     flex-direction: column
@@ -48,9 +86,10 @@
   .title
     text-align: center
     margin-top: 20px
-  img
-    width: 70%
-    height: 70%
-  .title
     font-size: 2rem
+  .section__title
+    display: flex
+    justify-content: center
+    font-size: 3rem
+    font-weight: 500
 </style>
