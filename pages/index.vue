@@ -9,22 +9,7 @@
         <login />
       </el-dialog>
     </div>
-    <div class="main">
-      <div class="main_describe">
-        <div class="main__club_name">
-          <h1>北科</h1>
-          <h2 class="main_title">
-            程式設計研究社
-          </h2>
-          <button class="main__register" @click="centerDialogVisible = true">
-            加入我們
-          </button>
-        </div>
-      </div>
-      <div class="np_big_logo">
-        <logo />
-      </div>
-    </div>
+    <main-component />
     <div class="second_body section">
       <cards />
     </div>
@@ -48,14 +33,14 @@
 <script>
 
 import History from '@/components/History.vue'
-import Logo from '@/components/NpcLogo.vue'
 import Cards from '@/components/ClubFeature.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
 import Login from '@/components/Login.vue'
+import MainComponent from '@/components/Main.vue'
 export default {
   components: {
+    MainComponent,
     History,
-    Logo,
     Cards,
     WhatWeDo,
     Login
@@ -110,33 +95,6 @@ export default {
     flex-direction: column
     align-items: center
     justify-content: center
-    .main
-      height: 80vh
-      width: 100%
-      display: flex
-      justify-content: space-around
-      align-items: center
-      .main__club_name
-        margin-right: 80px
-      .main_title
-        font-size: 4rem
-      .main_describe
-        display: flex
-        align-items: center
-      .main__register
-        margin-top: 20px
-        background-color: #0c1214
-        border: 1px solid orange
-        border-radius: 24px
-        color: orange
-        padding: 8px 12px
-        text-align: center
-        font-size: 18px
-        &:hover
-          cursor: pointer
-          background: orange
-          color: white
-          animation: pulse 1s infinite
 
   .second_body
     display: flex
