@@ -9,7 +9,7 @@
         <login />
       </el-dialog>
     </div>
-    <main-component />
+    <main-page />
     <div class="second_body section">
       <cards />
     </div>
@@ -36,10 +36,10 @@ import History from '@/components/History.vue'
 import Cards from '@/components/ClubFeature.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
 import Login from '@/components/Login.vue'
-import MainComponent from '@/components/Main.vue'
+import MainPage from '@/components/MainPage.vue'
 export default {
   components: {
-    MainComponent,
+    MainPage,
     History,
     Cards,
     WhatWeDo,
