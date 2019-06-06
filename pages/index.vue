@@ -91,7 +91,6 @@ export default {
     flex-direction: column
     align-items: center
     justify-content: center
-
   .second_body
     display: flex
     flex-direction: column
