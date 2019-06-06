@@ -42,7 +42,7 @@
   color: orange
   padding: 8px 12px
   text-align: center
-  font-size: 18px
+  font-size: 1.3rem
   &:hover
     cursor: pointer
     background: orange
