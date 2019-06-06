@@ -21,12 +21,12 @@
   *
     font-family: "微軟正黑體"!important
   .title
-    font-size: 3.5vw !important
-    margin-bottom: 2vh
+    font-size: calc(16px + 2vw) !important
+    margin-bottom: calc(5px + 1vw)
   .content
     margin-top: 5px
     margin-bottom: 3vw
-    font-size: 2.2vw
+    font-size: calc(12px + 0.6vw)
     text-align: center
   .test
     height: 100%

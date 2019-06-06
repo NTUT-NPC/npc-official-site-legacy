@@ -13,17 +13,17 @@
       <what-we-do img-src="演算法比賽-1.jpg" title="校外比賽" content="參加校外比賽，增加自己比賽的經歷，並且增廣見聞" :bool="true" />
     </div>
     <div class="experience section">
-      <h2 class="section__title">
+      <!-- <h2 class="section__title">
         經歷
       </h2>
-      <history />
+      <history /> -->
     </div>
   </div>
 </template>
 
 <script>
 
-import History from '@/components/History.vue'
+// import History from '@/components/History.vue'
 import Cards from '@/components/ClubFeature.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
 import MainPage from '@/components/MainPage.vue'
@@ -31,7 +31,7 @@ import MainPage from '@/components/MainPage.vue'
 export default {
   components: {
     MainPage,
-    History,
+    // History,
     Cards,
     WhatWeDo
   },
