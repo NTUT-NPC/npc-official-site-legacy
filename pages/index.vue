@@ -8,24 +8,9 @@
       <h2 class="section__title">
         我們平常都在幹嘛呢？
       </h2>
-      <what-we-do
-        img-src="社聚.jpg"
-        title="社聚"
-        content="定期在學校社辦聚會，沒是寫寫程式，與大家一起討論。不時還會玩點桌遊，培養社員間的感情"
-        :bool="true"
-      />
-      <what-we-do
-        img-src="107-1_MLCC上課.jpg"
-        title="校外進修"
-        content="有空參加校外的課程，在課餘時間精進自己，並將學習的新知教導給社員"
-        :bool="false"
-      />
-      <what-we-do
-        img-src="演算法比賽-1.jpg"
-        title="校外比賽"
-        content="不時參加校外比賽，增價自己比賽的經歷，並且增廣見聞，看看外面的世界實力如何"
-        :bool="true"
-      />
+      <what-we-do img-src="社聚.jpg" title="社聚" content="定期在學校社辦聚會，沒是寫寫程式，與大家一起討論。培養社員間的感情" :bool="true" />
+      <what-we-do img-src="107-1_MLCC上課.jpg" title="校外進修" content="有空參加校外的課程，在課餘時間精進自己，並將學習的新知教導給社員" :bool="false" />
+      <what-we-do img-src="演算法比賽-1.jpg" title="校外比賽" content="參加校外比賽，增加自己比賽的經歷，並且增廣見聞" :bool="true" />
     </div>
     <div class="experience section">
       <h2 class="section__title">
@@ -100,10 +85,10 @@ export default {
       font-size: 3rem
   .time_line
     margin-top: 50px
-  .npc_big_logo
-    svg
-      width: 300px
-      height: 300px
+  .main__login
+    width: 525px
+    position: relative
+    z-index: 10
 
   $main-color: #FFB945
 

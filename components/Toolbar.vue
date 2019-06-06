@@ -1,5 +1,5 @@
 <template>
-  <div fixed="true">
+  <div fixed>
     <v-toolbar class="hidden-sm-and-down web" flat color="#0c1214" fixed>
       <img
         class="contaner__logo"
@@ -22,12 +22,6 @@
           </h3>
         </button>
       </nuxt-link>
-      <button
-        class="toolbar__link__about_me"
-        src="#"
-      >
-        <h3>學習資源</h3>
-      </button>
       <nuxt-link to="/aboutMe/">
         <button
           src="#"
@@ -51,15 +45,25 @@
       v-model="drawer"
       class="hidden-md-and-up"
       fixed
+      right
       background-color="#0c1214"
     >
       <v-list class="pa-1" dark>
         <v-list-tile v-if="drawer" @click.stop="drawer = !drawer">
           <v-list-tile-action>
             <v-icon>
-              chevron_left
+              chevron_right
             </v-icon>
           </v-list-tile-action>
+        </v-list-tile>
+
+        <v-list-tile href="#" tag="div">
+          <v-list-tile-action>
+            <v-icon>
+              person
+            </v-icon>
+          </v-list-tile-action>
+          <h3>登入</h3>
         </v-list-tile>
         <v-list-tile href="/" tag="div">
           <v-list-tile-action>
@@ -68,14 +72,6 @@
             </v-icon>
           </v-list-tile-action>
           <h3>首頁</h3>
-        </v-list-tile>
-        <v-list-tile href="#" tag="div">
-          <v-list-tile-action>
-            <v-icon>
-              import_contacts
-            </v-icon>
-          </v-list-tile-action>
-          <h3>教學資源</h3>
         </v-list-tile>
         <v-list-tile href="/activities/" tag="div">
           <v-list-tile-action>
@@ -95,13 +91,21 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="hidden-md-and-up" flat fixed dark color="#0c1214">
+    <v-toolbar class="toolbar hidden-md-and-up" flat fixed dark color="#0c1214">
+      <img
+        class="contaner__logo"
+        src="../static/logo_normal_word.png"
+      >
+      <p>北科程式設計研究社</p>
+      <v-spacer />
       <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
     </v-toolbar>
   </div>
 </template>
 
 <style lang="sass" scoped>
+  .toolbar
+    padding: 10px
   .contaner__logo
     width: 70px
     height: 70px
@@ -113,6 +117,8 @@
     outline: none
   a
     text-decoration: none
+  p
+    font-size: 1.3rem
   .web button:hover
     cursor: pointer
     border-bottom: solid 2px white

@@ -8,7 +8,7 @@
       <login @dismiss="dismissModal" />
     </el-dialog>
     <div class="main_describe">
-      <div class="main__club_name">
+      <div class="main__club_name hidden-sm-and-down">
         <h1>北科</h1>
         <h2 class="main_title">
           程式設計研究社
@@ -21,7 +21,7 @@
         </button>
       </div>
     </div>
-    <div class="np_big_logo">
+    <div class="npc_big_logo">
       <logo />
     </div>
   </div>
@@ -29,8 +29,18 @@
 
 <style lang="sass" scoped>
 .main__container
+  height: 100vh
   display: flex
   justify-content: center
+.npc_big_logo
+  display: flex
+  justify-content: center
+  align-items: center
+  /deep/ svg
+    max-width: 400px
+    max-height: 400px
+    width: 80vw
+    height: 80vw
 .main
   height: 80vh
   width: 100%

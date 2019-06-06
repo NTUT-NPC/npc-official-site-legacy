@@ -21,16 +21,17 @@
   *
     font-family: "微軟正黑體"!important
   .title
-    font-size: 72px
-    margin-bottom: 20px
+    font-size: 3.5vw !important
+    margin-bottom: 2vh
   .content
     margin-top: 5px
     margin-bottom: 3vw
+    font-size: 2.2vw
     text-align: center
   .test
-    // position: absolute
     height: 100%
-    width: 300px
+    width: 80%
+    max-width: 600px
     display: flex
     flex-direction: column
     justify-content: center
