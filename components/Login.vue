@@ -164,7 +164,7 @@ export default {
         this.user.mail
       )
 
-      this.$store.dispatch('signUp', this.user)
+      this.$store.dispatch('logIn', this.user)
     }
   }
 }

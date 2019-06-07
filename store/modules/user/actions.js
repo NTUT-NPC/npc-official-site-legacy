@@ -10,8 +10,19 @@ const actions = {
     storeInformationToFirebaseWith(user)
     updateUserInfoWith(user)
 
+    console.log('successed to log up')
+    commit(types.APP_SIGNUP)
+  },
+  logIn({ commit }, user) {
+    firebase.auth().signInWithEmailAndPassword(user.mail, user.password).catch((error) => {
+      const errorCode = error.code
+      const errorMessage = error.message
+      console.log('log in failed with ' + errorCode + ' ' + errorMessage)
+    })
+    console.log('successed to log in')
     commit(types.APP_SIGNUP)
   }
+
 }
 
 const updateUserInfoWith = (user) => {
