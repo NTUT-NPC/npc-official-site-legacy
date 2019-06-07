@@ -164,20 +164,7 @@ export default {
         this.user.mail
       )
 
-      this.$store.dispatch('signUp')
-
-      // this.signUp(this.user)
-
-      // if (this.user.password !== this.user.repeatPassword) {
-      //   console.log('password is not the same')
-      // } else if (this.user.userName === '' || this.user.repeatPassword === '' || this.user.password === '') {
-      //   console.log('you gotta enter all the shit')
-      // } else {
-      //   const firebaseUser = await firebaseApp.auth().createUserWithEmailAndPassword(this.user.mail, this.user.password)
-      //   // await this.writeUserData(firebaseUser.uid, firebaseUser.mail)
-      //   await console.log('outside user: ' + firebaseUser)
-      //   await this.login(firebaseUser.uid)
-      // }
+      this.$store.dispatch('signUp', this.user)
     }
   }
 }
