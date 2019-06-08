@@ -13,7 +13,7 @@
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-3 white--text"
+          class="mx-2 white--text"
           icon
           href="https://www.facebook.com/NPC.OwO/"
           target="_blank"
