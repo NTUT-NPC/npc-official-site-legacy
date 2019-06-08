@@ -68,9 +68,9 @@
     justify-content: center
   .web_card
     img
-      width: 20vw
-      height: 20vw
-
+      width: calc(100px + 5vw)
+      height: calc(100px + 5vw)
+      margin: 50px
   .phone_card
     flex-direction: column
     img
