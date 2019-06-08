@@ -5,7 +5,7 @@
     class="card-container"
   >
     <div class="section__title">
-      <p>為甚麼加入我們？</p>
+      <h2>為甚麼加入我們？</h2>
     </div>
     <ul class="web_card feature hidden-sm-and-down">
       <li>

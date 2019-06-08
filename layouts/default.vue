@@ -15,7 +15,8 @@
   h1
     font-size: 4rem
   h2
-    font-size: 3rem
+    font-size: calc(24px + 1vw)
+    font-weight: 500
   h3
     font-szie: 2rem
   h4 p

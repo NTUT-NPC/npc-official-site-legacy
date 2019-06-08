@@ -4,26 +4,19 @@
     <div class="second_body section">
       <cards />
     </div>
-    <div class="daily section">
+    <div class="section">
       <h2 class="section__title">
         我們平常都在幹嘛呢？
       </h2>
-      <what-we-do img-src="社聚.jpg" title="社聚" content="定期在學校社辦聚會，沒是寫寫程式，與大家一起討論。培養社員間的感情" :bool="true" />
+      <what-we-do img-src="社聚.jpg" title="社聚" content="定期在學校社辦聚會，沒是寫寫程式一起討論。培養社員間的感情" :bool="true" />
       <what-we-do img-src="107-1_MLCC上課.jpg" title="校外進修" content="有空參加校外的課程，在課餘時間精進自己，並將學習的新知教導給社員" :bool="false" />
       <what-we-do img-src="演算法比賽-1.jpg" title="校外比賽" content="參加校外比賽，增加自己比賽的經歷，並且增廣見聞" :bool="true" />
-    </div>
-    <div class="experience section">
-      <!-- <h2 class="section__title">
-        經歷
-      </h2>
-      <history /> -->
     </div>
   </div>
 </template>
 
 <script>
 
-// import History from '@/components/History.vue'
 import Cards from '@/components/ClubFeature.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
 import MainPage from '@/components/MainPage.vue'
@@ -31,7 +24,6 @@ import MainPage from '@/components/MainPage.vue'
 export default {
   components: {
     MainPage,
-    // History,
     Cards,
     WhatWeDo
   },
@@ -59,17 +51,16 @@ export default {
   /deep/ .el-dialog--center .el-dialog__body
     padding: 0 !important
   .section
-    margin: 100px  0 0 0
     display: flex
     flex-direction: column
-    &__title
-      font-size: 3rem
-      margin: 0 auto 32px auto
-      text-align: center
-      letter-spacing: 4px
-      padding: 4px
-      display: inline
-      font-weight: 700
+  .__title
+    font-size: 3rem
+    margin: 0 auto 32px auto
+    text-align: center
+    letter-spacing: 4px
+    padding: 4px
+    display: inline
+    font-weight: 700
 
   .container
     display: flex
@@ -81,8 +72,8 @@ export default {
     flex-direction: column
     align-items: center
     width: 100%
-    .second_title
-      font-size: 3rem
+  .section__title
+    text-align: center
   .time_line
     margin-top: 50px
   .main__login
