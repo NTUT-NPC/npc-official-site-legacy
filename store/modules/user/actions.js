@@ -10,7 +10,8 @@ const actions = {
 
         console.log('successed to log up')
         commit(types.APP_LOGIN)
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.log(error.message)
       })
   },
@@ -19,7 +20,8 @@ const actions = {
       .then(() => {
         console.log('successed to log in')
         commit(types.APP_LOGIN)
-      }).catch((error) => {
+      })
+      .catch((error) => {
         const errorCode = error.code
         const errorMessage = error.message
         console.log('log in failed with ' + errorCode + ' ' + errorMessage)
@@ -32,7 +34,8 @@ const actions = {
       .then((result) => {
         console.log('successed log in with google with ' + result.user)
         commit(types.APP_LOGIN)
-      }).catch((error) => {
+      })
+      .catch((error) => {
         alert('Oops . ' + error.message)
       })
   }

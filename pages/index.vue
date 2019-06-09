@@ -1,14 +1,5 @@
 <template>
   <div class="container">
-    <div>
-      <el-dialog
-        :visible.sync="centerDialogVisible"
-        width="30%"
-        center
-      >
-        <login />
-      </el-dialog>
-    </div>
     <main-page />
     <div class="second_body section">
       <cards />
@@ -50,28 +41,18 @@
 import History from '@/components/History.vue'
 import Cards from '@/components/ClubFeature.vue'
 import WhatWeDo from '@/components/WhatWeDo.vue'
-import Login from '@/components/Login.vue'
 import MainPage from '@/components/MainPage.vue'
+
 export default {
   components: {
     MainPage,
     History,
     Cards,
-    WhatWeDo,
-    Login
+    WhatWeDo
   },
   data() {
     return {
-      isModalVisible: true,
       centerDialogVisible: true
-    }
-  },
-  methods: {
-    showModal() {
-      this.isModalVisible = true
-    },
-    closeModal() {
-      this.isModalVisible = false
     }
   }
 }
