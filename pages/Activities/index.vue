@@ -1,24 +1,24 @@
 <template>
   <div>
-    <div class="body__carousal">
-      <el-carousel
-        indicator-position="inside"
-        :autoplay="isAutoPlay"
+    <div
+      :class="{'body__carousal': this.$vuetify.breakpoint.smAndUp}"
+    >
+      <v-carousel
         type="card"
-        height="400px"
+        max
+        hide-delimiters
+        height="auto"
       >
-        <el-carousel-item
+        <v-carousel-item
           v-for="(activity, index) in carousalActivities"
           :key="index"
         >
           <v-img
             :src="activity.image"
             class="carousal__image"
-            width="100%"
-            height="100%"
           />
-        </el-carousel-item>
-      </el-carousel>
+        </v-carousel-item>
+      </v-carousel>
     </div>
     <div class="body__title">
       <h2>Projects</h2>
@@ -186,7 +186,6 @@ export default {
   created() {
     this.fetchGithub()
   },
-  /* eslint-disable no-console */
   mounted() {
     this.isShow = true
   },
@@ -214,10 +213,11 @@ export default {
 <style lang="sass" scoped>
   p
     color: black
-
   .body__carousal
-    margin: 24px 120px 0 120px
-    padding: 0 40px
+    margin: 10vw 0px
+    display: flex
+    justify-content: center
+    padding: 0 10vw
     .el-carousel__item
       h3
         color: #475669
