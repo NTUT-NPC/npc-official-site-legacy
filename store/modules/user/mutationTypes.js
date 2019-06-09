@@ -1,1 +1,1 @@
-export const APP_SIGNUP = 'APP_SIGNUP'
+export const APP_LOGIN = 'APP_LOGIN'

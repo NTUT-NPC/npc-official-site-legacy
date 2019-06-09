@@ -11,7 +11,7 @@ const actions = {
     updateUserInfoWith(user)
 
     console.log('successed to log up')
-    commit(types.APP_SIGNUP)
+    commit(types.APP_LOGIN)
   },
   logIn({ commit }, user) {
     firebase.auth().signInWithEmailAndPassword(user.mail, user.password).catch((error) => {
@@ -20,7 +20,17 @@ const actions = {
       console.log('log in failed with ' + errorCode + ' ' + errorMessage)
     })
     console.log('successed to log in')
-    commit(types.APP_SIGNUP)
+    commit(types.APP_LOGIN)
+  },
+  logInWithGoogle({ commit }) {
+    const provider = firebase.googleProvider
+
+    firebase.auth().signInWithPopup(provider).then((result) => {
+      console.log('successed log in with google with ' + result.user)
+      commit(types.APP_LOGIN)
+    }).catch((error) => {
+      alert('Oops . ' + error.message)
+    })
   }
 
 }

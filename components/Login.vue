@@ -60,6 +60,7 @@
                 type="submit"
                 class="button"
                 value="Sign In"
+                @click="logIn()"
               >
             </div>
             <div class="hr" />
@@ -164,7 +165,13 @@ export default {
         this.user.mail
       )
 
+      this.$store.dispatch('signUp', this.user)
+    },
+    logIn() {
       this.$store.dispatch('logIn', this.user)
+    },
+    logInWithGoogle() {
+      this.$store.dispatch('logInWithGoogle')
     }
   }
 }
@@ -193,7 +200,7 @@ export default {
     width: 100%
     margin: auto
     max-width: 525px
-    min-height: 670px
+    min-height: 700px
     position: relative
     background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center
     box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)

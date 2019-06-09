@@ -1,7 +1,7 @@
 import * as types from './mutationTypes'
 
 const mutations = {
-  [types.APP_SIGNUP](state) {
+  [types.APP_LOGIN](state) {
     state.isLogin = true
   }
 }
