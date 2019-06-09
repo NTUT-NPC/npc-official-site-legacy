@@ -30,17 +30,16 @@
               >Email</label>
               <input
                 id="user"
-                v-model="user.mail"
                 v-validate="'required|email'"
                 type="text"
                 class="input"
-                name="email"
+                name="email_login"
               >
               <span
-                v-show="errors.has('email')"
+                v-show="errors.has('email_login')"
                 class="validate__warnning"
               >
-                {{ errors.first('email') }}
+                {{ errors.first('email_login') }}
               </span>
             </div>
             <div class="group">
@@ -50,17 +49,17 @@
               >Password</label>
               <input
                 id="pass"
-                v-model="user.password"
                 v-validate="'required|min:6'"
                 type="password"
                 class="input"
                 data-type="password"
+                name="password_login"
               >
               <span
-                v-show="errors.has('password')"
+                v-show="errors.has('password_login')"
                 class="validate__warnning"
               >
-                {{ errors.first('password') }}
+                {{ errors.first('password_login') }}
               </span>
             </div>
             <div class="group">
@@ -198,17 +197,13 @@ export default {
   }),
   methods: {
     close() { this.$emit('close') },
+    // TODO: handle validation while tap buttons
     onSignUpButtonPressed() {
-      this.$validator.validateAll()
-      if (this.errors.count() === 0) {
-        this.signUp()
-      }
+      this.signUp()
     },
     onLogInButtonPressed() {
-      this.$validator.validateAll()
-      if (this.errors.count() === 0) {
-        this.logIn()
-      }
+      this.logIn()
+      // TODO: handle dismiss itself behavior
     },
     signUp() {
       console.log(
