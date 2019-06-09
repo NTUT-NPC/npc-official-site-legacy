@@ -27,12 +27,21 @@
               <label
                 for="user"
                 class="label"
-              >Username</label>
+              >Email</label>
               <input
                 id="user"
+                v-model="user.mail"
+                v-validate="'required|email'"
                 type="text"
                 class="input"
+                name="email"
               >
+              <span
+                v-show="errors.has('email')"
+                class="validate__warnning"
+              >
+                {{ errors.first('email') }}
+              </span>
             </div>
             <div class="group">
               <label
@@ -41,10 +50,18 @@
               >Password</label>
               <input
                 id="pass"
+                v-model="user.password"
+                v-validate="'required|min:6'"
                 type="password"
                 class="input"
                 data-type="password"
               >
+              <span
+                v-show="errors.has('password')"
+                class="validate__warnning"
+              >
+                {{ errors.first('password') }}
+              </span>
             </div>
             <div class="group">
               <input
@@ -60,7 +77,7 @@
                 type="submit"
                 class="button"
                 value="Sign In"
-                @click="logIn()"
+                @click="onLogInButtonPressed()"
               >
             </div>
             <div class="hr" />
@@ -88,11 +105,20 @@
               >Password</label>
               <input
                 id="pass"
+                ref="password"
                 v-model="user.password"
+                v-validate="'required|min:6'"
                 type="password"
                 class="input"
                 data-type="password"
+                name="password"
               >
+              <span
+                v-show="errors.has('password')"
+                class="validate__warnning"
+              >
+                {{ errors.first('password') }}
+              </span>
             </div>
             <div class="group">
               <label
@@ -102,10 +128,18 @@
               <input
                 id="pass"
                 v-model="user.repeatPassword"
+                v-validate="'required|confirmed:password'"
                 type="password"
                 class="input"
                 data-type="password"
+                name="password_confirmation"
               >
+              <span
+                v-show="errors.has('password_confirmation')"
+                class="validate__warnning"
+              >
+                {{ errors.first('password_confirmation') }}
+              </span>
             </div>
             <div class="group">
               <label
@@ -115,16 +149,24 @@
               <input
                 id="pass"
                 v-model="user.mail"
+                v-validate="'required|email'"
                 type="text"
                 class="input"
+                name="email"
               >
+              <span
+                v-show="errors.has('email')"
+                class="validate__warnning"
+              >
+                {{ errors.first('email') }}
+              </span>
             </div>
             <div class="group">
               <input
                 type="submit"
                 class="button"
                 value="Sign Up"
-                @click="signUp()"
+                @click="onSignUpButtonPressed()"
               >
             </div>
             <div class="hr" />
@@ -142,6 +184,9 @@
 <script>
 
 export default {
+  $_veeValidate: {
+    validator: 'new'
+  },
   name: 'Login',
   data: () => ({
     user: {
@@ -153,6 +198,18 @@ export default {
   }),
   methods: {
     close() { this.$emit('close') },
+    onSignUpButtonPressed() {
+      this.$validator.validateAll()
+      if (this.errors.count() === 0) {
+        this.signUp()
+      }
+    },
+    onLogInButtonPressed() {
+      this.$validator.validateAll()
+      if (this.errors.count() === 0) {
+        this.logIn()
+      }
+    },
     signUp() {
       console.log(
         'userName: ' +
@@ -322,5 +379,8 @@ export default {
     background: rgba(255,255,255,.2)
   .foot-lnk
     text-align: center
+
+  .validate__warnning
+    color: red
 
 </style>

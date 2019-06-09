@@ -49,8 +49,8 @@ export default {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/vuetify',
-    '@/plugins/vueinview'
-
+    '@/plugins/vueinview',
+    '@/plugins/vee-validate'
   ],
 
   /*
