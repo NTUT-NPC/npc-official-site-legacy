@@ -200,18 +200,18 @@ export default {
     errorMessage: ''
   }),
   methods: {
-    close() { this.$emit('close') },
+    dismissModal() { this.$emit('dismiss') },
     // TODO: handle validation while tap buttons
     onSignUpButtonPressed() {
       this.signUp()
     },
     onLogInButtonPressed() {
       this.logIn()
-      // TODO: handle dismiss itself behavior
     },
     async signUp() {
       try {
         await this.$store.dispatch('signUp', this.user)
+        this.dismissModal()
       } catch (errorMessage) {
         this.errorMessage = errorMessage
       }
@@ -219,6 +219,7 @@ export default {
     async logIn() {
       try {
         await this.$store.dispatch('logIn', this.user)
+        this.dismissModal()
       } catch (errorMessage) {
         this.errorMessage = errorMessage
       }

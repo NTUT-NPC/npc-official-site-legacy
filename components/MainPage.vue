@@ -5,7 +5,7 @@
       width="30%"
       center
     >
-      <login />
+      <login @dismiss="dismissModal" />
     </el-dialog>
     <div class="main_describe">
       <div class="main__club_name">
@@ -77,6 +77,9 @@ export default {
   methods: {
     showModal() {
       this.centerDialogVisible = true
+    },
+    dismissModal() {
+      this.centerDialogVisible = false
     }
   }
 }
