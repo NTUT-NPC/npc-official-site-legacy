@@ -2,6 +2,9 @@
   <div class="container">
     <div class="login-wrap">
       <div class="login-html">
+        <p class="validate__warnning">
+          {{ errorMessage }}
+        </p>
         <input
           id="tab-1"
           type="radio"
@@ -193,7 +196,8 @@ export default {
       password: '',
       repeatPassword: '',
       mail: ''
-    }
+    },
+    errorMessage: ''
   }),
   methods: {
     close() { this.$emit('close') },
@@ -205,25 +209,26 @@ export default {
       this.logIn()
       // TODO: handle dismiss itself behavior
     },
-    signUp() {
-      console.log(
-        'userName: ' +
-        this.user.userName +
-        ' password: ' +
-        this.user.password +
-        ' repeatPassword: ' +
-        this.user.repeatPassword +
-        ' mail: ' +
-        this.user.mail
-      )
-
-      this.$store.dispatch('signUp', this.user)
+    async signUp() {
+      try {
+        await this.$store.dispatch('signUp', this.user)
+      } catch (errorMessage) {
+        this.errorMessage = errorMessage
+      }
     },
-    logIn() {
-      this.$store.dispatch('logIn', this.user)
+    async logIn() {
+      try {
+        await this.$store.dispatch('logIn', this.user)
+      } catch (errorMessage) {
+        this.errorMessage = errorMessage
+      }
     },
-    logInWithGoogle() {
-      this.$store.dispatch('logInWithGoogle')
+    async logInWithGoogle() {
+      try {
+        await this.$store.dispatch('logInWithGoogle')
+      } catch (errorMessage) {
+        this.errorMessage = errorMessage
+      }
     }
   }
 }

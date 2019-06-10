@@ -2,54 +2,51 @@ import firebase from '~/firebase/app'
 import * as types from './mutationTypes'
 
 const actions = {
-  signUp({ commit }, user) {
-    firebase.auth().createUserWithEmailAndPassword(user.mail, user.password)
-      .then(() => {
-        storeInformationToFirebaseWith(user)
-        updateUserInfoWith(user)
+  async signUp({ commit }, user) {
+    await firebase.auth().createUserWithEmailAndPassword(user.mail, user.password)
+    try {
+      storeInformationToFirebaseWith(user)
+      updateUserInfoWith(user)
 
-        console.log('successed to log up')
-        commit(types.APP_LOGIN)
-      })
-      .catch((error) => {
-        console.log(error.message)
-      })
+      console.log('successed to log up')
+      commit(types.APP_LOGIN)
+    } catch (error) {
+      console.log(error.message)
+    }
   },
-  logIn({ commit }, user) {
-    firebase.auth().signInWithEmailAndPassword(user.mail, user.password)
-      .then(() => {
-        console.log('successed to log in')
-        commit(types.APP_LOGIN)
-      })
-      .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
-        console.log('log in failed with ' + errorCode + ' ' + errorMessage)
-      })
+  async logIn({ commit }, user) {
+    await firebase.auth().signInWithEmailAndPassword(user.mail, user.password)
+    try {
+      commit(types.APP_LOGIN)
+    } catch (error) {
+      const errorCode = error.code
+      const errorMessage = error.message
+      console.log('log in failed with ' + errorCode + ' ' + errorMessage)
+      throw errorMessage
+    }
   },
-  logInWithGoogle({ commit }) {
+  async logInWithGoogle({ commit }) {
     const provider = firebase.googleProvider
-
-    firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-        console.log('successed log in with google with ' + result.user)
-        commit(types.APP_LOGIN)
-      })
-      .catch((error) => {
-        alert('Oops . ' + error.message)
-      })
+    const result = await firebase.auth().signInWithPopup(provider)
+    try {
+      console.log('successed log in with google with ' + result.user)
+      commit(types.APP_LOGIN)
+    } catch (error) {
+      alert('Oops . ' + error.message)
+    }
   }
-
 }
 
-const updateUserInfoWith = (user) => {
-  firebase.auth().currentUser.updateProfile({
+const updateUserInfoWith = async (user) => {
+  await firebase.auth().currentUser.updateProfile({
     displayName: user.userName
-  }).then(() => {
-    console.log('update user profile successfully')
-  }).catch((error) => {
-    console.log('update user profile with error: ' + error)
   })
+
+  try {
+    console.log('update user profile successfully')
+  } catch (error) {
+    console.log('update user profile with error: ' + error)
+  }
 }
 
 const storeInformationToFirebaseWith = (user) => {
