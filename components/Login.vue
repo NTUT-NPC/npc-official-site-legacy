@@ -2,24 +2,85 @@
   <div class="container">
     <div class="login-wrap">
       <div class="login-html">
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <p class="validate__warnning">
+          {{ errorMessage }}
+        </p>
+        <input
+          id="tab-1"
+          type="radio"
+          name="tab"
+          class="sign-in"
+          checked
+        ><label
+          for="tab-1"
+          class="tab"
+        >Sign In</label>
+        <input
+          id="tab-2"
+          type="radio"
+          name="tab"
+          class="sign-up"
+        ><label
+          for="tab-2"
+          class="tab"
+        >Sign Up</label>
         <div class="login-form">
           <div class="sign-in-htm">
             <div class="group">
-              <label for="user" class="label">Username</label>
-              <input id="user" type="text" class="input">
+              <label
+                for="user"
+                class="label"
+              >Email</label>
+              <input
+                id="user"
+                v-validate="'required|email'"
+                type="text"
+                class="input"
+                name="email_login"
+              >
+              <span
+                v-show="errors.has('email_login')"
+                class="validate__warnning"
+              >
+                {{ errors.first('email_login') }}
+              </span>
             </div>
             <div class="group">
-              <label for="pass" class="label">Password</label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label
+                for="pass"
+                class="label"
+              >Password</label>
+              <input
+                id="pass"
+                v-validate="'required|min:6'"
+                type="password"
+                class="input"
+                data-type="password"
+                name="password_login"
+              >
+              <span
+                v-show="errors.has('password_login')"
+                class="validate__warnning"
+              >
+                {{ errors.first('password_login') }}
+              </span>
             </div>
             <div class="group">
-              <input id="check" type="checkbox" class="check" checked>
+              <input
+                id="check"
+                type="checkbox"
+                class="check"
+                checked
+              >
               <label for="check"><span class="icon" /> Keep me Signed in</label>
             </div>
             <div class="group">
-              <input type="submit" class="button" value="Sign In">
+              <input
+                type="submit"
+                class="button"
+                value="Sign In"
+                @click="onLogInButtonPressed()"
+              >
             </div>
             <div class="hr" />
             <div class="foot-lnk">
@@ -28,27 +89,91 @@
           </div>
           <div class="sign-up-htm">
             <div class="group">
-              <label for="user" class="label">Username</label>
-              <input id="user" type="text" class="input">
+              <label
+                for="user"
+                class="label"
+              >Username</label>
+              <input
+                id="user"
+                v-model="user.userName"
+                type="text"
+                class="input"
+              >
             </div>
             <div class="group">
-              <label for="pass" class="label">Password</label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label
+                for="pass"
+                class="label"
+              >Password</label>
+              <input
+                id="pass"
+                ref="password"
+                v-model="user.password"
+                v-validate="'required|min:6'"
+                type="password"
+                class="input"
+                data-type="password"
+                name="password"
+              >
+              <span
+                v-show="errors.has('password')"
+                class="validate__warnning"
+              >
+                {{ errors.first('password') }}
+              </span>
             </div>
             <div class="group">
-              <label for="pass" class="label">Repeat Password</label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label
+                for="pass"
+                class="label"
+              >Repeat Password</label>
+              <input
+                id="pass"
+                v-model="user.repeatPassword"
+                v-validate="'required|confirmed:password'"
+                type="password"
+                class="input"
+                data-type="password"
+                name="password_confirmation"
+              >
+              <span
+                v-show="errors.has('password_confirmation')"
+                class="validate__warnning"
+              >
+                {{ errors.first('password_confirmation') }}
+              </span>
             </div>
             <div class="group">
-              <label for="pass" class="label">Email Address</label>
-              <input id="pass" type="text" class="input">
+              <label
+                for="pass"
+                class="label"
+              >Email Address</label>
+              <input
+                id="pass"
+                v-model="user.mail"
+                v-validate="'required|email'"
+                type="text"
+                class="input"
+                name="email"
+              >
+              <span
+                v-show="errors.has('email')"
+                class="validate__warnning"
+              >
+                {{ errors.first('email') }}
+              </span>
             </div>
             <div class="group">
-              <input type="submit" class="button" value="Sign Up">
+              <input
+                type="submit"
+                class="button"
+                value="Sign Up"
+                @click="onSignUpButtonPressed()"
+              >
             </div>
             <div class="hr" />
             <div class="foot-lnk">
-              <label for="tab-1">Already Member?</a>
+              <label for="tab-1">Already Member?>
               </label>
             </div>
           </div>
@@ -61,9 +186,51 @@
 <script>
 
 export default {
+  $_veeValidate: {
+    validator: 'new'
+  },
   name: 'Login',
+  data: () => ({
+    user: {
+      userName: '',
+      password: '',
+      repeatPassword: '',
+      mail: ''
+    },
+    errorMessage: ''
+  }),
   methods: {
-    close() { this.$emit('close') }
+    dismissModal() { this.$emit('dismiss') },
+    // TODO: handle validation while tap buttons
+    onSignUpButtonPressed() {
+      this.signUp()
+    },
+    onLogInButtonPressed() {
+      this.logIn()
+    },
+    async signUp() {
+      try {
+        await this.$store.dispatch('signUp', this.user)
+        this.dismissModal()
+      } catch (errorMessage) {
+        this.errorMessage = errorMessage
+      }
+    },
+    async logIn() {
+      try {
+        await this.$store.dispatch('logIn', this.user)
+        this.dismissModal()
+      } catch (errorMessage) {
+        this.errorMessage = errorMessage
+      }
+    },
+    async logInWithGoogle() {
+      try {
+        await this.$store.dispatch('logInWithGoogle')
+      } catch (errorMessage) {
+        this.errorMessage = errorMessage
+      }
+    }
   }
 }
 
@@ -91,7 +258,7 @@ export default {
     width: 100%
     margin: auto
     max-width: 525px
-    min-height: 670px
+    min-height: 700px
     position: relative
     background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center
     box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)
@@ -213,5 +380,8 @@ export default {
     background: rgba(255,255,255,.2)
   .foot-lnk
     text-align: center
+
+  .validate__warnning
+    color: red
 
 </style>

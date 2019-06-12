@@ -1,12 +1,22 @@
 <template>
   <div class="main__container">
+    <el-dialog
+      :visible.sync="centerDialogVisible"
+      width="30%"
+      center
+    >
+      <login @dismiss="dismissModal" />
+    </el-dialog>
     <div class="main_describe">
       <div class="main__club_name">
         <h1>北科</h1>
         <h2 class="main_title">
           程式設計研究社
         </h2>
-        <button class="main__register">
+        <button
+          class="main__register"
+          @click="showModal"
+        >
           加入我們
         </button>
       </div>
@@ -53,9 +63,24 @@
 <script>
 
 import Logo from '@/components/NpcLogo.vue'
+import Login from '@/components/Login.vue'
 export default {
   components: {
-    Logo
+    Logo,
+    Login
+  },
+  data() {
+    return {
+      centerDialogVisible: false
+    }
+  },
+  methods: {
+    showModal() {
+      this.centerDialogVisible = true
+    },
+    dismissModal() {
+      this.centerDialogVisible = false
+    }
   }
 }
 </script>
