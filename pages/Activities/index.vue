@@ -1,15 +1,14 @@
 <template>
   <div>
     <div
-      :class="{'body__carousal': this.$vuetify.breakpoint.smAndUp}"
+      class="body__carousal hidden-sm-and-down"
     >
-      <v-carousel
+      <el-carousel
         type="card"
-        max
-        hide-delimiters
-        height="auto"
+        :interval="5000"
+        height="300px"
       >
-        <v-carousel-item
+        <el-carousel-item
           v-for="(activity, index) in carousalActivities"
           :key="index"
         >
@@ -17,8 +16,8 @@
             :src="activity.image"
             class="carousal__image"
           />
-        </v-carousel-item>
-      </v-carousel>
+        </el-carousel-item>
+      </el-carousel>
     </div>
     <div class="body__title">
       <h2>Projects</h2>
@@ -49,7 +48,9 @@
           />
         </div>
         <div class="github__description">
-          <p>{{ project.description }}</p>
+          <p class="text__style">
+            {{ project.description }}
+          </p>
         </div>
       </el-card>
     </div>
@@ -213,13 +214,8 @@ export default {
 <style lang="sass" scoped>
   p
     color: black
-  .body__carousal2
-    margin: 10vw 0px
-    padding: 0 10vw
   .body__carousal
-    margin: 10vw 0px
-    display: flex
-    justify-content: center
+    margin: 8vw 0
     padding: 0 10vw
     .el-carousel__item
       h3
@@ -242,18 +238,17 @@ export default {
     object-fit: cover
 
   .project__cards
-    margin: 50px 160px 50px 160px
+    margin: 3vw 5vw
     display: flex !important
-    flex-direction: row
+    justify-content: center
     flex-wrap: wrap
     opacity: 0
     animation-delay: .3s
     animation-duration: 1s
 
   .project__card
-    height: 250px
-    width: 250px
-    margin: 10px
+    width : 20vw
+    margin: 20px 10px
     .text
       font-size: 14px
 
@@ -268,15 +263,14 @@ export default {
     .clearfix:after
       clear: both
 
-    .box-card
-      width: 480px
-
   .github__buttons
     display: flex
-
   .github__description
     margin-top: 30px
-
+  .text__style
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
   .activities__cards
     display: flex !important
     flex-direction: row
