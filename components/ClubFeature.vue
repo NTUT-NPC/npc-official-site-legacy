@@ -5,7 +5,7 @@
     class="card-container"
   >
     <div class="section__title">
-      <p>為甚麼加入我們？</p>
+      <h2>為甚麼加入我們？</h2>
     </div>
     <ul class="web_card feature hidden-sm-and-down">
       <li>
@@ -68,9 +68,9 @@
     justify-content: center
   .web_card
     img
-      width: 20vw
-      height: 20vw
-
+      width: calc(100px + 5vw)
+      height: calc(100px + 5vw)
+      margin: 50px
   .phone_card
     flex-direction: column
     img

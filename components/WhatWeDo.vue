@@ -2,15 +2,16 @@
   <v-card
     v-inview:parent="'animate'"
     v-inview:animate="'fadeInUp'"
-    :class="[bool ? 'card1 card':'card card2']"
+    class="card"
   >
-    <div class="content">
-      <p class="content__title text_color">
+    <div class="test">
+      <div class="title">
         {{ title }}
-      </p>
-      <p class="content__info">
+      </div>
+      <span class="content">
+        <hr>
         {{ content }}
-      </p>
+      </span>
     </div>
     <img :src="require(`~/static/${imgSrc}`)">
   </v-card>
@@ -18,35 +19,40 @@
 
 <style lang="sass" scoped>
   *
-    color: black
-  .card1
-    flex-direction: row-reverse
-  .card
-    opacity: 0
-    animation-direction: 1s
+    font-family: "微軟正黑體"!important
+  .title
+    font-size: calc(16px + 2vw) !important
+    margin-bottom: calc(5px + 1vw)
+  .content
+    margin-top: 5px
+    margin-bottom: 3vw
+    font-size: calc(12px + 0.6vw)
+    text-align: center
+  .test
     height: 100%
-    display: flex !important
+    width: 80%
+    max-width: 600px
+    display: flex
+    flex-direction: column
     justify-content: center
-    margin: 16px 0
+    align-items: center
+    color: white
+  .card
+    margin-top: 50px
+    width: 80vw
+    height: 30vw
+    display: flex  !important
+    justify-content: center
+    align-items: center
     overflow: hidden
-    border-radius: 10px
-    .content
-      width: 50%
-      padding: 40px
-      display: flex
-      flex-direction: column
-      &__title
-        font-size: 2.5rem
-        margin-bottom: 8px
-        font-weight: 700
-      &__info
-        font-size: 1.3rem
-    img
-      object-fit: cover
-      height: 350px
-      width: 50%
-      border-radius: 0
-
+    background-color: black
+  img
+    position: absolute
+    width: 100%
+    border-radius: 0
+  img:hover
+    transition: 0.5s
+    opacity: 0.3
 </style>
 
 <script>
