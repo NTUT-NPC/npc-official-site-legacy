@@ -75,7 +75,14 @@
               <label for="check"><span class="icon" /> Keep me Signed in</label>
             </div>
             <div class="group">
+              <div
+                v-if="this.$store.state.isLoading"
+                class="loading"
+              >
+                <v-progress-circular indeterminate="true" />
+              </div>
               <input
+                v-else
                 type="submit"
                 class="button"
                 value="Sign In"
@@ -164,7 +171,14 @@
               </span>
             </div>
             <div class="group">
+              <div
+                v-if="this.$store.state.isLoading"
+                class="loading"
+              >
+                <v-progress-circular indeterminate="true" />
+              </div>
               <input
+                v-else
                 type="submit"
                 class="button"
                 value="Sign Up"
@@ -386,5 +400,7 @@ export default {
 
   .validate__warnning
     color: red
+  .loading
+    margin-left: 140px
 
 </style>
