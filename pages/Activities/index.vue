@@ -6,7 +6,7 @@
       <el-carousel
         type="card"
         :interval="5000"
-        height="300px"
+        height="20vw"
       >
         <el-carousel-item
           v-for="(activity, index) in carousalActivities"
@@ -40,11 +40,9 @@
         <div class="github__buttons">
           <gh-btns-star
             :slug="project.name"
-            show-count
           />
           <gh-btns-fork
             :slug="project.name"
-            show-count
           />
         </div>
         <div class="github__description">
@@ -71,7 +69,7 @@
           <strong>{{ activitie.name }}</strong>
         </div>
         <div class="activities__description">
-          <p>{{ activitie.description }}</p>
+          <p class="text__style">{{ activitie.description }}</p>
         </div>
       </el-card>
     </div>
@@ -238,7 +236,7 @@ export default {
     object-fit: cover
 
   .project__cards
-    margin: 3vw 5vw
+    margin: 1vw 1vw
     display: flex !important
     justify-content: center
     flex-wrap: wrap
@@ -247,8 +245,8 @@ export default {
     animation-duration: 1s
 
   .project__card
-    width : 20vw
-    margin: 20px 10px
+    width : 22vw
+    margin: 1vw
     .text
       font-size: 14px
 
@@ -278,8 +276,9 @@ export default {
     animation-duration: 2s
     opacity: 0
     .el-card
-      width: 20vw
-      margin: 10px
+      width: 22vw
+      overflow: hidden
+      margin: 1vw
     .activities__description
       margin-top: -5px
 
