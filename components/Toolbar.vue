@@ -1,5 +1,12 @@
 <template>
-  <div fixed>
+  <div class="container">
+    <el-dialog
+      :visible.sync="centerDialogVisible"
+      width="30%"
+      center
+    >
+      <login @dismiss="dismissModal" />
+    </el-dialog>
     <v-toolbar
       class="hidden-sm-and-down web"
       flat
@@ -27,6 +34,7 @@
       </nuxt-link>
       <nuxt-link to="/learningResources/">
         <button
+          v-if="this.$store.state.isLogin"
           class="toolbar__link__about_me"
           src="#"
         >
@@ -41,7 +49,19 @@
         </button>
       </nuxt-link>
       <nuxt-link to="/">
-        <button src="#">
+        <button
+          v-if="this.$store.state.isLogin"
+          src="#"
+        >
+          <h3>
+            登出
+          </h3>
+        </button>
+        <button
+          v-else
+          src="#"
+          @click="showModal"
+        >
           <h3>
             登入
           </h3>
@@ -140,6 +160,9 @@
 <style lang="sass" scoped>
   .toolbar
     padding: 10px
+  .container
+    display: flex
+    justify-content: center
   .contaner__logo
     width: 70px
     height: 70px
@@ -164,9 +187,15 @@
 </style>
 
 <script>
+
+import Login from '@/components/Login.vue'
 export default {
+  components: {
+    Login
+  },
   data: () => ({
-    drawer: false
+    drawer: false,
+    centerDialogVisible: false
   }),
   methods: {
     showModal() {
