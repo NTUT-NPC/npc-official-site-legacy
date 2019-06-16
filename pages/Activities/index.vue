@@ -273,14 +273,12 @@ export default {
     text-overflow: ellipsis
   .activities__cards
     display: flex !important
-    flex-direction: row
+    justify-content: center
     flex-wrap: wrap
     animation-duration: 2s
-    margin: 50px 160px 50px 160px
     opacity: 0
     .el-card
-      width: 250px
-      height: 250px
+      width: 20vw
       margin: 10px
     .activities__description
       margin-top: -5px
