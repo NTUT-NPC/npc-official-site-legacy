@@ -34,7 +34,12 @@ const actions = {
     } catch (error) {
       alert('Oops . ' + error.message)
     }
+  },
+
+  logOut({ commit }) {
+    commit(types.APP_LOGOUT)
   }
+
 }
 
 const updateUserInfoWith = async (user) => {

@@ -52,6 +52,7 @@
         <button
           v-if="this.$store.state.isLogin"
           src="#"
+          @click="logOut"
         >
           <h3>
             登出
@@ -203,6 +204,9 @@ export default {
     },
     dismissModal() {
       this.centerDialogVisible = false
+    },
+    logOut() {
+      this.$store.dispatch('logOut')
     }
   }
 
