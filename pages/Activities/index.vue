@@ -213,6 +213,9 @@ export default {
 <style lang="sass" scoped>
   p
     color: black
+  .body__carousal2
+    margin: 10vw 0px
+    padding: 0 10vw
   .body__carousal
     margin: 10vw 0px
     display: flex
