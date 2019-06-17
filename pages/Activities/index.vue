@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div class="body__carousal">
+    <div
+      class="body__carousal hidden-sm-and-down"
+    >
       <el-carousel
-        indicator-position="inside"
-        :autoplay="isAutoPlay"
         type="card"
-        height="400px"
+        :interval="5000"
+        height="20vw"
       >
         <el-carousel-item
           v-for="(activity, index) in carousalActivities"
@@ -14,8 +15,6 @@
           <v-img
             :src="activity.image"
             class="carousal__image"
-            width="100%"
-            height="100%"
           />
         </el-carousel-item>
       </el-carousel>
@@ -41,15 +40,15 @@
         <div class="github__buttons">
           <gh-btns-star
             :slug="project.name"
-            show-count
           />
           <gh-btns-fork
             :slug="project.name"
-            show-count
           />
         </div>
         <div class="github__description">
-          <p>{{ project.description }}</p>
+          <p class="text__style">
+            {{ project.description }}
+          </p>
         </div>
       </el-card>
     </div>
@@ -70,7 +69,7 @@
           <strong>{{ activitie.name }}</strong>
         </div>
         <div class="activities__description">
-          <p>{{ activitie.description }}</p>
+          <p class="text__style">{{ activitie.description }}</p>
         </div>
       </el-card>
     </div>
@@ -186,7 +185,6 @@ export default {
   created() {
     this.fetchGithub()
   },
-  /* eslint-disable no-console */
   mounted() {
     this.isShow = true
   },
@@ -214,10 +212,9 @@ export default {
 <style lang="sass" scoped>
   p
     color: black
-
   .body__carousal
-    margin: 24px 120px 0 120px
-    padding: 0 40px
+    margin: 8vw 0
+    padding: 0 10vw
     .el-carousel__item
       h3
         color: #475669
@@ -239,18 +236,17 @@ export default {
     object-fit: cover
 
   .project__cards
-    margin: 50px 160px 50px 160px
+    margin: 1vw 1vw
     display: flex !important
-    flex-direction: row
+    justify-content: center
     flex-wrap: wrap
     opacity: 0
     animation-delay: .3s
     animation-duration: 1s
 
   .project__card
-    height: 250px
-    width: 250px
-    margin: 10px
+    width : 22vw
+    margin: 1vw
     .text
       font-size: 14px
 
@@ -265,26 +261,24 @@ export default {
     .clearfix:after
       clear: both
 
-    .box-card
-      width: 480px
-
   .github__buttons
     display: flex
-
   .github__description
     margin-top: 30px
-
+  .text__style
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
   .activities__cards
     display: flex !important
-    flex-direction: row
+    justify-content: center
     flex-wrap: wrap
     animation-duration: 2s
-    margin: 50px 160px 50px 160px
     opacity: 0
     .el-card
-      width: 250px
-      height: 250px
-      margin: 10px
+      width: 22vw
+      overflow: hidden
+      margin: 1vw
     .activities__description
       margin-top: -5px
 
