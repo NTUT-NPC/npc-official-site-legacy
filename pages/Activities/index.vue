@@ -19,6 +19,15 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <div>
+      <v-carousel hide-delimiters max height="auto" class="body__carousel hidden-sm-and-up">
+        <v-carousel-item
+          v-for="(activity, index) in carousalActivities"
+          :key="index"
+          :src="activity.image"
+        />
+      </v-carousel>
+    </div>
     <div class="body__title">
       <h2>Projects</h2>
     </div>
@@ -212,9 +221,11 @@ export default {
 <style lang="sass" scoped>
   p
     color: black
-  .body__carousal
+  .phone__carousel
     margin: 8vw 0
-    padding: 0 10vw
+  .body__carousal
+    margin: 5vw 120px
+    padding: 0 40px
     .el-carousel__item
       h3
         color: #475669
