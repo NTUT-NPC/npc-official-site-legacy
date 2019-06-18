@@ -53,7 +53,6 @@ export default {
 .container
   display: flex
   flex-direction: column
-  //justify-content: center
   align-items: center
 
 .body__carousal
@@ -66,8 +65,9 @@ export default {
 
 .body__row
   border: 1px solid gray
+  padding: 30px
   margin-top: 70px
-  width: 500px
+  width: 550px
   height: 150px
   border-radius: 10px
   display: flex
@@ -75,8 +75,7 @@ export default {
   align-items: center
 
 .row__text
-  margin-left: 15px
-  margin-right: 15px
+  margin-left: 20px
   font-size: 2rem
   font-weight: 500
 
