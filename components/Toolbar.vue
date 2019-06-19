@@ -1,6 +1,11 @@
 <template>
   <div fixed>
-    <v-toolbar class="hidden-sm-and-down web" flat color="#0c1214" fixed>
+    <v-toolbar
+      class="hidden-sm-and-down web"
+      flat
+      color="#0c1214"
+      fixed
+    >
       <img
         class="contaner__logo"
         src="../static/logo_normal_word.png"
@@ -14,27 +19,29 @@
         </button>
       </nuxt-link>
       <nuxt-link to="/activities/">
-        <button
-          src="#"
-        >
+        <button src="#">
           <h3>
             活動
           </h3>
         </button>
       </nuxt-link>
-      <nuxt-link to="/aboutMe/">
+      <nuxt-link to="/learningResources/">
         <button
+          class="toolbar__link__about_me"
           src="#"
         >
+          <h3>學習資源</h3>
+        </button>
+      </nuxt-link>
+      <nuxt-link to="/aboutMe/">
+        <button src="#">
           <h3>
             關於
           </h3>
         </button>
       </nuxt-link>
       <nuxt-link to="/">
-        <button
-          src="#"
-        >
+        <button src="#">
           <h3>
             登入
           </h3>
@@ -48,8 +55,14 @@
       right
       background-color="#0c1214"
     >
-      <v-list class="pa-1" dark>
-        <v-list-tile v-if="drawer" @click.stop="drawer = !drawer">
+      <v-list
+        class="pa-1"
+        dark
+      >
+        <v-list-tile
+          v-if="drawer"
+          @click.stop="drawer = !drawer"
+        >
           <v-list-tile-action>
             <v-icon>
               chevron_right
@@ -57,7 +70,10 @@
           </v-list-tile-action>
         </v-list-tile>
 
-        <v-list-tile href="#" tag="div">
+        <v-list-tile
+          href="#"
+          tag="div"
+        >
           <v-list-tile-action>
             <v-icon>
               person
@@ -65,7 +81,10 @@
           </v-list-tile-action>
           <h3>登入</h3>
         </v-list-tile>
-        <v-list-tile href="/" tag="div">
+        <v-list-tile
+          href="/"
+          tag="div"
+        >
           <v-list-tile-action>
             <v-icon>
               home
@@ -73,7 +92,10 @@
           </v-list-tile-action>
           <h3>首頁</h3>
         </v-list-tile>
-        <v-list-tile href="/activities/" tag="div">
+        <v-list-tile
+          href="/activities/"
+          tag="div"
+        >
           <v-list-tile-action>
             <v-icon>
               insert_invitation
@@ -81,7 +103,10 @@
           </v-list-tile-action>
           <h3>活動</h3>
         </v-list-tile>
-        <v-list-tile href="/aboutMe/" tag="div">
+        <v-list-tile
+          href="/aboutMe/"
+          tag="div"
+        >
           <v-list-tile-action>
             <v-icon>
               supervised_user_circle
@@ -91,14 +116,23 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="toolbar hidden-md-and-up" flat fixed dark color="#0c1214">
+    <v-toolbar
+      class="toolbar hidden-md-and-up"
+      flat
+      fixed
+      dark
+      color="#0c1214"
+    >
       <img
         class="contaner__logo"
         src="../static/logo_normal_word.png"
       >
       <p>北科程式設計研究社</p>
       <v-spacer />
-      <v-toolbar-side-icon class="burger_size" @click.stop="drawer = !drawer" />
+      <v-toolbar-side-icon
+        class="burger_size"
+        @click.stop="drawer = !drawer"
+      />
     </v-toolbar>
   </div>
 </template>
