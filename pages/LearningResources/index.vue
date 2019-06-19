@@ -50,6 +50,28 @@
             :src="language.src"
             aspect-ratio="1"
           />
+          <v-card-title
+            primary-title
+            class="justify-center"
+          >
+            <div>
+              <div class="headline ">
+                {{ language.name }}
+              </div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn icon>
+              <v-icon>favorite</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>bookmark</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>share</v-icon>
+            </v-btn>
+          </v-card-actions>
         </el-card>
       </div>
 
@@ -68,6 +90,28 @@
             :src="frontEnd.src"
             aspect-ratio="1"
           />
+          <v-card-title
+            primary-title
+            class="justify-center"
+          >
+            <div>
+              <div class="headline">
+                {{ frontEnd.name }}
+              </div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn icon>
+              <v-icon>favorite</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>bookmark</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>share</v-icon>
+            </v-btn>
+          </v-card-actions>
         </el-card>
       </div>
 
@@ -86,6 +130,28 @@
             :src="i.src"
             aspect-ratio="1"
           />
+          <v-card-title
+            primary-title
+            class="justify-center"
+          >
+            <div>
+              <div class="headline">
+                {{ i.name }}
+              </div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn icon>
+              <v-icon>favorite</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>bookmark</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>share</v-icon>
+            </v-btn>
+          </v-card-actions>
         </el-card>
       </div>
 
@@ -104,6 +170,28 @@
             :src="other.src"
             aspect-ratio="1"
           />
+          <v-card-title
+            primary-title
+            class="justify-center"
+          >
+            <div>
+              <div class="headline">
+                {{ other.name }}
+              </div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn icon>
+              <v-icon>favorite</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>bookmark</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>share</v-icon>
+            </v-btn>
+          </v-card-actions>
         </el-card>
       </div>
     </div>
@@ -124,7 +212,7 @@ export default {
         { name: 'c++', src: require('~/static/learning/cpp.png') },
         { name: 'python', src: require('~/static/learning/python.png') },
         { name: 'golang', src: require('~/static/learning/golang.jpeg') },
-        { name: 'git version control', src: require('~/static/learning/git.png') },
+        { name: 'git', src: require('~/static/learning/git.png') },
         { name: 'ruby', src: require('~/static/learning/ruby.png') }
       ],
       frontEnds: [
@@ -137,19 +225,14 @@ export default {
         { name: 'Swift', src: require('~/static/learning/swift.png') },
         { name: 'RxSwift', src: require('~/static/learning/rxswift.png') },
         { name: 'objective-c', src: require('~/static/learning/objectivec.png') },
-        { name: 'cocoaPods', src: require('~/static/learning/cocoapods.png') }
+        { name: 'cocoapods', src: require('~/static/learning/cocoapods.png') }
       ],
       others: [
         { name: 'flutter', src: require('~/static/learning/flutter.png') },
         { name: 'line bot', src: require('~/static/learning/line.png') },
-        { name: 'Security', src: require('~/static/learning/hacker.png') },
-        { name: 'Japanese', src: require('~/static/learning/japanese.png') }
+        { name: '資安', src: require('~/static/learning/hacker.png') },
+        { name: '日本語', src: require('~/static/learning/japanese.png') }
       ]
-    }
-  },
-  computed: {
-    cardsCol(index) {
-      return index % 2 === 0 ? '' : ''
     }
   }
 }
@@ -207,7 +290,7 @@ export default {
   animation-duration: 1s
 
 .resources__card
-  width : 200px
+  width: 200px
   height: 300px
   margin: 20px 10px
   .text
