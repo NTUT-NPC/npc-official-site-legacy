@@ -33,6 +33,7 @@
               >Email</label>
               <input
                 id="user"
+                v-model="user.mail"
                 v-validate="'required|email'"
                 type="text"
                 class="input"
@@ -52,6 +53,7 @@
               >Password</label>
               <input
                 id="pass"
+                v-model="user.password"
                 v-validate="'required|min:6'"
                 type="password"
                 class="input"

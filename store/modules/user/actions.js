@@ -17,6 +17,7 @@ const actions = {
     }
   },
   async logIn({ commit }, user) {
+    console.log('login with user: ' + user.mail + 'password: ' + user.password)
     commit(types.APP_LOADING)
     try {
       await firebase.auth().signInWithEmailAndPassword(user.mail, user.password)
