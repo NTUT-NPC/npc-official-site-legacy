@@ -456,6 +456,12 @@ export default {
   justify-content: center
   align-items: center
 
+@media screen and (max-width: 480px)
+  .final__row
+    width: 400px
+    h2
+      font-size: 1.5rem
+
 .final__block
   display: flex
   flex-direction: column
