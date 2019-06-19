@@ -239,6 +239,8 @@ export default {
 <style lang="sass" scoped>
   .container
     margin: 0
+    display: flex
+    justify-content: center
     color: #6a6f8c
     background: #c8c8c8
     font: 600 16px/18px 'Open Sans',sans-serif
@@ -256,18 +258,19 @@ export default {
     text-decoration: none
   .login-wrap
     width: 100%
-    margin: auto
-    max-width: 525px
-    min-height: 700px
+    height: 80vh
+    max-width: 500px
+    min-width: 300px
+    min-height: 500px
     position: relative
-    background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center
+    background: rgba(12,18,20,0.95)
     box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)
   .login-html
     width: 100%
     height: 100%
+    background: rgba(12,18,20,0.95)
     position: absolute
-    padding: 90px 70px 50px 70px
-    background: rgba(40,57,101,.9)
+    padding: 3vw
 
     .tab
       font-size: 22px
@@ -363,7 +366,7 @@ export default {
   .login-form .group .input,
   .login-form .group .button
     border: none
-    padding: 15px 20px
+    padding: 8px 8px
     border-radius: 25px
     background: rgba(255,255,255,.1)
   .login-form .group label .icon:before,
@@ -376,7 +379,7 @@ export default {
     transition: all .2s ease-in-out 0s
   .hr
     height: 2px
-    margin: 60px 0 50px 0
+    margin: 40px 0 30px 0
     background: rgba(255,255,255,.2)
   .foot-lnk
     text-align: center
