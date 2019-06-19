@@ -146,7 +146,7 @@
         >
           <v-list-tile-action>
             <v-icon>
-              insert_invitation
+              import_contacts
             </v-icon>
           </v-list-tile-action>
           <h3>學習資源</h3>
