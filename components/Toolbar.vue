@@ -133,7 +133,15 @@
 export default {
   data: () => ({
     drawer: false
-  })
+  }),
+  methods: {
+    showModal() {
+      this.centerDialogVisible = true
+    },
+    dismissModal() {
+      this.centerDialogVisible = false
+    }
+  }
 
 }
 </script>

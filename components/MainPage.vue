@@ -2,8 +2,8 @@
   <div class="main__container">
     <el-dialog
       :visible.sync="centerDialogVisible"
+      :show-close="false"
       width="30%"
-      center
     >
       <login @dismiss="dismissModal" />
     </el-dialog>
