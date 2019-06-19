@@ -99,7 +99,12 @@
           :key="id"
           shadow="hover"
           class="box-card resources__card"
-        />
+        >
+          <v-img
+            :src="other.src"
+            aspect-ratio="1"
+          />
+        </el-card>
       </div>
     </div>
   </div>
@@ -135,10 +140,10 @@ export default {
         { name: 'cocoaPods', src: require('~/static/learning/cocoapods.png') }
       ],
       others: [
-        { name: 'flutter' },
-        { name: 'line bot' },
-        { name: 'Security' },
-        { name: 'Japanese' }
+        { name: 'flutter', src: require('~/static/learning/flutter.png') },
+        { name: 'line bot', src: require('~/static/learning/line.png') },
+        { name: 'Security', src: require('~/static/learning/hacker.png') },
+        { name: 'Japanese', src: require('~/static/learning/japanese.png') }
       ]
     }
   },
@@ -189,7 +194,7 @@ export default {
 
 .resources__title h2
   font-size: 4rem
-  margin-top: 50px
+  margin-top: 80px
   color: white
 
 .cards
