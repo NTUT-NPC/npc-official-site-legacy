@@ -59,11 +59,16 @@
         class="resources__cards resources__col"
       >
         <el-card
-          v-for="(platform, id) in platforms"
+          v-for="(frontEnd, id) in frontEnds"
           :key="id"
           shadow="hover"
           class="box-card resources__card"
-        />
+        >
+          <v-img
+            :src="frontEnd.src"
+            aspect-ratio="1"
+          />
+        </el-card>
       </div>
 
       <div
@@ -72,7 +77,7 @@
         class="resources__cards"
       >
         <el-card
-          v-for="(platform, id) in platforms"
+          v-for="(i, id) in ios"
           :key="id"
           shadow="hover"
           class="box-card resources__card"
@@ -85,7 +90,7 @@
         class="resources__cards resources__col"
       >
         <el-card
-          v-for="(platform, id) in platforms"
+          v-for="(other, id) in others"
           :key="id"
           shadow="hover"
           class="box-card resources__card"
@@ -112,11 +117,23 @@ export default {
         { name: 'git version control', src: require('~/static/learning/git.png') },
         { name: 'ruby', src: require('~/static/learning/ruby.png') }
       ],
-      platforms: [
-        { name: 'front-end development' },
-        { name: 'ios development' },
-        { name: 'android development' },
-        { name: 'back-end development' }
+      frontEnds: [
+        { name: 'vue.js', src: require('~/static/learning/vue.png') },
+        { name: 'react.js', src: require('~/static/learning/react.png') },
+        { name: 'angular', src: require('~/static/learning/angular.png') },
+        { name: 'j query', src: require('~/static/learning/jquery.png') }
+      ],
+      ios: [
+        { name: 'Swift' },
+        { name: 'SwiftUI' },
+        { name: 'objective-c' },
+        { name: 'cocoaPod' }
+      ],
+      others: [
+        { name: 'flutter' },
+        { name: 'line bot' },
+        { name: 'Security' },
+        { name: 'Japanese' }
       ]
     }
   },
