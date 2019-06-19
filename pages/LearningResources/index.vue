@@ -133,10 +133,8 @@
             primary-title
             class="justify-center"
           >
-            <div>
-              <div class="headline">
-                {{ i.name }}
-              </div>
+            <div class="headline">
+              {{ i.name }}
             </div>
           </v-card-title>
           <v-card-actions>
@@ -173,10 +171,8 @@
             primary-title
             class="justify-center"
           >
-            <div>
-              <div class="headline">
-                {{ other.name }}
-              </div>
+            <div class="headline">
+              {{ other.name }}
             </div>
           </v-card-title>
           <v-card-actions>
@@ -214,12 +210,13 @@
               primary-title
               class="justify-center"
             >
-              <div>
-                <div class="headline">
-                  {{ language.name }}
-                </div>
+              <div class="headline">
+                {{ language.name }}
               </div>
             </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
           </div>
         </el-card>
 
@@ -241,12 +238,13 @@
               primary-title
               class="justify-center"
             >
-              <div>
-                <div class="headline">
-                  {{ i.name }}
-                </div>
+              <div class="headline">
+                {{ i.name }}
               </div>
             </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
           </div>
         </el-card>
 
@@ -268,12 +266,13 @@
               primary-title
               class="justify-center"
             >
-              <div>
-                <div class="headline">
-                  {{ frontEnd.name }}
-                </div>
+              <div class="headline">
+                {{ frontEnd.name }}
               </div>
             </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
           </div>
         </el-card>
 
@@ -295,12 +294,13 @@
               primary-title
               class="justify-center"
             >
-              <div>
-                <div class="headline">
-                  {{ other.name }}
-                </div>
+              <div class="headline">
+                {{ other.name }}
               </div>
             </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
           </div>
         </el-card>
       </div>
@@ -470,6 +470,7 @@ export default {
     margin-top: 30px
 
 .small__cards
+  position: relative
   display: flex
   flex-direction: column
   align-items: center
@@ -484,5 +485,9 @@ export default {
 .small__card-contain
   display: flex
   flex-direction: row
+
+.small__card-button
+  position: absolute
+  margin: 120px 5px 10px 270px
 
 </style>
