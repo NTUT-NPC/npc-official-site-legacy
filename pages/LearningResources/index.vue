@@ -41,11 +41,16 @@
         class="resources__cards"
       >
         <el-card
-          v-for="(platform, id) in platforms"
+          v-for="(language, id) in languages"
           :key="id"
           shadow="hover"
           class="box-card resources__card"
-        />
+        >
+          <v-img
+            :src="language.src"
+            aspect-ratio="1"
+          />
+        </el-card>
       </div>
 
       <div
@@ -101,11 +106,11 @@ export default {
         { src: require('~/static/activities/python_basic.png') }
       ],
       languages: [
-        { name: 'c++' },
-        { name: 'python' },
-        { name: 'golang' },
-        { name: 'git version control' },
-        { name: 'ruby' }
+        { name: 'c++', src: require('~/static/learning/cpp.png') },
+        { name: 'python', src: require('~/static/learning/python.png') },
+        { name: 'golang', src: require('~/static/learning/golang.jpeg') },
+        { name: 'git version control', src: require('~/static/learning/git.png') },
+        { name: 'ruby', src: require('~/static/learning/ruby.png') }
       ],
       platforms: [
         { name: 'front-end development' },
