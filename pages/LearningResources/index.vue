@@ -81,7 +81,12 @@
           :key="id"
           shadow="hover"
           class="box-card resources__card"
-        />
+        >
+          <v-img
+            :src="i.src"
+            aspect-ratio="1"
+          />
+        </el-card>
       </div>
 
       <div
@@ -124,10 +129,10 @@ export default {
         { name: 'j query', src: require('~/static/learning/jquery.png') }
       ],
       ios: [
-        { name: 'Swift' },
-        { name: 'SwiftUI' },
-        { name: 'objective-c' },
-        { name: 'cocoaPod' }
+        { name: 'Swift', src: require('~/static/learning/swift.png') },
+        { name: 'RxSwift', src: require('~/static/learning/rxswift.png') },
+        { name: 'objective-c', src: require('~/static/learning/objectivec.png') },
+        { name: 'cocoaPods', src: require('~/static/learning/cocoapods.png') }
       ],
       others: [
         { name: 'flutter' },
