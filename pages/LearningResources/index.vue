@@ -195,6 +195,37 @@
         </el-card>
       </div>
     </div>
+    <div class="final__row">
+      <div class="final__block">
+        <h2 class="row__text">
+          課程許願池
+        </h2>
+        <p>找不到想要的課程嗎</p>
+        <v-btn
+          large
+          class="final__button"
+          color="#FFB945"
+        >
+          許願
+        </v-btn>
+      </div>
+
+      <div class="row__seperate-line" />
+
+      <div class="final__block">
+        <h2 class="row__text">
+          分享獨門祕技
+        </h2>
+        <p>分享自己的寶典給社團</p>
+        <v-btn
+          large
+          class="final__button"
+          color="#FFB945"
+        >
+          分享
+        </v-btn>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -257,7 +288,7 @@ export default {
   border: 1px solid gray
   padding: 30px
   margin-top: 70px
-  width: 550px
+  width: 600px
   height: 150px
   border-radius: 10px
   display: flex
@@ -266,11 +297,11 @@ export default {
 
 .row__text
   margin-left: 20px
+  margin-right: 20px
   font-size: 2rem
   font-weight: 500
 
 .row__seperate-line
-  float: left
   width: 2px
   background-color: gray
   height: 60px
@@ -298,5 +329,25 @@ export default {
 
 .resources__col
   margin-top: 200px
+
+.final__row
+  // border: 1px solid gray
+  padding: 30px
+  margin-top: 70px
+  margin-bottom: 70px
+  padding-top: -10px
+  width: 600px
+  height: 150px
+  border-radius: 10px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.final__block
+  display: flex
+  flex-direction: column
+  align-items: center
+  .final__button
+    margin-top: 30px
 
 </style>
