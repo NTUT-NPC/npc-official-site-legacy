@@ -3,7 +3,7 @@
     <el-dialog
       :visible.sync="centerDialogVisible"
       :show-close="false"
-      width="30%"
+      width="25%"
     >
       <login @dismiss="dismissModal" />
     </el-dialog>

@@ -263,14 +263,14 @@ export default {
     min-width: 300px
     min-height: 500px
     position: relative
-    background: url('../static/Login/photo_2019-06-19_11-40-21.png') center
+    background: rgba(12,18,20,0.95)
     box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)
   .login-html
     width: 100%
     height: 100%
+    background: rgba(12,18,20,0.95)
     position: absolute
     padding: 3vw
-    background: #0c1214
 
     .tab
       font-size: 22px
