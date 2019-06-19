@@ -3,22 +3,26 @@ import * as types from './mutationTypes'
 
 const actions = {
   async signUp({ commit }, user) {
-    await firebase.auth().createUserWithEmailAndPassword(user.mail, user.password)
+    commit(types.APP_LOADING)
     try {
+      await firebase.auth().createUserWithEmailAndPassword(user.mail, user.password)
       storeInformationToFirebaseWith(user)
       updateUserInfoWith(user)
 
       console.log('successed to log up')
       commit(types.APP_LOGIN)
     } catch (error) {
+      commit(types.APP_LOADING)
       console.log(error.message)
     }
   },
   async logIn({ commit }, user) {
-    await firebase.auth().signInWithEmailAndPassword(user.mail, user.password)
+    commit(types.APP_LOADING)
     try {
+      await firebase.auth().signInWithEmailAndPassword(user.mail, user.password)
       commit(types.APP_LOGIN)
     } catch (error) {
+      commit(types.APP_LOADING)
       const errorCode = error.code
       const errorMessage = error.message
       console.log('log in failed with ' + errorCode + ' ' + errorMessage)
@@ -26,15 +30,22 @@ const actions = {
     }
   },
   async logInWithGoogle({ commit }) {
+    commit(types.APP_LOADING)
     const provider = firebase.googleProvider
-    const result = await firebase.auth().signInWithPopup(provider)
     try {
+      const result = await firebase.auth().signInWithPopup(provider)
       console.log('successed log in with google with ' + result.user)
       commit(types.APP_LOGIN)
     } catch (error) {
+      commit(types.APP_LOADING)
       alert('Oops . ' + error.message)
     }
+  },
+
+  logOut({ commit }) {
+    commit(types.APP_LOGOUT)
   }
+
 }
 
 const updateUserInfoWith = async (user) => {

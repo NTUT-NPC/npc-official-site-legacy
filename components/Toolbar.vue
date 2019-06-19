@@ -1,5 +1,12 @@
 <template>
-  <div fixed>
+  <div class="container">
+    <el-dialog
+      :visible.sync="centerDialogVisible"
+      :show-close="false"
+      width="25%"
+    >
+      <login @dismiss="dismissModal" />
+    </el-dialog>
     <v-toolbar
       class="hidden-sm-and-down web"
       flat
@@ -25,14 +32,13 @@
           </h3>
         </button>
       </nuxt-link>
-      <nuxt-link to="/learningResources/">
-        <button
-          class="toolbar__link__about_me"
-          src="#"
-        >
-          <h3>學習資源</h3>
-        </button>
-      </nuxt-link>
+      <button
+        v-if="this.$store.state.isLogin"
+        class="toolbar__link__about_me"
+        src="#"
+      >
+        <h3>學習資源</h3>
+      </button>
       <nuxt-link to="/aboutMe/">
         <button src="#">
           <h3>
@@ -41,7 +47,20 @@
         </button>
       </nuxt-link>
       <nuxt-link to="/">
-        <button src="#">
+        <button
+          v-if="this.$store.state.isLogin"
+          src="#"
+          @click="logOut"
+        >
+          <h3>
+            登出
+          </h3>
+        </button>
+        <button
+          v-else
+          src="#"
+          @click="showModal"
+        >
           <h3>
             登入
           </h3>
@@ -79,7 +98,24 @@
               person
             </v-icon>
           </v-list-tile-action>
-          <h3>登入</h3>
+          <button
+            v-if="this.$store.state.isLogin"
+            src="#"
+            @click="logOut"
+          >
+            <h3>
+              登出
+            </h3>
+          </button>
+          <button
+            v-else
+            src="#"
+            @click="showModal"
+          >
+            <h3>
+              登入
+            </h3>
+          </button>
         </v-list-tile>
         <v-list-tile
           href="/"
@@ -102,6 +138,18 @@
             </v-icon>
           </v-list-tile-action>
           <h3>活動</h3>
+        </v-list-tile>
+        <v-list-tile
+          v-if="this.$store.state.isLogin"
+          href="#"
+          tag="div"
+        >
+          <v-list-tile-action>
+            <v-icon>
+              insert_invitation
+            </v-icon>
+          </v-list-tile-action>
+          <h3>學習資源</h3>
         </v-list-tile>
         <v-list-tile
           href="/aboutMe/"
@@ -138,8 +186,26 @@
 </template>
 
 <style lang="sass" scoped>
+  /deep/ .el-dialog
+    background:  #c8c8c8 !important
+    padding: 0 !important
+  /deep/ .el-dialog__headerbtn
+    z-index: 2005 !important
+    color: white
+  /deep/ .el-dialog__header
+    padding: 0 !important
+    margin: 0 !important
+  /deep/ .el-dialog__body
+    padding: 0 !important
+  /deep/ .container
+    padding: 0 !important
+  /deep/ .el-dialog--center .el-dialog__body
+    padding: 0 !important
   .toolbar
     padding: 10px
+  .container
+    display: flex
+    justify-content: center
   .contaner__logo
     width: 70px
     height: 70px
@@ -164,9 +230,15 @@
 </style>
 
 <script>
+
+import Login from '@/components/Login.vue'
 export default {
+  components: {
+    Login
+  },
   data: () => ({
-    drawer: false
+    drawer: false,
+    centerDialogVisible: false
   }),
   methods: {
     showModal() {
@@ -174,6 +246,9 @@ export default {
     },
     dismissModal() {
       this.centerDialogVisible = false
+    },
+    logOut() {
+      this.$store.dispatch('logOut')
     }
   }
 

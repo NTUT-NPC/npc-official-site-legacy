@@ -191,15 +191,13 @@ export default {
         }
       ],
       activeName: '1',
-      isAutoPlay: false,
-      isShow: false
+      isAutoPlay: false
     }
   },
   created() {
     this.fetchGithub()
   },
   mounted() {
-    this.isShow = true
   },
   methods: {
     async fetchGithub() {

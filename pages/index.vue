@@ -44,10 +44,11 @@ export default {
     color: white
   /deep/ .el-dialog__header
     padding: 0 !important
+    margin: 0 !important
   /deep/ .el-dialog__body
     padding: 0 !important
-    .container
-      padding: 0 !important
+  /deep/ .container
+    padding: 0 !important
   /deep/ .el-dialog--center .el-dialog__body
     padding: 0 !important
   .section
