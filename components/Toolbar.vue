@@ -157,6 +157,21 @@
 </template>
 
 <style lang="sass" scoped>
+  /deep/ .el-dialog
+    background:  #c8c8c8 !important
+    padding: 0 !important
+  /deep/ .el-dialog__headerbtn
+    z-index: 2005 !important
+    color: white
+  /deep/ .el-dialog__header
+    padding: 0 !important
+    margin: 0 !important
+  /deep/ .el-dialog__body
+    padding: 0 !important
+  /deep/ .container
+    padding: 0 !important
+  /deep/ .el-dialog--center .el-dialog__body
+    padding: 0 !important
   .toolbar
     padding: 10px
   .container
