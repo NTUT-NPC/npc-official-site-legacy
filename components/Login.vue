@@ -337,7 +337,7 @@ export default {
   .login-html .sign-in:checked + .tab,
   .login-html .sign-up:checked + .tab
     color: #fff
-    border-color: #1161ee
+    border-color: #FCA222
   .login-form
     min-height: 345px
     position: relative
@@ -375,7 +375,7 @@ export default {
           & + label
             color: #fff
             .icon
-              background: #1161ee
+              background: #FCA222
               &:before
                 transform: scale(1) rotate(45deg)
               &:after

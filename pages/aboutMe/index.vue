@@ -38,7 +38,7 @@
     <div class="body__group">
       <h2>定期聚</h2>
       <br>
-      <p>歡迎加入我們，我們會在每週一的 18:00 ~ 21:00 舉行定期聚。追蹤我們的粉絲專頁獲得更多消息</p>
+      <p>歡迎加入我們，我們會在<strong class="text__color">每週一</strong>的 <strong class="text__color">18:00 ~ 21:00</strong> 舉行定期聚。追蹤我們的粉絲專頁獲得更多消息</p>
     </div>
     <div class="body__follow">
       <h2>- Follow Us -</h2>
@@ -104,6 +104,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  .text__color
+    color: #FAB24C
   *
     color: white
 

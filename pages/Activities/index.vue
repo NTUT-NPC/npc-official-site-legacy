@@ -40,7 +40,7 @@
         v-for="(project, index) in projects"
         :key="index"
         shadow="hover"
-        class="box-card project__card"
+        class="box-card project__card card__style"
         @click.native="router(project.link)"
       >
         <div class="github__title">
@@ -75,6 +75,7 @@
         v-for="(activitie, index) in activities"
         :key="index"
         shadow="hover"
+        class="card__style"
       >
         <div slot="header">
           <strong>{{ activitie.name }}</strong>
@@ -221,8 +222,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  $card__color: #fff
   p
     color: black
+  .card__style
+    border: none
+    background-color: $card__color
+    border: $card__color solid
   .phone__carousel
     margin: 8vw 0
   .body__carousal
