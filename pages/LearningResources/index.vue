@@ -17,7 +17,7 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="body__row">
+    <div class="body__row hidden-sm-and-down">
       <p class="row__text">
         學習永遠不設限
       </p>
@@ -194,7 +194,7 @@
         </el-card>
       </div>
     </div>
-    <div class="hidden-md-and-up">
+    <div class="cards hidden-md-and-up">
       <div class="small__cards">
         <el-card
           v-for="(language, id) in languages"
@@ -208,7 +208,18 @@
             <v-img
               :src="language.src"
               aspect-ratio="1"
+              max-width="150px"
             />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div>
+                <div class="headline">
+                  {{ language.name }}
+                </div>
+              </div>
+            </v-card-title>
           </div>
         </el-card>
 
@@ -224,7 +235,18 @@
             <v-img
               :src="i.src"
               aspect-ratio="1"
+              max-width="150px"
             />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div>
+                <div class="headline">
+                  {{ i.name }}
+                </div>
+              </div>
+            </v-card-title>
           </div>
         </el-card>
 
@@ -240,7 +262,18 @@
             <v-img
               :src="frontEnd.src"
               aspect-ratio="1"
+              max-width="150px"
             />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div>
+                <div class="headline">
+                  {{ frontEnd.name }}
+                </div>
+              </div>
+            </v-card-title>
           </div>
         </el-card>
 
@@ -256,7 +289,18 @@
             <v-img
               :src="other.src"
               aspect-ratio="1"
+              max-width="150px"
             />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div>
+                <div class="headline">
+                  {{ other.name }}
+                </div>
+              </div>
+            </v-card-title>
           </div>
         </el-card>
       </div>
@@ -341,12 +385,13 @@ export default {
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: center
 
 .body__carousal
   margin-top: 70px
   margin-left: 0px
   width: 100%
-  border: 1px solid white
+
 .carousal__image
   object-fit: cover
 
@@ -379,6 +424,8 @@ export default {
 
 .cards
   display: flex
+  justify-content: center
+  align-items: center
 
 .resources__cards
   margin: 1vw 1vw
@@ -424,6 +471,7 @@ export default {
 .small__card
   margin-top: 30px
   width: 30%
+  height: 200px
   min-width: 400px
   min-height: 10vw
 
