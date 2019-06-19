@@ -216,7 +216,14 @@ export default {
     errorMessage: ''
   }),
   methods: {
-    dismissModal() { this.$emit('dismiss') },
+    dismissModal() {
+      this.clear()
+      this.errorMessage = []
+      this.$emit('dismiss')
+    },
+    clear() {
+      this.user = {}
+    },
     // TODO: handle validation while tap buttons
     onSignUpButtonPressed() {
       this.signUp()
