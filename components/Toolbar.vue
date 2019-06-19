@@ -98,7 +98,24 @@
               person
             </v-icon>
           </v-list-tile-action>
-          <h3>登入</h3>
+          <button
+            v-if="this.$store.state.isLogin"
+            src="#"
+            @click="logOut"
+          >
+            <h3>
+              登出
+            </h3>
+          </button>
+          <button
+            v-else
+            src="#"
+            @click="showModal"
+          >
+            <h3>
+              登入
+            </h3>
+          </button>
         </v-list-tile>
         <v-list-tile
           href="/"
@@ -121,6 +138,18 @@
             </v-icon>
           </v-list-tile-action>
           <h3>活動</h3>
+        </v-list-tile>
+        <v-list-tile
+          v-if="this.$store.state.isLogin"
+          href="#"
+          tag="div"
+        >
+          <v-list-tile-action>
+            <v-icon>
+              insert_invitation
+            </v-icon>
+          </v-list-tile-action>
+          <h3>學習資源</h3>
         </v-list-tile>
         <v-list-tile
           href="/aboutMe/"
