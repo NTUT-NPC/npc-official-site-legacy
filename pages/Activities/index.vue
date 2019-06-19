@@ -19,6 +19,15 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <div>
+      <v-carousel hide-delimiters max height="250px" class="body__carousel hidden-md-and-up">
+        <v-carousel-item
+          v-for="(activity, index) in carousalActivities"
+          :key="index"
+          :src="activity.image"
+        />
+      </v-carousel>
+    </div>
     <div class="body__title">
       <h2>Projects</h2>
     </div>
@@ -34,17 +43,19 @@
         class="box-card project__card"
         @click.native="router(project.link)"
       >
-        <div slot="header">
+        <div class="github__title">
           <strong>{{ project.name }}</strong>
-        </div>
-        <div class="github__buttons">
+          <v-space />
           <gh-btns-star
             :slug="project.name"
+            show-count
           />
           <gh-btns-fork
             :slug="project.name"
+            show-count
           />
         </div>
+
         <div class="github__description">
           <p class="text__style">
             {{ project.description }}
@@ -69,7 +80,9 @@
           <strong>{{ activitie.name }}</strong>
         </div>
         <div class="activities__description">
-          <p class="text__style">{{ activitie.description }}</p>
+          <p class="text__style">
+            {{ activitie.description }}
+          </p>
         </div>
       </el-card>
     </div>
@@ -212,9 +225,11 @@ export default {
 <style lang="sass" scoped>
   p
     color: black
-  .body__carousal
+  .phone__carousel
     margin: 8vw 0
-    padding: 0 10vw
+  .body__carousal
+    margin: 5vw 120px
+    padding: 0 40px
     .el-carousel__item
       h3
         color: #475669
@@ -230,23 +245,26 @@ export default {
         background-color: #d3dce6
 
   .body__title
+    display: flex
+    justify-content: center
     margin: 50px 160px 0 160px
 
   .carousal__image
     object-fit: cover
 
   .project__cards
-    margin: 1vw 1vw
+    margin: 3vw 5vw
     display: flex !important
     justify-content: center
     flex-wrap: wrap
     opacity: 0
     animation-delay: .3s
     animation-duration: 1s
-
-  .project__card
-    width : 22vw
-    margin: 1vw
+    .project__card
+        width: 30%
+        min-width: 350px
+        min-height: 10vw
+        margin: 1vw
     .text
       font-size: 14px
 
@@ -260,23 +278,31 @@ export default {
 
     .clearfix:after
       clear: both
-
+  .github__title
+    display: flex
+    margin: 0
   .github__buttons
     display: flex
   .github__description
     margin-top: 30px
-  .text__style
+  .gh-button-container
+    min-width: 30px !important
+    display: flex
+  .text__style, strong
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
   .activities__cards
+    margin: 3vw 5vw
     display: flex !important
     justify-content: center
     flex-wrap: wrap
     animation-duration: 2s
     opacity: 0
     .el-card
-      width: 22vw
+      width: 30%
+      min-width: 350px
+      min-height: 10vw
       overflow: hidden
       margin: 1vw
     .activities__description
