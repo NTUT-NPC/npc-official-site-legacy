@@ -30,6 +30,63 @@
         變大神從學習開始
       </p>
     </div>
+    <div class="resources__title">
+      <h2>猜你想學</h2>
+    </div>
+
+    <div class="cards">
+      <div
+        v-inview:parent="'animate'"
+        v-inview:animate="'fadeIn'"
+        class="resources__cards"
+      >
+        <el-card
+          v-for="(platform, id) in platforms"
+          :key="id"
+          shadow="hover"
+          class="box-card resources__card"
+        />
+      </div>
+
+      <div
+        v-inview:parent="'animate'"
+        v-inview:animate="'fadeIn'"
+        class="resources__cards resources__col"
+      >
+        <el-card
+          v-for="(platform, id) in platforms"
+          :key="id"
+          shadow="hover"
+          class="box-card resources__card"
+        />
+      </div>
+
+      <div
+        v-inview:parent="'animate'"
+        v-inview:animate="'fadeIn'"
+        class="resources__cards"
+      >
+        <el-card
+          v-for="(platform, id) in platforms"
+          :key="id"
+          shadow="hover"
+          class="box-card resources__card"
+        />
+      </div>
+
+      <div
+        v-inview:parent="'animate'"
+        v-inview:animate="'fadeIn'"
+        class="resources__cards resources__col"
+      >
+        <el-card
+          v-for="(platform, id) in platforms"
+          :key="id"
+          shadow="hover"
+          class="box-card resources__card"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -42,7 +99,25 @@ export default {
         { src: require('~/static/activities/MLCC.jpg') },
         { src: require('~/static/activities/npc_meet.png') },
         { src: require('~/static/activities/python_basic.png') }
+      ],
+      languages: [
+        { name: 'c++' },
+        { name: 'python' },
+        { name: 'golang' },
+        { name: 'git version control' },
+        { name: 'ruby' }
+      ],
+      platforms: [
+        { name: 'front-end development' },
+        { name: 'ios development' },
+        { name: 'android development' },
+        { name: 'back-end development' }
       ]
+    }
+  },
+  computed: {
+    cardsCol(index) {
+      return index % 2 === 0 ? '' : ''
     }
   }
 }
@@ -84,5 +159,29 @@ export default {
   width: 2px
   background-color: gray
   height: 60px
+
+.resources__title h2
+  font-size: 4rem
+  margin-top: 50px
+  color: white
+
+.cards
+  display: flex
+
+.resources__cards
+  margin: 1vw 1vw
+  opacity: 0
+  animation-delay: .3s
+  animation-duration: 1s
+
+.resources__card
+  width : 200px
+  height: 300px
+  margin: 20px 10px
+  .text
+    font-size: 14px
+
+.resources__col
+  margin-top: 200px
 
 </style>
