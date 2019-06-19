@@ -32,13 +32,15 @@
           </h3>
         </button>
       </nuxt-link>
-      <button
-        v-if="this.$store.state.isLogin"
-        class="toolbar__link__about_me"
-        src="#"
-      >
-        <h3>學習資源</h3>
-      </button>
+      <nuxt-link to="/learningResources/">
+        <button
+          v-if="this.$store.state.isLogin"
+          class="toolbar__link__about_me"
+          src="#"
+        >
+          <h3>學習資源</h3>
+        </button>
+      </nuxt-link>
       <nuxt-link to="/aboutMe/">
         <button src="#">
           <h3>
