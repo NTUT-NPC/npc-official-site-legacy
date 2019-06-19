@@ -44,6 +44,7 @@ export default {
     color: white
   /deep/ .el-dialog__header
     padding: 0 !important
+    margin: 0 !important
   /deep/ .el-dialog__body
     padding: 0 !important
     .container
