@@ -17,7 +17,7 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="body__row">
+    <div class="body__row hidden-sm-and-down">
       <p class="row__text">
         學習永遠不設限
       </p>
@@ -34,7 +34,7 @@
       <h2>猜你想學</h2>
     </div>
 
-    <div class="cards">
+    <div class="cards hidden-sm-and-down">
       <div
         v-inview:parent="'animate'"
         v-inview:animate="'fadeIn'"
@@ -74,7 +74,6 @@
           </v-card-actions>
         </el-card>
       </div>
-
       <div
         v-inview:parent="'animate'"
         v-inview:animate="'fadeIn'"
@@ -134,10 +133,8 @@
             primary-title
             class="justify-center"
           >
-            <div>
-              <div class="headline">
-                {{ i.name }}
-              </div>
+            <div class="headline">
+              {{ i.name }}
             </div>
           </v-card-title>
           <v-card-actions>
@@ -174,10 +171,8 @@
             primary-title
             class="justify-center"
           >
-            <div>
-              <div class="headline">
-                {{ other.name }}
-              </div>
+            <div class="headline">
+              {{ other.name }}
             </div>
           </v-card-title>
           <v-card-actions>
@@ -192,6 +187,121 @@
               <v-icon>share</v-icon>
             </v-btn>
           </v-card-actions>
+        </el-card>
+      </div>
+    </div>
+    <div class="cards hidden-md-and-up">
+      <div class="small__cards">
+        <el-card
+          v-for="(language, id) in languages"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="language.src"
+              aspect-ratio="1"
+              max-width="150px"
+            />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div class="headline">
+                {{ language.name }}
+              </div>
+            </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
+          </div>
+        </el-card>
+
+        <el-card
+          v-for="(i, id) in ios"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="i.src"
+              aspect-ratio="1"
+              max-width="150px"
+            />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div class="headline">
+                {{ i.name }}
+              </div>
+            </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
+          </div>
+        </el-card>
+
+        <el-card
+          v-for="(frontEnd, id) in frontEnds"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="frontEnd.src"
+              aspect-ratio="1"
+              max-width="150px"
+            />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div class="headline">
+                {{ frontEnd.name }}
+              </div>
+            </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
+          </div>
+        </el-card>
+
+        <el-card
+          v-for="(other, id) in others"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="other.src"
+              aspect-ratio="1"
+              max-width="150px"
+            />
+            <v-card-title
+              primary-title
+              class="justify-center"
+            >
+              <div class="headline">
+                {{ other.name }}
+              </div>
+            </v-card-title>
+            <div class="small__card-button">
+              <v-btn>了解更多</v-btn>
+            </div>
+          </div>
         </el-card>
       </div>
     </div>
@@ -275,12 +385,13 @@ export default {
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: center
 
 .body__carousal
   margin-top: 70px
   margin-left: 0px
   width: 100%
-  border: 1px solid white
+
 .carousal__image
   object-fit: cover
 
@@ -313,6 +424,8 @@ export default {
 
 .cards
   display: flex
+  justify-content: center
+  align-items: center
 
 .resources__cards
   margin: 1vw 1vw
@@ -343,11 +456,38 @@ export default {
   justify-content: center
   align-items: center
 
+@media screen and (max-width: 480px)
+  .final__row
+    width: 400px
+    h2
+      font-size: 1.5rem
+
 .final__block
   display: flex
   flex-direction: column
   align-items: center
   .final__button
     margin-top: 30px
+
+.small__cards
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.small__card
+  margin-top: 30px
+  width: 30%
+  height: 200px
+  min-width: 400px
+  min-height: 10vw
+
+.small__card-contain
+  display: flex
+  flex-direction: row
+
+.small__card-button
+  position: absolute
+  margin: 120px 5px 10px 270px
 
 </style>
