@@ -56,16 +56,16 @@
   align-items: center
 .main__register
   margin-top: 20px
-  background-color: #0c1214
+  background-color: #FAB24C
   border: 1px solid orange
   border-radius: 24px
-  color: orange
+  color: white
   padding: 8px 12px
   text-align: center
+  font-weight: 1000
   font-size: 1.3rem
   &:hover
     cursor: pointer
-    background: orange
     color: white
     animation: pulse 1s infinite
 </style>
