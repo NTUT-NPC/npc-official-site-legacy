@@ -34,7 +34,7 @@
       <h2>猜你想學</h2>
     </div>
 
-    <div class="cards">
+    <div class="cards hidden-sm-and-down">
       <div
         v-inview:parent="'animate'"
         v-inview:animate="'fadeIn'"
@@ -74,7 +74,6 @@
           </v-card-actions>
         </el-card>
       </div>
-
       <div
         v-inview:parent="'animate'"
         v-inview:animate="'fadeIn'"
@@ -192,6 +191,73 @@
               <v-icon>share</v-icon>
             </v-btn>
           </v-card-actions>
+        </el-card>
+      </div>
+    </div>
+    <div class="hidden-md-and-up">
+      <div class="small__cards">
+        <el-card
+          v-for="(language, id) in languages"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="language.src"
+              aspect-ratio="1"
+            />
+          </div>
+        </el-card>
+
+        <el-card
+          v-for="(i, id) in ios"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="i.src"
+              aspect-ratio="1"
+            />
+          </div>
+        </el-card>
+
+        <el-card
+          v-for="(frontEnd, id) in frontEnds"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="frontEnd.src"
+              aspect-ratio="1"
+            />
+          </div>
+        </el-card>
+
+        <el-card
+          v-for="(other, id) in others"
+          :key="id"
+          v-inview:parent="'animate'"
+          v-inview:animate="'fadeInUp'"
+          shadow="hover"
+          class="box-card small__card"
+        >
+          <div class="small__card-contain">
+            <v-img
+              :src="other.src"
+              aspect-ratio="1"
+            />
+          </div>
         </el-card>
       </div>
     </div>
@@ -349,5 +415,20 @@ export default {
   align-items: center
   .final__button
     margin-top: 30px
+
+.small__cards
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.small__card
+  margin-top: 30px
+  width: 30%
+  min-width: 400px
+  min-height: 10vw
+
+.small__card-contain
+  display: flex
+  flex-direction: row
 
 </style>
