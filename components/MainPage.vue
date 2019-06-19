@@ -14,10 +14,18 @@
           程式設計研究社
         </h2>
         <button
+          v-if="!this.$store.state.isLogin"
           class="main__register"
           @click="showModal"
         >
           加入我們
+        </button>
+        <button
+          v-else
+          class="main__register"
+          @click="logOut"
+        >
+          登出
         </button>
       </div>
     </div>
@@ -56,16 +64,16 @@
   align-items: center
 .main__register
   margin-top: 20px
-  background-color: #0c1214
+  background-color: #FAB24C
   border: 1px solid orange
   border-radius: 24px
-  color: orange
+  color: white
   padding: 8px 12px
   text-align: center
+  font-weight: 1000
   font-size: 1.3rem
   &:hover
     cursor: pointer
-    background: orange
     color: white
     animation: pulse 1s infinite
 </style>
@@ -85,6 +93,9 @@ export default {
     }
   },
   methods: {
+    logOut() {
+      this.$store.dispatch('logOut')
+    },
     showModal() {
       this.centerDialogVisible = true
     },

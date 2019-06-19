@@ -215,7 +215,9 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn>了解更多</v-btn>
+              <v-btn color="#FAB24C">
+                了解更多
+              </v-btn>
             </div>
           </div>
         </el-card>
@@ -243,7 +245,9 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn>了解更多</v-btn>
+              <v-btn color="#FAB24C">
+                了解更多
+              </v-btn>
             </div>
           </div>
         </el-card>
@@ -271,7 +275,9 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn>了解更多</v-btn>
+              <v-btn color="#FAB24C">
+                了解更多
+              </v-btn>
             </div>
           </div>
         </el-card>
@@ -299,7 +305,9 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn>了解更多</v-btn>
+              <v-btn color="#FAB24C">
+                了解更多
+              </v-btn>
             </div>
           </div>
         </el-card>

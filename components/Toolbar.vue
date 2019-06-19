@@ -10,7 +10,7 @@
     <v-toolbar
       class="hidden-sm-and-down web"
       flat
-      color="#0c1214"
+      color="#171B1C"
       fixed
     >
       <img
@@ -32,13 +32,15 @@
           </h3>
         </button>
       </nuxt-link>
-      <button
-        v-if="this.$store.state.isLogin"
-        class="toolbar__link__about_me"
-        src="#"
-      >
-        <h3>學習資源</h3>
-      </button>
+      <nuxt-link to="/learningResources/">
+        <button
+          v-if="this.$store.state.isLogin"
+          class="toolbar__link__about_me"
+          src="#"
+        >
+          <h3>學習資源</h3>
+        </button>
+      </nuxt-link>
       <nuxt-link to="/aboutMe/">
         <button src="#">
           <h3>
@@ -72,7 +74,7 @@
       class="hidden-md-and-up"
       fixed
       right
-      background-color="#0c1214"
+      color="#171B1C"
     >
       <v-list
         class="pa-1"
@@ -169,7 +171,7 @@
       flat
       fixed
       dark
-      color="#0c1214"
+      color="#171B1C"
     >
       <img
         class="contaner__logo"
@@ -212,7 +214,7 @@
   .web button
     padding: 15px 32px
     text-align: center
-    border-bottom: solid 2px #0c1214
+    border-bottom: solid 2px #171B1C
     transition: 0.5s
     outline: none
   a
@@ -225,7 +227,7 @@
   /deep/ .burger_size i
     font-size: 36px
   .v-navigation-drawer
-    background-color: #0c1214
+    background-color: #171B1C
 
 </style>
 

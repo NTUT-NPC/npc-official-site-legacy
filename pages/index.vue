@@ -82,7 +82,7 @@ export default {
     position: relative
     z-index: 10
 
-  $main-color: #FFB945
+  $main-color: #171B1C
 
   @keyframes pulse
     0%
