@@ -223,7 +223,7 @@
     font-size: 1.3rem
   .web button:hover
     cursor: pointer
-    border-bottom: solid 2px white
+    border-bottom: solid 2px #FCA222
   /deep/ .burger_size i
     font-size: 36px
   .v-navigation-drawer

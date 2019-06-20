@@ -215,7 +215,7 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn color="#FAB24C">
+              <v-btn color="#FCA222">
                 了解更多
               </v-btn>
             </div>
@@ -245,7 +245,7 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn color="#FAB24C">
+              <v-btn color="#FCA222">
                 了解更多
               </v-btn>
             </div>
@@ -275,7 +275,7 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn color="#FAB24C">
+              <v-btn color="#FCA222">
                 了解更多
               </v-btn>
             </div>
@@ -305,7 +305,7 @@
               </div>
             </v-card-title>
             <div class="small__card-button">
-              <v-btn color="#FAB24C">
+              <v-btn color="#FCA222">
                 了解更多
               </v-btn>
             </div>
@@ -320,11 +320,10 @@
         </h2>
         <p>找不到想要的課程嗎</p>
         <v-btn
-          large
           class="final__button"
-          color="#FFB945"
+          color="#FCA222"
         >
-          許願
+          <p>許願</p>
         </v-btn>
       </div>
 
@@ -336,11 +335,10 @@
         </h2>
         <p>分享自己的寶典給社團</p>
         <v-btn
-          large
           class="final__button"
-          color="#FFB945"
+          color="#FCA222"
         >
-          分享
+          <p>分享</p>
         </v-btn>
       </div>
     </div>
@@ -475,8 +473,13 @@ export default {
   flex-direction: column
   align-items: center
   .final__button
+    font-size: 16px
     margin-top: 30px
-
+    border-radius: 3vh
+    &:hover
+      cursor: pointer
+      color: white
+      animation: pulse 1s infinite
 .small__cards
   position: relative
   display: flex

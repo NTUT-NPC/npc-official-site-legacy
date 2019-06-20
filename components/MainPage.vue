@@ -64,7 +64,7 @@
   align-items: center
 .main__register
   margin-top: 20px
-  background-color: #FAB24C
+  background-color: #FCA222
   border: 1px solid orange
   border-radius: 24px
   color: white
