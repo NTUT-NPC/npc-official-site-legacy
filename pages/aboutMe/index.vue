@@ -78,17 +78,15 @@ export default {
     return {
       aboutText: '學習程式，並不是為了成為「程式設計師」，而是為了開拓更寬廣的學習途徑',
       missonText: '扭轉以往大家對學習程式的迷思，並提供許多管道給想要學習程式的你',
-      author: '前社長 小辰辰',
+      author: '創社社長 小辰辰',
       avatarSize: 100,
       people: [
-        { name: '洨辰辰', src: require('~/static/organizers/yaoandy.jpg') },
-        { name: '陳季宏', src: require('~/static/organizers/fourseasonred.jpg') },
-        { name: '蔡政賓', src: require('~/static/organizers/Caizhengbin.jpg') },
-        { name: '杜方宇', src: require('~/static/organizers/Dufangyu.jpg') },
-        { name: '吳博翰', src: require('~/static/organizers/wubrian.jpg') },
-        { name: '林庭緯', src: require('~/static/organizers/tingway.jpg') },
+        { name: '創始元老 洨辰辰', src: require('~/static/organizers/yaoandy.jpg') },
+        { name: '許雅淑', src: require('~/static/organizers/susan.jpeg') },
+        { name: '腋毛', src: require('~/static/organizers/armpit_hair.jpeg') },
+        { name: '黃發泉', src: require('~/static/organizers/fa_chuan.jpeg') },
         { name: '邱柏翰', src: require('~/static/organizers/hans.jpg') },
-        { name: '神崎秀吉', src: require('~/static/organizers/showgi.jpg') }
+        { name: '孫億龍', src: require('~/static/organizers/e_long.jpeg') }
       ]
     }
   },
