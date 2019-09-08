@@ -14,18 +14,10 @@
           程式設計研究社
         </h2>
         <button
-          v-if="!this.$store.state.isLogin"
           class="main__register"
-          @click="showModal"
+          @click="openFB"
         >
           加入我們
-        </button>
-        <button
-          v-else
-          class="main__register"
-          @click="logOut"
-        >
-          登出
         </button>
       </div>
     </div>
@@ -81,11 +73,9 @@
 <script>
 
 import Logo from '@/components/NpcLogo.vue'
-import Login from '@/components/Login.vue'
 export default {
   components: {
-    Logo,
-    Login
+    Logo
   },
   data() {
     return {
@@ -93,14 +83,8 @@ export default {
     }
   },
   methods: {
-    logOut() {
-      this.$store.dispatch('logOut')
-    },
-    showModal() {
-      this.centerDialogVisible = true
-    },
-    dismissModal() {
-      this.centerDialogVisible = false
+    openFB() {
+      window.open('https://www.facebook.com/NPC.OwO/')
     }
   }
 }
