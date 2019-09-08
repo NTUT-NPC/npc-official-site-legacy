@@ -24,8 +24,8 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      <v-card-text class="footer-text white--text pt-0">
+        南無喝囉怛那哆囉夜耶，南無阿唎耶，婆盧羯帝爍缽囉耶，菩提薩埵婆耶，摩訶薩埵婆耶，摩訶迦盧尼迦耶，唵，薩皤囉罰曳，數怛那怛寫，南無悉吉粟埵伊蒙阿唎耶，婆盧吉帝室佛囉愣馱婆，南無那囉謹墀，醯利摩訶皤哆沙咩，薩婆阿他豆輸朋，阿逝孕，薩婆薩哆那摩婆薩哆那摩婆伽，摩罰特豆，怛姪他，唵阿婆盧醯，盧迦帝，迦羅帝，夷醯唎，摩訶菩提薩埵，薩婆薩婆，摩囉摩囉，摩醯摩醯．唎馱孕，俱盧俱盧羯蒙，度盧度盧罰闍耶帝，摩訶罰闍耶帝，陀羅陀羅，地唎尼，室佛囉耶，遮囉遮囉，摩摩罰摩囉，穆帝隸，伊醯伊醯，室那室那，阿囉?佛囉舍利，罰沙罰參，佛囉舍耶，呼嚧呼嚧摩囉，呼嚧呼嚧醯唎，娑囉娑囉，悉唎悉唎，蘇盧蘇盧，菩提夜菩提夜，菩馱夜菩馱夜，彌帝唎夜，那囉謹墀，地唎瑟尼那，波夜摩那，娑婆訶，悉陀夜，娑婆訶，摩訶悉陀夜，娑婆訶，悉陀喻藝，室皤囉耶，娑婆訶那囉謹墀，娑婆訶，摩羅那羅，娑婆訶，悉囉僧阿穆佉耶，娑婆訶，娑婆摩訶阿悉陀夜，娑婆訶，者吉囉阿悉陀夜，娑婆訶，波陀摩羯悉哆夜，娑婆訶，那囉謹墀．皤伽囉耶，娑婆訶，摩婆利勝羯囉夜，娑婆訶，南無喝囉怛那哆囉夜耶，南無阿唎耶，婆盧吉帝，爍皤囉夜，娑婆訶，唵悉殿都，漫哆囉，跋馱耶，娑婆訶。
       </v-card-text>
 
       <v-divider />
@@ -50,3 +50,9 @@ export default {
   })
 }
 </script>
+
+<style lang="scss" scoped>
+.footer-text {
+  opacity: 0.5;
+}
+</style>
