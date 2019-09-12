@@ -60,6 +60,14 @@
           Github
         </button>
       </div>
+      <div class="body__follow-button">
+        <button
+          class="button follow__button-animation"
+          @click="openInstagram"
+          >
+            Instagram
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -96,6 +104,9 @@ export default {
     },
     openGithub() {
       window.open('https://github.com/NTUT-NPC', '_blank')
+    },
+    openInstagram() {
+      window.open('https://www.instagram.com/npc.designer/?hl=zh-tw', '_blank')
     }
   }
 }
